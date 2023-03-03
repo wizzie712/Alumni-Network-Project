@@ -1,0 +1,19 @@
+form {
+  width: 400px;
+}
+/* .bg1{
+  background-size: cover;
+  background-size: 100vh;
+  background-repeat: no-repeat;
+} */
+img {
+  width: 580px;
+  object-fit: fill;
+  margin-right: 100px;
+
+
+}
+
+.col {
+  border: 5px black;
+}

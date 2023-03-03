@@ -1,0 +1,67 @@
+<table>
+  <tr>
+    <td>
+      <form class="border p-3 rounded-60" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+  <div class="row g-0">
+    <div class="col1 text-center p-2 mb-3">
+      <span class="fs-3">Student Login</span>
+    </div>
+  </div>
+  <div class="col mb-3">
+    <div class="col mb-3">
+      <input type="email" class="form-control" id="email" placeholder="Email" formControlName="logemail">
+      <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+        Email is required
+      </div>
+      <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
+        Email is Invalid
+      </div>
+    </div>
+    <div class="col mb-3">
+      <input type="password" class="form-control" id="password" placeholder="Password" formControlName="logpassword">
+      <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
+        Password is required
+      </div>
+      <div class="form-text text-danger" *ngIf="Password.errors?.['pattern'] && (Password.dirty || Password.touched)">
+        Password should have Special characters, Lower & Upper case, numbers and minimum 8 characters
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-6 offset-3">
+        <div class="d-grid">
+          <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
+          <a routerLink="/studentregister">Register as Student</a>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-6 offset-3">
+        <div class="d-grid">
+          <a routerLink="/adminlogin">Admin Login</a>
+        </div>
+        <div>
+          <a routerLink="/adminregister">Register as Admin</a>
+        </div>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col-6 offset-3">
+        <div class="d-grid">
+          <a routerLink="/facultylogin">Faculty Login</a>
+        </div>
+        <!-- <div>
+          <a routerLink="/facultyregister">Faculty as Student</a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+</form>
+</td>
+<td>
+  <img src='assets/images/123.jpg'>
+</td>
+</tr>
+</table>

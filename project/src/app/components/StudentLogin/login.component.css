@@ -1,0 +1,33 @@
+form {
+  padding: 0;
+  width: 450px;
+  margin-right: 100px;
+  margin-left: 0px;
+  justify-content: center;
+  align-items: center;
+}
+.col input{
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+}
+
+ .col placeholder{
+  position:absolute;
+  top:0;
+  left: 0;
+  color:#adadad;
+  padding: 10px 0;
+  transition: .5s;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+img {
+  width: 780px;
+  padding: 0;
+}

@@ -1,0 +1,108 @@
+<div class="bg1">
+  <div class="row justify-content-start">
+
+    <div class="col align-self-center">
+      <span class="border"></span>
+  <img src='assets/images/123.jpg'>
+  </div>
+  <div class="col">
+<form class="border p-3 rounded-60" [formGroup]="registerForm" (ngSubmit)="registerSubmitted()">
+
+  <div class="row g-0">
+    <div class="col text-center p-2 mb-3">
+      <span class="fs-3">Student Registration</span>
+    </div>
+  </div>
+
+  <div class="col mb-3">
+    <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+    <div class="form-text text-danger" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
+      Name is required
+    </div>
+    <div class="form-text text-danger" *ngIf="Name.errors?.['minlength'] && (Name.touched || Name.dirty)">
+      Name is too short
+    </div>
+    <div class="form-text text-danger" *ngIf="Name.errors?.['pattern'] && (Name.touched || Name.dirty)">
+      Name should start with alphabet
+    </div>
+  </div>
+  <div class="col mb-3">
+    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+    <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+      Email is required
+    </div>
+    <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
+      Email is Invalid
+    </div>
+  </div>
+  <div class="col mb-3">
+    <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+    <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
+      Password is required
+    </div>
+    <div class="form-text text-danger" *ngIf="Password.errors?.['pattern'] && (Password.dirty || Password.touched)">
+      Password should have Special characters, Lower & Upper case, numbers and minimum 8 characters
+    </div>
+  </div>
+  <div class="col ps-2">
+    <div class="m-1">Gender</div>
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" value="m" id="male" formControlName="gender">
+      <label for="male" class="form-check-label">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" value="f" id="female" formControlName="gender">
+      <label for="female" class="form-check-label">Female</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" value="o" id="others" formControlName="gender">
+      <label for="others" class="form-check-label">Others</label>
+    </div>
+    <div class="form-text text-danger" *ngIf="Gender.errors?.['required']">
+      Select Gender
+    </div>
+
+    <div class="m-1">Batch</div>
+  <select class="form-select" formControlName="year">
+    <option value="" disabled selected>Select Year</option>
+    <option *ngFor="let year of years" [value]="year">{{year}}</option>
+  </select>
+  <div class="form-text text-danger" *ngIf="Year.errors?.['required']">
+    Select Year
+  </div>
+      <div class="row">
+        <div class="col-6 offset-3">
+          <div class="d-grid">
+            <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Submit</button>
+
+          </div>
+          <div class="d-grid">
+            <a routerLink="/studentlogin">StudentLogin</a>
+          </div>
+          <!-- <div class="d-grid">
+            <a routerLink="/adminlogin">Admin Login</a>
+          </div>
+          <div>
+            <a routerLink="/adminregister">Register as Admin</a>
+          </div> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 offset-3">
+          <div class="d-grid">
+            <a routerLink="/facultylogin">Faculty Login</a>
+          </div>
+          <!-- <div>
+            <a routerLink="/facultyregister">Register as Faculty</a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+
+
+
+</form>
+</div>
+</div>
+</div>

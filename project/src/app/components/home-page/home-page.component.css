@@ -1,0 +1,131 @@
+.bg{
+	background: rgb(123,128,168);
+	background: linear-gradient(180deg, rgba(123,128,168,1) 20%, rgba(0,50,84,1) 74%);
+	height: 700px;
+	margin: 2px;
+	background-repeat: no-repeat;
+	border-radius: 29% 71% 38% 62% / 56% 28% 72% 44% ;
+}
+
+h3{
+	font-size: 40px;
+	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bolder;
+}
+
+/*  ******   multicolored heading    *******         */
+
+.multicolortext {
+	background-image: linear-gradient(to left, rgb(11, 12, 63), rgb(33, 47, 172), rgb(175, 205, 240), rgb(242, 242, 248), rgb(247, 247, 242), rgb(219, 193, 141), rgb(218, 190, 115));
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	color: transparent;
+  }
+
+/*   		CARD ANIMATIONS          */
+.container_foto {
+	background-color: rgba(131, 135, 156, 0.13);
+	padding: 0;
+	overflow: hidden;
+	max-width: 480px;
+	margin-left: 50px;
+	margin-top: 100px;
+	margin-right: 40px;
+	border-radius: 15%;
+	border: 3px solid rgb(241, 235, 235);
+}
+
+.container_foto article {
+	padding: 10%;
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.container_foto h2 {
+	color: #fff;
+	font-weight: 800;
+	font-size: 35px;
+	border-bottom: #fff solid 1px;
+	line-height: 1.6;
+	letter-spacing: 4px;
+}
+
+.container_foto img {
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0.4;
+	-webkit-transition: all 4s ease;
+	-moz-transition: all 4s ease;
+	-o-transition: all 4s ease;
+	-ms-transition: all 4s ease;
+	transition: all 4s ease;
+
+}
+
+.ver_mas {
+	background-color: #f5912d;
+	position: absolute;
+	width: 100%;
+	height: 70px;
+	bottom: 0;
+	z-index: 1;
+	opacity: 0;
+	transform: translate(0px, 70px);
+	-webkit-transform: translate(0px, 70px);
+	-moz-transform: translate(0px, 70px);
+	-o-transform: translate(0px, 70px);
+	-ms-transform: translate(0px, 70px);
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.ver_mas span {
+	font-size: 40px;
+	color: #fff;
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	top: 13px;
+}
+
+
+/* /hovers/ */
+
+.container_foto:hover {
+	cursor: pointer;
+}
+
+.container_foto:hover img {
+	opacity: 0.3;
+	transform: scale(1.5);
+}
+
+.container_foto:hover article {
+	transform: translate(2px, -69px);
+	-webkit-transform: translate(2px, -69px);
+	-moz-transform: translate(2px, -69px);
+	-o-transform: translate(2px, -69px);
+	-ms-transform: translate(2px, -69px);
+}
+
+.container_foto:hover .ver_mas {
+	transform: translate(0px, 0px);
+	-webkit-transform: translate(0px, 0px);
+	-moz-transform: translate(0px, 0px);
+	-o-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	opacity: 1;
+}
+/*                      ******* END CARD ANIMATION **********                        */
