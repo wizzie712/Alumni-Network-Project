@@ -1,7 +1,7 @@
 .bg{
 	background: rgb(123,128,168);
 	background: linear-gradient(180deg, rgba(123,128,168,1) 20%, rgba(0,50,84,1) 74%);
-	height: 700px;
+	height: 580px;
 	margin: 2px;
 	background-repeat: no-repeat;
 	border-radius: 29% 71% 38% 62% / 56% 28% 72% 44% ;
@@ -29,9 +29,9 @@ h3{
 	background-color: rgba(131, 135, 156, 0.13);
 	padding: 0;
 	overflow: hidden;
-	max-width: 480px;
+	max-width: 465px;
 	margin-left: 50px;
-	margin-top: 100px;
+	margin-top: 90px;
 	margin-right: 40px;
 	border-radius: 15%;
 	border: 3px solid rgb(241, 235, 235);

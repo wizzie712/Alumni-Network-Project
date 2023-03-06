@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'facultylogin', component:FacultyLoginComponent},
   { path: 'adminlogin', component:AdminLoginComponent},
   { path: 'adminregister', component:AdminRegisterComponent},
-  { path: 'homepage', component:HomePageComponent}
+  { path: 'homepage', component:HomePageComponent},
+  { path: '', component:HomePageComponent}
 ];
 
 @NgModule({

@@ -1,19 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins',sans-serif;
+}
+.linktohome{
+/* text-align: left; */
+margin-right: 1250px;
+margin-bottom: 550px;
+height: fit-content;
+font-size: large;
+margin-left: 0px;
+}
+
+h2{
+  font-size: 2em;
+  color: #0e7785;
+  text-align: center;
+}
 form {
-  width: 400px;
-}
-/* .bg1{
-  background-size: cover;
-  background-size: 100vh;
-  background-repeat: no-repeat;
-} */
-img {
-  width: 580px;
-  object-fit: fill;
+  padding: 10;
+  width: 450px;
+  margin-left: auto;
   margin-right: 100px;
+  margin-top: 100px;
+  margin-bottom: auto;
+  position: absolute;
+  justify-content: center;
+  background: transparent;
+  align-items: center;
+  border: 2px solid rgba(255,255,255,0.5);
+  top: 0;
+  right: 0;
+  padding: 20px;
+  max-width: 450px;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.inputbox{
+  position: relative;
+  width: 410px;
+  border-bottom: 1px solid #fff;
+}
+.inputbox label{
+  position: absolute;
+  top: 35%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #383737;
+  font-size: 1em;
+  pointer-events: none;
+  transition: .5s;
+}
+.inputbox input {
 
-
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding:0 35px 0 5px;
+  color: #333030;
+}
+input:focus ~ label,
+input:valid ~ label{
+top: -5px;
 }
 
-.col {
-  border: 5px black;
+.inputbox ion-icon{
+  position: absolute;
+  right: 8px;
+  color: #160c0c;
+  font-size: 1.2em;
+  top: 10px;
 }
+.col input{
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  outline: none;
+  color: #555;
+  font-size: 18px;
+}
+
+.col placeholder{
+  position:absolute;
+  top:0;
+  left: 0;
+  color:#adadad;
+  padding: 10px 0;
+  transition: .5s;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.bg-image {
+  background-image: url('src/assets/images/123.jpg');
+  position: absolute;
+  bottom: 0;
+  left: -5;
+  min-width: 70%;
+  min-height: 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: 5px;
+  left: -25px;
+  width: 300px;
+  height: 600px;
+  text-align: left;
+}
+
+
+.loginstu{
+  font-size: .9em;
+  color: #fff;
+  text-align: center;
+  margin: 50px 0 -20px;
+}
+.loginstu p a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  /* margin-bottom: 20px; */
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #1E90FF;
+}
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.radio-container label {
+  margin-right: 10px;
+  font-size: 15px;
+  color: #707070;
+}
+
+.radio-container input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  outline: none;
+  position: relative;
+  top: -4px;
+}
+
+.radio-container input[type="radio"]:checked:before {
+  content: "";
+  display: block;
+  position: relative;
+  top: 1px;
+  left: 1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #326190;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  /* margin-right: 2px; */
+  /* margin-top: 0; */
+  /* margin-left: 20px; */
+  margin-block-start: 9px;
+  margin-inline-start: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 200%;
+  border: 20px solid #141111;
+  outline: none;
+}
+
+input[type="radio"]:focus {
+  outline: 30px;
+  border-color: #1E90FF;
+}
+
+.form-select {
+  width: 200px; /* Set the width to whatever value you prefer */
+  height: 30px;
+  font-size: 15px;
+  margin-left: 10px;
+  color: #707070;
+}
+
+.home{
+  width: 10%;
+  left:7%;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #dadfdb;
+  color: rgb(38, 33, 33);
+  border: none;
+  border-radius: 30px;
+  transition: 0.3s;
+
+}
+.home:hover{
+  background-color: #052a07;
+  color: white;
+}
+button{
+  width: 50%;
+  height: 40px;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  margin: 10px 0 -25px;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+button:hover{
+  background-color: #61a364;
+  color: #052a07;
+}
+

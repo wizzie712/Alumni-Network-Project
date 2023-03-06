@@ -1,16 +1,27 @@
-<table>
-  <tr>
-    <td>
+
+<div class="bg-image">
+</div>
+  <div class="linktohome">
+    <button class="home" routerLink="/homepage">< HOME</button>
+  </div>
+    <div class="form-box">
+      <div class="form-value">
+
       <form class="border p-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+
 
   <div class="row g-0">
     <div class="col text-center p-2 mb-3">
-      <span class="fs-3">Faculty Login</span>
+      <span class="fs-3"><h2>Faculty Login</h2></span>
     </div>
   </div>
   <div class="col mb-3">
     <div class="col mb-3">
-      <input type="email" class="form-control" id="email" placeholder="Email" formControlName="logemail">
+      <div class="inputbox">
+        <ion-icon name="mail-outline"></ion-icon>
+      <input type="email" required class="form-control input-field" id="email" formControlName="logemail">
+      <label for="">Email</label>
+    </div>
       <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
         Email is required
       </div>
@@ -18,20 +29,27 @@
         Email is Invalid
       </div>
     </div>
-    <div class="col mb-3">
-      <input type="password" class="form-control" id="password" placeholder="Password" formControlName="logpassword">
+    <div class="col mb-1">
+      <div class="inputbox">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      <input type="password" required class="form-control input-field" id="password" formControlName="logpassword">
+      <label for="">Password</label>
+      </div>
       <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
         Password is required
       </div>
-      <div class="form-text text-danger" *ngIf="Password.errors?.['pattern'] && (Password.dirty || Password.touched)">
-        Password should have Special characters, Lower & Upper case, numbers and minimum 8 characters
-      </div>
     </div>
+    <div class="d-grid">
     <div class="row">
-      <div class="col-6 offset-3">
+    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
+  </div>
+  </div>
+    <div class="row">
         <div class="d-grid">
-          <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
-          <!-- <a routerLink="/facultyregister">Register as Faculty</a> -->
+          <div class="loginstu">
+
+          <a routerLink="/studentlogin">Student Login</a>
+
         </div>
       </div>
     </div>
@@ -45,22 +63,14 @@
         </div>
       </div>
     </div> -->
-    <div class="row">
-      <div class="col-6 offset-3">
-        <div class="d-grid">
-          <a routerLink="/studentlogin">Student Login</a>
-        </div>
-        <!-- <div>
-          <a routerLink="/studentregister">Register as Student</a>
-        </div> -->
-      </div>
-    </div>
+
   </div>
 
 </form>
-</td>
-<td>
-  <img src='assets/images/studentlogin.jpg'>
-</td>
-</tr>
-</table>
+
+
+</div>
+</div>
+
+
+
