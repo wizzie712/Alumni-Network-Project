@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
-
+  yearControl = new FormControl('');
 
   constructor(private router: Router) { }
 
@@ -17,6 +16,9 @@ export class RegisterComponent implements OnInit {
   }
 
   years = Array.from({length: 18}, (_, i) => 2025 - i);
+
+
+
   registerForm = new FormGroup({
     name: new FormControl("", [
       Validators.required,

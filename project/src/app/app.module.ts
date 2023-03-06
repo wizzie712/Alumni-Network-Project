@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/StudentRegister/register.component';
@@ -28,6 +28,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    IonicModule.forRoot(),
     ReactiveFormsModule
   ],
   providers: [],

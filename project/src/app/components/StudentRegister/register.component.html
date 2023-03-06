@@ -1,21 +1,27 @@
-<div class="bg1">
-  <div class="row justify-content-start">
 
-    <div class="col align-self-center">
-      <span class="border"></span>
-  <img src='assets/images/123.jpg'>
+<div class="bg-image">
+</div>
+  <div class="linktohome">
+    <button class="home" routerLink="/homepage">< HOME</button>
   </div>
-  <div class="col">
-<form class="border p-3 rounded-60" [formGroup]="registerForm" (ngSubmit)="registerSubmitted()">
+    <div class="form-box">
+      <div class="form-value">
+
+      <form class="border p-3" [formGroup]="registerForm" (ngSubmit)="registerSubmitted()">
+
 
   <div class="row g-0">
     <div class="col text-center p-2 mb-3">
-      <span class="fs-3">Student Registration</span>
+      <span class="fs-3"><h2>Student Registration</h2></span>
     </div>
   </div>
-
   <div class="col mb-3">
-    <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+    <div class="col mb-4">
+      <div class="inputbox">
+        <ion-icon name="person-outline"></ion-icon>
+      <input type="text" required class="form-control input-field" id="name" formControlName="name">
+      <label for="">Name</label>
+    </div>
     <div class="form-text text-danger" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
       Name is required
     </div>
@@ -25,84 +31,97 @@
     <div class="form-text text-danger" *ngIf="Name.errors?.['pattern'] && (Name.touched || Name.dirty)">
       Name should start with alphabet
     </div>
-  </div>
-  <div class="col mb-3">
-    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
-    <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
-      Email is required
     </div>
-    <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
-      Email is Invalid
+    <div class="col mb-4">
+      <div class="inputbox">
+        <ion-icon name="mail-outline"></ion-icon>
+      <input type="email" required class="form-control input-field" id="email" formControlName="email">
+      <label for="">Email</label>
     </div>
-  </div>
-  <div class="col mb-3">
-    <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
-    <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
-      Password is required
-    </div>
-    <div class="form-text text-danger" *ngIf="Password.errors?.['pattern'] && (Password.dirty || Password.touched)">
-      Password should have Special characters, Lower & Upper case, numbers and minimum 8 characters
-    </div>
-  </div>
-  <div class="col ps-2">
-    <div class="m-1">Gender</div>
-    <div class="form-check form-check-inline">
-      <input type="radio" class="form-check-input" value="m" id="male" formControlName="gender">
-      <label for="male" class="form-check-label">Male</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input type="radio" class="form-check-input" value="f" id="female" formControlName="gender">
-      <label for="female" class="form-check-label">Female</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input type="radio" class="form-check-input" value="o" id="others" formControlName="gender">
-      <label for="others" class="form-check-label">Others</label>
-    </div>
-    <div class="form-text text-danger" *ngIf="Gender.errors?.['required']">
-      Select Gender
-    </div>
-
-    <div class="m-1">Batch</div>
-  <select class="form-select" formControlName="year">
-    <option value="" disabled selected>Select Year</option>
-    <option *ngFor="let year of years" [value]="year">{{year}}</option>
-  </select>
-  <div class="form-text text-danger" *ngIf="Year.errors?.['required']">
-    Select Year
-  </div>
-      <div class="row">
-        <div class="col-6 offset-3">
-          <div class="d-grid">
-            <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Submit</button>
-
-          </div>
-          <div class="d-grid">
-            <a routerLink="/studentlogin">StudentLogin</a>
-          </div>
-          <!-- <div class="d-grid">
-            <a routerLink="/adminlogin">Admin Login</a>
-          </div>
-          <div>
-            <a routerLink="/adminregister">Register as Admin</a>
-          </div> -->
-        </div>
+      <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+        Email is required
       </div>
-      <div class="row">
-        <div class="col-6 offset-3">
-          <div class="d-grid">
-            <a routerLink="/facultylogin">Faculty Login</a>
-          </div>
-          <!-- <div>
-            <a routerLink="/facultyregister">Register as Faculty</a>
-          </div> -->
-        </div>
+      <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
+        Email is Invalid
       </div>
     </div>
+    <div class="col mb-4">
+      <div class="inputbox">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      <input type="password" required class="form-control input-field" id="password" formControlName="password">
+      <label for="">Password</label>
+      </div>
+      <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
+        Password is required
+      </div>
+      <div class="form-text text-danger" *ngIf="Password.errors?.['pattern'] && (Password.dirty || Password.touched)">
+        Password should have Special characters, Lower & Upper case, numbers and minimum 8 characters
+      </div>
+    </div>
+    <div class="col ps-2">
+      <div class="m-1"><label>Gender</label></div>
+      <div class="form-check form-check-inline">
+        <div class="radio-container">
+        <input type="radio" class="form-check-input" value="m" id="male" formControlName="gender">
+        <label for="male" class="form-check-label">Male</label>
+      </div>
+      </div>
+      <div class="form-check form-check-inline">
+        <div class="radio-container">
+        <input type="radio" class="form-check-input" value="f" id="female" formControlName="gender">
+        <label for="female" class="form-check-label">Female</label>
+        </div>
+      </div>
+      <div class="form-check form-check-inline">
+        <div class="radio-container">
+        <input type="radio" class="form-check-input" value="o" id="others" formControlName="gender">
+        <label for="others" class="form-check-label">Others</label>
+        </div>
+      </div>
+      <div class="form-text text-danger" *ngIf="Gender.errors?.['required']">
+        Select Gender
+      </div>
+  </div>
+  <div class="col ps-3">
+    <div class="row">
+      <div class="col-2">
+        <div class="m-1"><label for="year-dropdown">Batch</label></div>
+      </div>
+      <div class="col-10">
+        <select class="form-select" formControlName="year" id="year-dropdown">
+          <option value="" disabled selected>Select Year</option>
+          <option *ngFor="let year of years" [value]="year">{{year}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-text text-danger" *ngIf="Year.errors?.['required']">
+      Select Year
+    </div>
+</div>
+    <div class="d-grid">
+    <div class="row">
+    <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Submit</button>
+  </div>
+  </div>
+    <div class="row">
+        <div class="d-grid">
+          <div class="loginstu">
+
+          <a routerLink="/studentlogin">Student Login</a><br>
+          <a routerLink="/facultylogin">Faculty Login</a>
+        </div>
+
+      </div>
+    </div>
 
 
-
+  </div>
 
 </form>
+
+
 </div>
 </div>
-</div>
+
+
+
