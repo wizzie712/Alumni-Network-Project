@@ -7,6 +7,7 @@ import { FacultyLoginComponent } from './components/FacultyLogin/faculty-login.c
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { StudentDashboardComponent } from './components/student-dashboard/student-dashboard.component';
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'adminlogin', component:AdminLoginComponent},
   { path: 'adminregister', component:AdminRegisterComponent},
   { path: 'homepage', component:HomePageComponent},
-  { path: '', component:HomePageComponent}
+  { path: '', component:HomePageComponent},
+  { path: 'studentdashboard', component:StudentDashboardComponent}
 ];
 
 @NgModule({
