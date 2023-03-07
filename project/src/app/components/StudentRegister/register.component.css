@@ -246,4 +246,10 @@ button:hover{
   background-color: #61a364;
   color: #052a07;
 }
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 

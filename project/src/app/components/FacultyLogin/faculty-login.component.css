@@ -177,3 +177,9 @@ button:hover{
   color: #052a07;
 }
 
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
