@@ -13,6 +13,8 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { StudentDashboardComponent } from './components/student-dashboard/student-dashboard.component';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
+import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { StudentDashboardComponent } from './components/student-dashboard/studen
     AdminRegisterComponent,
     HomePageComponent,
     StudentDashboardComponent,
+    StudentDetailsComponent,
+    StudentProfileComponent,
   ],
   imports: [
     BrowserModule,
