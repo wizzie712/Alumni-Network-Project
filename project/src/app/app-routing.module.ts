@@ -8,6 +8,8 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { StudentDashboardComponent } from './components/student-dashboard/student-dashboard.component';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
+import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -18,7 +20,9 @@ const routes: Routes = [
   { path: 'adminregister', component:AdminRegisterComponent},
   { path: 'homepage', component:HomePageComponent},
   { path: '', component:HomePageComponent},
-  { path: 'studentdashboard', component:StudentDashboardComponent}
+  { path: 'studentdashboard', component:StudentDashboardComponent},
+  { path: 'studentdetails', component:StudentDetailsComponent},
+  { path: 'studentprofile', component:StudentProfileComponent}
 ];
 
 @NgModule({
