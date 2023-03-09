@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+
 declare class StickyNavigation {
 
   currentId: string | null;
