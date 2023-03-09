@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,9 +30,11 @@ import { StudentDashboardComponent } from './components/student-dashboard/studen
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    IonicModule,
     IonicModule.forRoot(),
     ReactiveFormsModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

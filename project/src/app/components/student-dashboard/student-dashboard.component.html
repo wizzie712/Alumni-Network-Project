@@ -1,77 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Hero -->
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-</head>
-<body>
-  <div class="wrapper">
-    <nav>
-      <input type="checkbox" id="show-search">
-      <input type="checkbox" id="show-menu">
-      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
-      <div class="content">
-      <div class="logo"><a href="#">AlumniConnect</a></div>
-        <ul class="links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Look for Job</a></li>
-          <li><a href="#">Post Job</a></li>
-          <li>
-            <a href="#" class="desktop-link">Guidance</a>
-            <input type="checkbox" id="show-features">
-            <label for="show-features">Guidance</label>
-            <ul>
-              <li><a href="#">Interview Help</a></li>
-              <li><a href="#">Video/Ted Talk</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Trends Ongoing</a></li>
-          <!-- <li>
-            <a href="#" class="desktop-link">Services</a>
-            <input type="checkbox" id="show-services">
-            <label for="show-services">Services</label>
-            <ul>
-              <li><a href="#">Drop Menu 1</a></li>
-              <li><a href="#">Drop Menu 2</a></li>
-              <li><a href="#">Drop Menu 3</a></li>
-              <li>
-                <a href="#" class="desktop-link">More Items</a>
-                <input type="checkbox" id="show-items">
-                <label for="show-items">More Items</label>
-                <ul>
-                  <li><a href="#">Sub Menu 1</a></li>
-                  <li><a href="#">Sub Menu 2</a></li>
-                  <li><a href="#">Sub Menu 3</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li> -->
-          <li>
-            <a href="#" class="desktop-link"><ion-icon name="person-outline"></ion-icon></a>
-            <input type="checkbox" id="show-features">
-            <label for="show-features"></label>
-            <ul>
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Logout</a></li>
-            </ul>
-          </li>
-        </ul>
+  <body>
+    <section class="et-hero-tabs">
+      <h1>ALUMNI CONNECT</h1>
+      <h3>Student Dashboard</h3>
+      <div class="et-hero-tabs-container">
+        <a class="et-hero-tab" href="#tab-lookforjob">Look for Job</a>
+        <a class="et-hero-tab" href="#tab-postjobs">Post Jobs</a>
+        <a class="et-hero-tab" href="#tab-guidance">Guidance</a>
+        <a class="et-hero-tab" href="#tab-trends">Trends</a>
+        <a class="et-hero-tab" href="#tab-profile">Profile</a>
+        <span class="et-hero-tab-slider"></span>
       </div>
-      <div class="icon">
+    </section>
+
+    <!-- Main -->
+    <main class="et-main">
+      <section class="et-slide">
+        <img src="assets/images/studentdashboard.jpeg" class="sdimg">
+      </section>
+      <section class="et-slide" id="tab-lookforjob">
+        <h1>Look for Job</h1>
+        <h3>something about Look for Job</h3>
+      </section>
+      <section class="et-slide" id="tab-postjobs">
+        <div class="form-box">
+          <div class="form-value">
+
+          <form class="border p-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+
+
+      <div class="row g-0">
+        <div class="col text-center p-2 mb-3">
+          <span class="fs-3"><h2>Student Login</h2></span>
+        </div>
+      </div>
+      <div class="col mb-3">
+        <div class="col mb-3">
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+          <input type="email" required class="form-control input-field" id="email" formControlName="logemail">
+          <label for="">Email</label>
+        </div>
+          <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+            Email is required
+          </div>
+          <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
+            Email is Invalid
+          </div>
+        </div>
+        <div class="col mb-1">
+          <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+          <input type="password" required class="form-control input-field" id="password" formControlName="logpassword">
+          <label for="">Password</label>
+          </div>
+          <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
+            Password is required
+          </div>
+        </div>
+        <div class="d-grid">
+        <div class="row">
+        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
+      </div>
+      </div>
+        <div class="row">
+            <div class="d-grid">
+              <div class="loginstu">
+
+              <a routerLink="/studentregister">Register as a Student</a><br>
+              <a routerLink="/facultylogin">Faculty Login</a>
+            </div>
+
+          </div>
+        </div>
+
 
       </div>
-      <!-- <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
-      <form action="#" class="search-box">
-        <input type="text" placeholder="Type Something to Search..." required>
-        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
-      </form> -->
-    </nav>
-  </div>
+
+    </form>
 
 
+    </div>
+    </div>
 
-</body>
-</html>
+      </section>
+      <section class="et-slide" id="tab-guidance">
+        <h1>Guidance</h1>
+        <h3>something about Guidance</h3>
+      </section>
+      <section class="et-slide" id="tab-trends">
+        <h1>Trends</h1>
+        <h3>something about Trends</h3>
+      </section>
+      <section class="et-slide" id="tab-profile">
+        <h1>Profile</h1>
+        <h3>something about Profile</h3>
+      </section>
+    </main>
+    <script src="src/app/components/StudentDashboard/stickynavbar.component.js"></script>
+
+  </body>
