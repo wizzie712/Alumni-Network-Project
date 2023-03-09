@@ -45,21 +45,5 @@ import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/la
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule implements OnInit {
-  title = 'my-app';
-  constructor(public responsive: BreakpointObserver) {}
-  
-  ngOnInit() {
-  this.responsive
-  .observe([Breakpoints.HandsetPortrait])
-  .subscribe((state: BreakpointState) => {
-  if (state.matches) {
-  console.log(
-  'This is the Handset Portrait point at max-width: 599.98 px and portrait orientation.'
-  );
-  }
-  });
-  }
-  }   
-
+export class AppModule { }
 
