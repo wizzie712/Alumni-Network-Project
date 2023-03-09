@@ -3,11 +3,11 @@
 	background-color: rgba(39, 39, 41, 0.618);
 	padding: 0;
 	overflow: hidden;
-	max-width: 465px;
+	max-width: 400px;
 	margin-left: 50px;
 	margin-top: 90px;
 	margin-right: 40px;
-	border-radius: 15%;
+	border-radius: 5%;
 	border: 3px solid rgb(241, 235, 235);
 }
 
