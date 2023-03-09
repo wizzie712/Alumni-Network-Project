@@ -46,7 +46,7 @@
 }
 
 .ver_mas {
-	background-color: #f5912d;
+	background-color: #809bce;
 	position: absolute;
 	width: 100%;
 	height: 70px;
@@ -106,10 +106,10 @@
 
 
 button{
-    background-color: #003559;
+    background-color: #809bce;
     width: 200px;
     padding: auto;
-    color: #E4c9b0 ;
+    color: white ;
     letter-spacing: 3px;
 }
 .profile{
