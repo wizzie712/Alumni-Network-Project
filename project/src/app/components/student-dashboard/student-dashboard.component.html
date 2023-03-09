@@ -32,44 +32,81 @@
 
       <div class="row g-0">
         <div class="col text-center p-2 mb-3">
-          <span class="fs-3"><h2>Student Login</h2></span>
+          <span class="fs-3"><h2>Post a Job</h2></span>
         </div>
       </div>
       <div class="col mb-3">
         <div class="col mb-3">
           <div class="inputbox">
-            <ion-icon name="mail-outline"></ion-icon>
-          <input type="email" required class="form-control input-field" id="email" formControlName="logemail">
-          <label for="">Email</label>
+            <ion-icon name="pencil-outline"></ion-icon>
+          <input type="text" required class="form-control input-field" id="designation" formControlName="designation">
+          <label for="">Designation</label>
         </div>
-          <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
-            Email is required
-          </div>
-          <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
-            Email is Invalid
+          <div class="form-text text-danger" *ngIf="Designation.errors?.['required'] && (Designation.dirty || Designation.touched)">
+            Required field
           </div>
         </div>
-        <div class="col mb-1">
+        <div class="col mb-3">
           <div class="inputbox">
-            <ion-icon name="lock-closed-outline"></ion-icon>
-          <input type="password" required class="form-control input-field" id="password" formControlName="logpassword">
-          <label for="">Password</label>
-          </div>
-          <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
-            Password is required
+            <ion-icon name="briefcase-outline"></ion-icon>
+          <input type="text" required class="form-control input-field" id="company" formControlName="company">
+          <label for="">Company Name</label>
+        </div>
+          <div class="form-text text-danger" *ngIf="Company.errors?.['required'] && (Company.dirty || Company.touched)">
+            Required field
           </div>
         </div>
+        <div class="col mb-3">
+          <div class="inputbox">
+            <ion-icon name="calendar-outline"></ion-icon>
+          <input type="text" required class="form-control input-field" id="experience" formControlName="experience">
+          <label for="">Experience Required</label>
+        </div>
+          <div class="form-text text-danger" *ngIf="Experience.errors?.['required'] && (Experience.dirty || Experience.touched)">
+            Required field
+          </div>
+        </div>
+        <div class="col mb-3">
+          <div class="inputbox">
+            <ion-icon name="cash-outline"></ion-icon>
+          <input type="text" required class="form-control input-field" id="salary" formControlName="salary">
+          <label for="">Salary</label>
+        </div>
+          <div class="form-text text-danger" *ngIf="Salary.errors?.['required'] && (Salary.dirty || Salary.touched)">
+            Required field
+          </div>
+        </div>
+        <div class="col mb-3">
+          <div class="inputbox">
+            <ion-icon name="location-outline"></ion-icon>
+          <input type="text" required class="form-control input-field" id="location" formControlName="location">
+          <label for="">Location</label>
+        </div>
+          <div class="form-text text-danger" *ngIf="Location.errors?.['required'] && (Location.dirty || Location.touched)">
+            Required field
+          </div>
+        </div>
+        <div class="col mb-3">
+          <div class="inputbox">
+            <ion-icon name="checkmark-done-outline"></ion-icon>
+          <input type="text" required class="form-control input-field" id="musthaves" formControlName="musthaves">
+          <label for="">Must Haves</label>
+        </div>
+          <div class="form-text text-danger" *ngIf="Musthaves.errors?.['required'] && (Musthaves.dirty || Musthaves.touched)">
+            Required field
+          </div>
+        </div>
+
         <div class="d-grid">
         <div class="row">
-        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
+        <button type="submit" (click)="showPopup()" [disabled]="loginForm.invalid" class="sub">Submit</button>
       </div>
       </div>
+
         <div class="row">
             <div class="d-grid">
               <div class="loginstu">
 
-              <a routerLink="/studentregister">Register as a Student</a><br>
-              <a routerLink="/facultylogin">Faculty Login</a>
             </div>
 
           </div>
@@ -79,7 +116,13 @@
       </div>
 
     </form>
+    <div class="popup-background" *ngIf="showPopupFlag">
+      <div class="popup">
+        <h2>Job posting submitted</h2>
 
+        <button class="popupbtn" (click)="hidePopup()">OK</button>
+      </div>
+    </div>
 
     </div>
     </div>

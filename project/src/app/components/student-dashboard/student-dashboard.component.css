@@ -25,7 +25,7 @@ text-decoration: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   background: #eee;
   text-align: center;
@@ -116,12 +116,12 @@ text-decoration: none;
 }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 *{
   margin: 0;
   padding: 0;
   font-family: 'poppins',sans-serif;
-}
+} */
 .linktohome{
 /* text-align: left; */
 margin-right: 1250px;
@@ -138,20 +138,20 @@ h2{
 }
 form {
   padding: 10;
-  width: 450px;
+  width: 80%;
   margin-right: auto;
-  margin-left: 100px;
-  margin-top: 150px;
+  margin-left: 10%;
+  /* margin-top: 10%; */
   margin-bottom: auto;
   position: absolute;
   justify-content: center;
   background: transparent;
   align-items: center;
   border: 2px solid rgba(255,255,255,0.5);
-  top: 0;
+  top: 2%;
   left: 0;
   padding: 20px;
-  max-width: 450px;
+  /* max-width: 450px; */
   backdrop-filter: blur(5px);
   border-radius: 10px;
   justify-content: center;
@@ -159,8 +159,9 @@ form {
 }
 .inputbox{
   position: relative;
-  width: 410px;
+  width: 99%;
   border-bottom: 1px solid #fff;
+  margin-bottom: 5px;
 }
 .inputbox label{
   position: absolute;
@@ -191,7 +192,7 @@ top: -5px;
   position: absolute;
   right: 8px;
   color: #160c0c;
-  font-size: 1.2em;
+  font-size: 1.5em;
   top: 10px;
 }
 .col input{
@@ -236,15 +237,19 @@ top: -5px;
   font-size: .9em;
   color: #fff;
   text-align: center;
-  margin: 35px 0 -20px;
+  margin: 20px 0 10px;
 }
 .loginstu p a{
   text-decoration: none;
   color: #fff;
   font-weight: 600;
 }
-input[type="email"],
-input[type="password"] {
+input[type="designation"],
+input[type="company"],
+input[type="experience"],
+input[type="salary"],
+input[type="location"],
+input[type="musthaves"] {
   display: block;
   width: 100%;
   padding: 10px;
@@ -254,8 +259,12 @@ input[type="password"] {
   font-size: 16px;
 }
 
-input[type="email"]:focus,
-input[type="password"]:focus {
+input[type="designation"]:focus,
+input[type="company"]:focus,
+input[type="exprerience"]:focus,
+input[type="salary"]:focus,
+input[type="location"]:focus,
+input[type="musthaves"]:focus {
   outline: none;
   border-color: #1E90FF;
 }
@@ -275,8 +284,8 @@ input[type="password"]:focus {
   background-color: #052a07;
   color: white;
 }
-button{
-  width: 50%;
+.sub{
+  width: 25%;
   height: 40px;
   border-radius: 40px;
   border: none;
@@ -289,10 +298,29 @@ button{
   margin: -5px 0 -25px;
   transform: translateX(-50%);
   transition: 0.3s;
+  color: #050c13;
+  background-color: #66B1F1;
 }
-button:hover{
+.sub:hover{
   background-color: #61a364;
   color: #052a07;
+}
+.popupbtn {
+  width: 25%;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 0;
+  position: center;
+  /* left: 30%; */
+  /* margin: -5px 0 -25px; */
+  /* margin-bottom: 5%; */
+  color: #050c13;
+  background-color: #66B1F1;
 }
 
 .container{
@@ -300,4 +328,24 @@ button:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.popup-background {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  height: 20%;
 }
