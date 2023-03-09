@@ -60,6 +60,6 @@ export class AppModule implements OnInit {
   }
   });
   }
-  }
+  }   
 
 
