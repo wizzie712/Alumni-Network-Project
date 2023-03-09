@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,9 +34,11 @@ import { StudentProfileComponent } from './components/student-profile/student-pr
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    IonicModule,
     IonicModule.forRoot(),
     ReactiveFormsModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
