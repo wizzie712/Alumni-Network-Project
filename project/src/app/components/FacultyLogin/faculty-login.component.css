@@ -27,13 +27,13 @@ form {
   justify-content: center;
   background: transparent;
   align-items: center;
-  border: 2px solid rgba(255,255,255,0.5);
+  border: 0.125em solid rgba(255,255,255,0.5);
   left: 0%;
   bottom: 30%;
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
+  backdrop-filter: blur(0.3125em);
+  border-radius: 0.625em;
   justify-content: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.2);
 }
 .inputbox{
   position: relative;
@@ -74,7 +74,7 @@ top: -20%;
 }
 .col input{
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 0.0625em solid #ccc;
   background: transparent;
   outline: none;
   height: 20%;
@@ -87,9 +87,9 @@ top: -20%;
   top:0;
   left: 0;
   color:#adadad;
-  padding: 10px 0;
+  padding: 0.625em 0;
   transition: .5s;
-  font-size: 16px;
+  font-size: 1em;
   pointer-events: none;
 }
 
@@ -128,8 +128,8 @@ input[type="password"] {
   padding: 100%;
   margin-bottom: 3%;
   border: none;
-  border-bottom: 2px solid #ccc;
-  font-size: 16px;
+  border-bottom: 0.125em solid #ccc;
+  font-size: 1em;
 }
 
 input[type="email"]:focus,
@@ -143,11 +143,11 @@ input[type="password"]:focus {
   left:7%;
   height:7%;
   padding: 1% 1%;
-  font-size: 16px;
+  font-size: 1em;
   background-color: #dadfdb;
   color: rgb(38, 33, 33);
   border: none;
-  border-radius: 40px;
+  border-radius: 2.5em;
   transition: 0.3s;
 
 }
@@ -158,7 +158,7 @@ input[type="password"]:focus {
 button{
   width: 50%;
   height: 15%;
-  border-radius: 40px;
+  border-radius: 2.5em;
   border: none;
   outline: none;
   cursor: pointer;
