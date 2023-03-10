@@ -30,13 +30,13 @@
           <form class="border p-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
 
 
-      <div class="row g-0">
+      <div class="row g-1">
         <div class="col text-center p-2 mb-3">
-          <span class="fs-3"><h2>Post a Job</h2></span>
+          <span class="fs-3"><div class="mainheading"><h2>Post a Job</h2></div></span>
         </div>
       </div>
       <div class="col mb-3">
-        <div class="col mb-3">
+        <div class="col mb-4">
           <div class="inputbox">
             <ion-icon name="pencil-outline"></ion-icon>
           <input type="text" required class="form-control input-field" id="designation" formControlName="designation">
@@ -46,7 +46,7 @@
             Required field
           </div>
         </div>
-        <div class="col mb-3">
+        <div class="col mb-4">
           <div class="inputbox">
             <ion-icon name="briefcase-outline"></ion-icon>
           <input type="text" required class="form-control input-field" id="company" formControlName="company">
@@ -56,17 +56,45 @@
             Required field
           </div>
         </div>
-        <div class="col mb-3">
-          <div class="inputbox">
-            <ion-icon name="calendar-outline"></ion-icon>
-          <input type="text" required class="form-control input-field" id="experience" formControlName="experience">
-          <label for="">Experience Required</label>
-        </div>
-          <div class="form-text text-danger" *ngIf="Experience.errors?.['required'] && (Experience.dirty || Experience.touched)">
-            Required field
+        <div class="col ps-3">
+          <div class="dropdown">
+          <div class="row">
+            <div class="col-2">
+              <div class="m-1"><label for="year-dropdown">Experience</label></div>
+            </div>
+            <div class="col-10">
+              <select class="form-select" formControlName="experience" id="type-dropdown">
+                <option value="" disabled selected>Select Experience</option>
+                <option *ngFor="let experience of experiences" [value]="experience">{{experience}}</option>
+              </select>
+              <ion-icon name="hourglass-outline"></ion-icon>
+            </div>
           </div>
         </div>
-        <div class="col mb-3">
+          <!-- <div class="form-text text-danger" *ngIf="Experience.errors?.['required']">
+            Select Type
+          </div> -->
+      </div>
+        <div class="col ps-3">
+          <div class="dropdown">
+          <div class="row">
+            <div class="col-2">
+              <div class="m-1"><label for="type-dropdown">Type of job</label></div>
+            </div>
+            <div class="col-10">
+              <select class="form-select" formControlName="jobtype" id="type-dropdown">
+                <option value="" disabled selected>Select Type</option>
+                <option *ngFor="let jobtype of jobtypes" [value]="jobtype">{{jobtype}}</option>
+              </select>
+              <ion-icon name="list-circle-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+          <!-- <div class="form-text text-danger" *ngIf="Jobtype.errors?.['required']">
+            Select Type
+          </div> -->
+      </div>
+        <div class="col mb-4">
           <div class="inputbox">
             <ion-icon name="cash-outline"></ion-icon>
           <input type="text" required class="form-control input-field" id="salary" formControlName="salary">
@@ -76,7 +104,7 @@
             Required field
           </div>
         </div>
-        <div class="col mb-3">
+        <div class="col mb-4">
           <div class="inputbox">
             <ion-icon name="location-outline"></ion-icon>
           <input type="text" required class="form-control input-field" id="location" formControlName="location">
@@ -86,7 +114,7 @@
             Required field
           </div>
         </div>
-        <div class="col mb-3">
+        <div class="col mb-4">
           <div class="inputbox">
             <ion-icon name="checkmark-done-outline"></ion-icon>
           <input type="text" required class="form-control input-field" id="musthaves" formControlName="musthaves">

@@ -16,6 +16,8 @@ export class StudentDashboardComponent implements OnInit{
   constructor(private router: Router,private renderer: Renderer2) {}
   ngOnInit(): void {
   }
+  jobtypes = ['Full time','Part-time','Temporary','Contract','Internship','Commission Only'];
+  experiences = ['6 months','1 year','2 years','3 years','5 years','10 years','10+ years'];
   loginForm = new FormGroup({
     designation: new FormControl("", [
       Validators.required]),
@@ -29,6 +31,8 @@ export class StudentDashboardComponent implements OnInit{
       Validators.required]),
     musthaves: new FormControl("", [
       Validators.required]),
+    jobtype: new FormControl("", [
+      Validators.required])
 });
 
 get Designation(): FormControl {
@@ -55,6 +59,10 @@ get Musthaves(): FormControl {
   return this.loginForm.get("musthaves") as FormControl;
 }
 
+get Jobtype(): FormControl {
+  return this.loginForm.get("jobtype") as FormControl;
+}
+
   ngAfterViewInit() {
     this.stickyNavigation = new StickyNavigation();
 
@@ -63,7 +71,11 @@ get Musthaves(): FormControl {
 loginSubmitted(){
   console.log(this.loginForm);
   // document.write("login successful");
+  const formValues = this.loginForm.value;
+  this.loginForm.reset();
 
+  // use the form values as needed
+  console.log(formValues);
 
 }
 showPopupFlag: boolean = false;

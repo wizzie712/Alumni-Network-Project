@@ -131,7 +131,7 @@ font-size: large;
 margin-left: 0px;
 }
 
-h2{
+.mainheading h2{
   font-size: 2em;
   color: #0e7785;
   text-align: center;
@@ -188,7 +188,7 @@ input:valid ~ label{
 top: -5px;
 }
 
-.inputbox ion-icon{
+ ion-icon{
   position: absolute;
   right: 8px;
   color: #160c0c;
@@ -202,7 +202,7 @@ top: -5px;
   outline: none;
   height: 40px;
   color: #555;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .col placeholder{
@@ -306,7 +306,7 @@ input[type="musthaves"]:focus {
   color: #052a07;
 }
 .popupbtn {
-  width: 25%;
+  width: 40%;
   height: 40px;
   border-radius: 30px;
   border: none;
@@ -315,10 +315,10 @@ input[type="musthaves"]:focus {
   font-size: 1em;
   font-weight: 600;
   margin-bottom: 0;
-  position: center;
-  /* left: 30%; */
-  /* margin: -5px 0 -25px; */
-  /* margin-bottom: 5%; */
+  position:center;
+  left: 30%;
+  margin: 10px 0 -35px;
+  margin-bottom: 5%;
   color: #050c13;
   background-color: #66B1F1;
 }
@@ -348,4 +348,28 @@ input[type="musthaves"]:focus {
   border-radius: 5px;
   text-align: center;
   height: 20%;
+}
+
+.popup h2 {
+  font-size: 1.6em;
+}
+
+.dropdown {
+  margin-left: -5.5%;
+}
+
+.form-select {
+  width: 94%; /* Set the width to whatever value you prefer */
+  height: 30px;
+  font-size: 15px;
+  margin-left: 10px;
+  color: #707070;
+  margin-bottom: 2%;
+  background: #eee;
+}
+
+.dropdown ion-icon {
+  font-size: 1.7em;
+  margin-right: 0.8%;
+  margin-bottom: 10%;
 }
