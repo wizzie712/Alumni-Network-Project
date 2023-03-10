@@ -2,15 +2,16 @@
 *{
   font-family: 'poppins',sans-serif;
 }
-.linktohome{
+
+ .linktohome{ 
 /* text-align: left; */
-margin-top: 2%;
+ margin-top: 2%;
 margin-right: 78.125em;
 margin-bottom: 34.37em;
 
 font-size: 16px;
 margin-left: 10%;
-}
+} 
 
 h2{
   font-size: 2em;
@@ -152,8 +153,9 @@ input[type="password"]:focus {
 .home:hover{
   background-color: #809bce;
   color: white;
-}
-button{
+} 
+
+  button{
   width: 50%;
   height: 15%;
   border-radius: 2.5em;
@@ -171,7 +173,7 @@ button{
 button:hover{
   background-color: #61a364;
   color: #052a07;
-}
+}  
 
 .container{
   height: 100%;
@@ -180,7 +182,3 @@ button:hover{
   align-items: center;
 }
 
-/*  homebutton  */
-i{
-  
-}
