@@ -1,4 +1,7 @@
 /*   		CARD ANIMATIONS          */
+html {
+  font-size: 100%;
+}
 .container_foto {
 	background-color: rgba(39, 39, 41, 0.618);
 	padding: 0;
@@ -135,7 +138,9 @@ table,td{
 }
 
 @media(max-width:1370px){
-  h2{
-      font-size: 210%;
+  #heading {
+    max-width: 1366px;
+    margin-left: 23vw;
   }
+
 }
