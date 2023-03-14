@@ -134,3 +134,8 @@ table,td{
     width:770px;
 }
 
+@media(max-width:1370px){
+  h2{
+      font-size: 210%;
+  }
+}
