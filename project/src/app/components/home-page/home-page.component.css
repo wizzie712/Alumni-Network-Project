@@ -142,5 +142,8 @@ table,td{
     max-width: 1370px;
     margin-left: 23vw;
   }
+}
 
+#heading{
+	margin-left: 26vw;
 }
