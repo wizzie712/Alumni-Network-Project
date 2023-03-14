@@ -84,18 +84,22 @@
             </div>
           </div>
         </div>
-          <!-- <div class="form-text text-danger" *ngIf="Jobtype.errors?.['required']">
-            Select Type
-          </div> -->
       </div>
-        <div class="col mb-4">
-          <div class="inputbox">
-          <input type="text" placeholder="Salary" required class="form-control input-field" id="salary" formControlName="salary">
-        </div>
-          <div class="form-text text-danger" *ngIf="Salary.errors?.['required'] && (Salary.dirty || Salary.touched)">
-            Required field
+      <div class="col ps-3">
+        <div class="dropdown">
+        <div class="row">
+          <div class="col-2">
+            <div class="m-1"><label for="type-dropdown">Salary</label></div>
+          </div>
+          <div class="col-10">
+            <select class="form-select" formControlName="salary" id="type-dropdown">
+              <option value="" disabled selected>Select salary</option>
+              <option *ngFor="let salary of salaries" [value]="salary">{{salary}}</option>
+            </select>
           </div>
         </div>
+      </div>
+    </div>
         <div class="col mb-4">
           <div class="inputbox">
           <input type="text" placeholder="Location" required class="form-control input-field" id="location" formControlName="location">

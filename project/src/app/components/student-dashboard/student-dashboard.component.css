@@ -158,7 +158,8 @@ form {
 }
 
 label {
-  margin-left: -5%;
+  margin-left: -3.5%;
+  position: absolute;
 }
 
 .bg-image {
