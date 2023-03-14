@@ -116,21 +116,6 @@ text-decoration: none;
 }
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  font-family: 'poppins',sans-serif;
-} */
-.linktohome{
-/* text-align: left; */
-margin-right: 1250px;
-margin-bottom: 550px;
-height: fit-content;
-font-size: large;
-margin-left: 0px;
-}
-
 .mainheading h2{
   font-size: 2em;
   color: #0e7785;
@@ -157,44 +142,7 @@ form {
   justify-content: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.inputbox{
-  position: relative;
-  width: 99%;
-  border-bottom: 1px solid #fff;
-  margin-bottom: 5px;
-}
-.inputbox label{
-  position: absolute;
-  top: 35%;
-  left: 5px;
-  transform: translateY(-50%);
-  color: #383737;
-  font-size: 1em;
-  pointer-events: none;
-  transition: .5s;
-}
-.inputbox input {
-  width: 100%;
-  height: 40px;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 1em;
-  padding:0 35px 0 5px;
-  color: #333030;
-}
-input:focus ~ label,
-input:valid ~ label{
-top: -5px;
-}
 
- ion-icon{
-  position: absolute;
-  right: 8px;
-  color: #160c0c;
-  font-size: 1.5em;
-  top: 10px;
-}
 .col input{
   border: none;
   border-bottom: 1px solid #ccc;
@@ -205,15 +153,13 @@ top: -5px;
   font-size: 15px;
 }
 
-.col placeholder{
-  position:absolute;
-  top:0;
-  left: 0;
-  color:#adadad;
-  padding: 10px 0;
-  transition: .5s;
-  font-size: 16px;
-  pointer-events: none;
+::placeholder {
+  color: #000;
+}
+
+label {
+  margin-left: -3.5%;
+  position: absolute;
 }
 
 .bg-image {
@@ -234,16 +180,10 @@ top: -5px;
 
 
 .loginstu{
-  font-size: .9em;
-  color: #fff;
-  text-align: center;
+
   margin: 20px 0 10px;
 }
-.loginstu p a{
-  text-decoration: none;
-  color: #fff;
-  font-weight: 600;
-}
+
 input[type="designation"],
 input[type="company"],
 input[type="experience"],
@@ -268,26 +208,11 @@ input[type="musthaves"]:focus {
   outline: none;
   border-color: #1E90FF;
 }
-.home{
-  width: 10%;
-  left:7%;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #dadfdb;
-  color: rgb(38, 33, 33);
-  border: none;
-  border-radius: 30px;
-  transition: 0.3s;
 
-}
-.home:hover{
-  background-color: #052a07;
-  color: white;
-}
-.sub{
+#sub{
   width: 25%;
   height: 40px;
-  border-radius: 40px;
+  /* border-radius: 40px; */
   border: none;
   outline: none;
   cursor: pointer;
@@ -298,17 +223,13 @@ input[type="musthaves"]:focus {
   margin: -5px 0 -25px;
   transform: translateX(-50%);
   transition: 0.3s;
-  color: #050c13;
-  background-color: #66B1F1;
+  color: #000006;
+  background-color: #bbaaaa;
 }
-.sub:hover{
-  background-color: #61a364;
-  color: #052a07;
-}
+
 .popupbtn {
-  width: 40%;
+  width: 30%;
   height: 40px;
-  border-radius: 30px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -320,14 +241,7 @@ input[type="musthaves"]:focus {
   margin: 10px 0 -35px;
   margin-bottom: 5%;
   color: #050c13;
-  background-color: #66B1F1;
-}
-
-.container{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #939597;
 }
 
 .popup-background {
@@ -359,7 +273,7 @@ input[type="musthaves"]:focus {
 }
 
 .form-select {
-  width: 94%; /* Set the width to whatever value you prefer */
+  width: 98%;
   height: 30px;
   font-size: 15px;
   margin-left: 10px;
@@ -368,8 +282,3 @@ input[type="musthaves"]:focus {
   background: #eee;
 }
 
-.dropdown ion-icon {
-  font-size: 1.7em;
-  margin-right: 0.8%;
-  margin-bottom: 10%;
-}

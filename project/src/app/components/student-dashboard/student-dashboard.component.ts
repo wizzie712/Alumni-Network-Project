@@ -16,6 +16,7 @@ export class StudentDashboardComponent implements OnInit{
   constructor(private router: Router,private renderer: Renderer2) {}
   ngOnInit(): void {
   }
+  salaries = ['Less than 8 lpa','10-15 lpa','10-15 lpa','15-20 lpa','20-25 lpa','25+ lpa'];
   jobtypes = ['Full time','Part-time','Temporary','Contract','Internship','Commission Only'];
   experiences = ['6 months','1 year','2 years','3 years','5 years','10 years','10+ years'];
   loginForm = new FormGroup({
