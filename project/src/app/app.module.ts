@@ -17,7 +17,7 @@ import { StudentDetailsComponent } from './components/student-details/student-de
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/layout';
+// import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [

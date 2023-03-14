@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 *{
-  margin: 0;
-  padding: 0;
   font-family: 'poppins',sans-serif;
 }
 .linktohome{
 /* text-align: left; */
-margin-right: 1250px;
-margin-bottom: 550px;
+margin-top: 2%;
+margin-right:auto;
+margin-bottom:55%;
 height: fit-content;
 font-size: large;
-margin-left: 0px;
+margin-left: 10%;
 }
 
 h2{
@@ -19,35 +18,33 @@ h2{
   text-align: center;
 }
 form {
-  padding: 10;
-  width: 450px;
-  margin-right: auto;
-  margin-left: 100px;
-  margin-top: 150px;
-  margin-bottom: auto;
+  padding: 10%;
+  width:30%;
+  height: 45%;
+  margin-left: 5%;
+  margin-top: 15%;
   position: absolute;
   justify-content: center;
   background: transparent;
   align-items: center;
-  border: 2px solid rgba(255,255,255,0.5);
-  top: 0;
-  left: 0;
-  padding: 20px;
-  max-width: 450px;
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
+  border: 0.125em solid rgba(255,255,255,0.5);
+  left: 0%;
+  bottom: 30%;
+  backdrop-filter: blur(0.3125em);
+  border-radius: 0.625em;
   justify-content: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.2);
 }
 .inputbox{
   position: relative;
-  width: 410px;
-  border-bottom: 1px solid #fff;
+  margin-top: 4%;
+  width: 95%;
+  border-bottom: 3px solid #fff;
 }
 .inputbox label{
   position: absolute;
-  top: 35%;
-  left: 5px;
+  top: 40%;
+  left: 5%;
   transform: translateY(-50%);
   color: #383737;
   font-size: 1em;
@@ -56,34 +53,33 @@ form {
 }
 .inputbox input {
   width: 100%;
-  height: 40px;
   background: transparent;
   border: none;
   outline: none;
   font-size: 1em;
-  padding:0 35px 0 5px;
+  padding:0 5% 0 5%;
   color: #333030;
 }
 input:focus ~ label,
 input:valid ~ label{
-top: -5px;
+top: -20%;
 }
 
 .inputbox ion-icon{
   position: absolute;
-  right: 8px;
+  right: 5%;
   color: #160c0c;
   font-size: 1.2em;
-  top: 10px;
+  top: 25%
 }
 .col input{
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 0.0625em solid #ccc;
   background: transparent;
   outline: none;
-  height: 40px;
+  height: 20%;
   color: #555;
-  font-size: 18px;
+  font-size: 220%;
 }
 
 .col placeholder{
@@ -91,34 +87,34 @@ top: -5px;
   top:0;
   left: 0;
   color:#adadad;
-  padding: 10px 0;
+  padding: 0.625em 0;
   transition: .5s;
-  font-size: 16px;
+  font-size: 1em;
   pointer-events: none;
 }
 
 .bg-image {
   background-image: url('src/assets/images/studentlogin.jpg');
   position: absolute;
-  bottom: 0;
-  right: 0;
-  min-width: 70%;
-  min-height: 70%;
+  margin-bottom: 2%;
+  min-width: 75%;
+  min-height: 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  bottom: 0px;
-  right: 0px;
-  width: 300px;
-  height: 600px;
+  bottom: 0;
+  right: 0;
+  width: 75%;
+  height: 90%;
   text-align: left;
 }
 
 
 .loginstu{
-  font-size: .9em;
+  padding: 5%;
   color: #fff;
   text-align: center;
-  margin: 35px 0 -20px;
+  margin: 6% 0 -4%;
+  font-size: 100%;
 }
 .loginstu p a{
   text-decoration: none;
@@ -129,11 +125,11 @@ input[type="email"],
 input[type="password"] {
   display: block;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 100%;
+  margin-bottom: 3%;
   border: none;
-  border-bottom: 2px solid #ccc;
-  font-size: 16px;
+  border-bottom: 0.125em solid #ccc;
+  font-size: 1em;
 }
 
 input[type="email"]:focus,
@@ -142,14 +138,16 @@ input[type="password"]:focus {
   border-color: #1E90FF;
 }
 .home{
-  width: 10%;
+  margin-top: 2%;
+  width: 8%;
   left:7%;
-  padding: 10px 20px;
-  font-size: 16px;
+  height:7%;
+  padding: 1% 1%;
+  font-size: 1em;
   background-color: #dadfdb;
   color: rgb(38, 33, 33);
   border: none;
-  border-radius: 30px;
+  border-radius: 2.5em;
   transition: 0.3s;
 
 }
@@ -159,16 +157,16 @@ input[type="password"]:focus {
 }
 button{
   width: 50%;
-  height: 40px;
-  border-radius: 40px;
+  height: 15%;
+  border-radius: 2.5em;
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 120%;
   font-weight: 600;
   position: absolute;
   left: 50%;
-  margin: -5px 0 -25px;
+  margin: -1% 0 0;
   transform: translateX(-50%);
   transition: 0.3s;
 }
@@ -178,8 +176,9 @@ button:hover{
 }
 
 .container{
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
