@@ -1,39 +1,13 @@
-.bg{
-	background: rgb(123,128,168);
-	background: linear-gradient(180deg, rgba(123,128,168,1) 20%, rgba(0,50,84,1) 74%);
-	height: 580px;
-	margin: 2px;
-	background-repeat: no-repeat;
-	border-radius: 29% 71% 38% 62% / 56% 28% 72% 44% ;
-}
-
-h3{
-	font-size: 40px;
-	text-align: center;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-weight: bolder;
-}
-
-/*  ******   multicolored heading    *******         */
-
-.multicolortext {
-	background-image: linear-gradient(to left, rgb(11, 12, 63), rgb(33, 47, 172), rgb(175, 205, 240), rgb(242, 242, 248), rgb(247, 247, 242), rgb(219, 193, 141), rgb(218, 190, 115));
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	background-clip: text;
-	color: transparent;
-  }
-
 /*   		CARD ANIMATIONS          */
 .container_foto {
-	background-color: rgba(131, 135, 156, 0.13);
+	background-color: rgba(39, 39, 41, 0.618);
 	padding: 0;
 	overflow: hidden;
-	max-width: 465px;
+	max-width: 400px;
 	margin-left: 50px;
 	margin-top: 90px;
 	margin-right: 40px;
-	border-radius: 15%;
+	border-radius: 5%;
 	border: 3px solid rgb(241, 235, 235);
 }
 
@@ -72,7 +46,7 @@ h3{
 }
 
 .ver_mas {
-	background-color: #f5912d;
+	background-color: #809bce;
 	position: absolute;
 	width: 100%;
 	height: 70px;
@@ -129,4 +103,34 @@ h3{
 	opacity: 1;
 }
 /*                      ******* END CARD ANIMATION **********                        */
+
+
+button{
+    background-color: #809bce;
+    width: 200px;
+    padding: auto;
+    color: white ;
+    letter-spacing: 3px;
+}
+.profile{
+    width: 100%;
+}
+
+table,td{
+    border: 2px black;
+}
+.mapouter{
+    position:left;
+    text-align:right;
+    height:510px;
+    width:700px;
+    margin-left: 150px;
+}
+
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:510px;
+    width:770px;
+}
 

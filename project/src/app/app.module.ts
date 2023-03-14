@@ -16,6 +16,9 @@ import { StudentDashboardComponent } from './components/student-dashboard/studen
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 
+import { Component, OnInit } from '@angular/core';
+// import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,3 +46,4 @@ import { StudentProfileComponent } from './components/student-profile/student-pr
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
