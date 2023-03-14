@@ -38,9 +38,7 @@
       <div class="col mb-3">
         <div class="col mb-4">
           <div class="inputbox">
-            <ion-icon name="pencil-outline"></ion-icon>
-          <input type="text" required class="form-control input-field" id="designation" formControlName="designation">
-          <label for="">Designation</label>
+          <input type="text" placeholder="Designation" required class="form-control input-field" id="designation" formControlName="designation">
         </div>
           <div class="form-text text-danger" *ngIf="Designation.errors?.['required'] && (Designation.dirty || Designation.touched)">
             Required field
@@ -48,9 +46,7 @@
         </div>
         <div class="col mb-4">
           <div class="inputbox">
-            <ion-icon name="briefcase-outline"></ion-icon>
-          <input type="text" required class="form-control input-field" id="company" formControlName="company">
-          <label for="">Company Name</label>
+          <input type="text" placeholder="Company Name" required class="form-control input-field" id="company" formControlName="company">
         </div>
           <div class="form-text text-danger" *ngIf="Company.errors?.['required'] && (Company.dirty || Company.touched)">
             Required field
@@ -67,7 +63,6 @@
                 <option value="" disabled selected>Select Experience</option>
                 <option *ngFor="let experience of experiences" [value]="experience">{{experience}}</option>
               </select>
-              <ion-icon name="hourglass-outline"></ion-icon>
             </div>
           </div>
         </div>
@@ -86,7 +81,6 @@
                 <option value="" disabled selected>Select Type</option>
                 <option *ngFor="let jobtype of jobtypes" [value]="jobtype">{{jobtype}}</option>
               </select>
-              <ion-icon name="list-circle-outline"></ion-icon>
             </div>
           </div>
         </div>
@@ -96,9 +90,7 @@
       </div>
         <div class="col mb-4">
           <div class="inputbox">
-            <ion-icon name="cash-outline"></ion-icon>
-          <input type="text" required class="form-control input-field" id="salary" formControlName="salary">
-          <label for="">Salary</label>
+          <input type="text" placeholder="Salary" required class="form-control input-field" id="salary" formControlName="salary">
         </div>
           <div class="form-text text-danger" *ngIf="Salary.errors?.['required'] && (Salary.dirty || Salary.touched)">
             Required field
@@ -106,9 +98,7 @@
         </div>
         <div class="col mb-4">
           <div class="inputbox">
-            <ion-icon name="location-outline"></ion-icon>
-          <input type="text" required class="form-control input-field" id="location" formControlName="location">
-          <label for="">Location</label>
+          <input type="text" placeholder="Location" required class="form-control input-field" id="location" formControlName="location">
         </div>
           <div class="form-text text-danger" *ngIf="Location.errors?.['required'] && (Location.dirty || Location.touched)">
             Required field
@@ -116,9 +106,7 @@
         </div>
         <div class="col mb-4">
           <div class="inputbox">
-            <ion-icon name="checkmark-done-outline"></ion-icon>
-          <input type="text" required class="form-control input-field" id="musthaves" formControlName="musthaves">
-          <label for="">Must Haves</label>
+          <input type="text" placeholder="Must haves" required class="form-control input-field" id="musthaves" formControlName="musthaves">
         </div>
           <div class="form-text text-danger" *ngIf="Musthaves.errors?.['required'] && (Musthaves.dirty || Musthaves.touched)">
             Required field
@@ -127,7 +115,7 @@
 
         <div class="d-grid">
         <div class="row">
-        <button type="submit" (click)="showPopup()" [disabled]="loginForm.invalid" class="sub">Submit</button>
+        <button type="submit" id="sub" (click)="showPopup()" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
       </div>
       </div>
 
