@@ -22,14 +22,14 @@ h2{
 }
 
 .bg-image {
-    background-image: url('src/assets/images/123.jpg');
+    background-image: url('src/assets/images/studentlogin.jpg');
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
     margin-left: 17vw;
-    margin-top: 9vh;
-    width: 60vw;
-    height: 90vh;
+    margin-top: 5vh;
+    width: 65vw;
+    height: 95vh;
 }
 
 form {

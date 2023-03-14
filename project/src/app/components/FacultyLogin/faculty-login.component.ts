@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-faculty-login',
   templateUrl: './faculty-login.component.html',
-  styleUrls: ['./faculty-login.component.css']
+  styleUrls: ['./faculty-login.component2.css']
 })
 export class FacultyLoginComponent implements OnInit{
   [x: string]: any;
