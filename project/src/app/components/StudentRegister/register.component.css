@@ -2,90 +2,87 @@
 *{
   font-family: 'poppins',sans-serif;
 }
-.linktohome{
-/* text-align: left; */
-margin-top: 2%;
-margin-right:auto;
-margin-bottom:55%;
-height: fit-content;
-font-size: large;
-margin-left: 10%;
+
+html{
+  font-size: 80%;
 }
 
+.linktohome{
+  position: relative;
+  /* text-align: left; */
+  margin-top: 5vh;
+  margin-left: -90vw;
+  font-size: 1.6rem;
+  }
+
 h2{
-  font-size: 2em;
+  font-size: 1.7em;
   color: #0e7785;
   text-align: center;
 }
 form {
-  padding: 10%;
-  width: 30%;
-  margin-left: auto;
-  margin-right: 5%;
-  margin-top: 4%;
-  margin-bottom: auto;
+  padding: 1rem;
+  width:30vw;
+  height: 95vh;
+  top:2rem;
+  left: 80rem;
   position: absolute;
   justify-content: center;
   background: transparent;
   align-items: center;
-  border: 2px solid rgba(255,255,255,0.5);
-  top: 0;
-  right: 0;
-  padding: 3%;
-  max-width: 40%;
-  backdrop-filter: blur( 0.3125em);
-  border-radius: 0.625em;
+  border: 10rem solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(0.2rem);
+  border-radius: 1rem;
   justify-content: center;
-  box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 .inputbox{
   position: relative;
-  margin-top: 4%;
-  width: 95%;
-  border-bottom: 0.1875em solid #fff;
+  margin-top: 3vh;
+  width: 28vw;
+  border-bottom: 0.1875rem solid #fff;
 }
 .inputbox label{
   position: absolute;
-  top: 40%;
-  left: 5%;
+  top: 3vh;
+  left: 1vw;
   transform: translateY(-50%);
   color: #383737;
-  font-size: 1em;
+  font-size: 1.2rem;
   pointer-events: none;
   transition: .5s;
 }
 .inputbox input {
-
-  width: 100%;
+  width: 28vw;
   background: transparent;
   border: none;
   outline: none;
-  font-size: 1em;
-  padding:0 5% 0 5%;
+  font-size: 1rem;
+  padding:0 1rem 0 1rem;
   color: #333030;
 }
 input:focus ~ label,
-input:valid ~ label{
-top: -20%;
-}
+  input:valid ~ label{
+  top: -1.1rem;
+  }
 
-.inputbox ion-icon{
-  position: absolute;
-  right: 5%;
-  color: #160c0c;
-  font-size: 1.2em;
-  top: 25%
-}
-.col input{
-  padding: 1% 3%;
-  border: none;
-  border-bottom: 0.0625em solid #ccc;
-  background: transparent;
-  outline: none;
-  height: 20%;
-  color: #555;
-  font-size: 125%;
-}
+  .inputbox ion-icon{
+    position: absolute;
+    right: 1vw;
+    color: #160c0c;
+    font-size: 1.2rem;
+    top: 2vh;
+  }
+
+  .col input{
+    border: none;
+    border-bottom: 0.0625rem solid #ccc;
+    background: transparent;
+    outline: none;
+    height: 6.5vh;
+    color: #555;
+    font-size: 1.6rem;
+  }
 
 .col placeholder{
   position:absolute;
@@ -98,13 +95,30 @@ top: -20%;
   pointer-events: none;
 }
 
+.gen {
+  margin-left: 0.8rem;
+}
+
+.batch {
+  margin-left: 1.25rem;
+}
+
+.faculty {
+  margin-left: 28rem;
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
 .bg-image {
-  background-image: url('src/assets/images/123.jpg');
+  background-image: url('src/assets/images/stuReg.png');
   position: absolute;
   bottom: 0;
   left: -5;
-  min-width: 70%;
-  min-height: 70%;
+  min-width: 100%;
+  min-height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   bottom: 10%;
@@ -116,11 +130,12 @@ top: -20%;
 
 
 .loginstu{
-  padding: 10%;
+  padding: 1vh 1.2vw;
   color: #fff;
   text-align: center;
-  margin: 6% 0 -4%;
-  font-size: 100%;
+  margin: 7vh 0 -7vw;
+  margin-top: 6rem;
+  font-size: 1.2rem;
 }
 .loginstu p a{
   text-decoration: none;
@@ -207,50 +222,54 @@ input[type="radio"]:focus {
 }
 
 .form-select {
-  width: 14.2em; /* Set the width to whatever value you prefer */
-  height: 1.82em;
-  font-size: 1em;
-  margin-left: 0.66em;
+  width: 14.2rem; /* Set the width to whatever value you prefer */
+  height: 2.82rem;
+  font-size: 1rem;
+  margin-left: 0.66rem;
   color: #707070;
 }
 
 .home{
-  margin-top: 2%;
-  width: 8%;
-  left:7%;
-  height:7%;
-  padding: 1% 1%;
-  font-size: 1em;
-  background-color: #dadfdb;
-  color: rgb(38, 33, 33);
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0rem;
+  margin-top: 2rem;
+  width: 5rem;
+  height:5rem;
+  padding: 1rem ;
+  font-size: 2.5rem;
+  background-color: #003559;
+  color: white;
   border: none;
-  border-radius: 2.5em;
+  border-radius: 50rem;
   transition: 0.3s;
-
 }
 .home:hover{
-  background-color: #052a07;
+  background-color: #809bce;
   color: white;
 }
-button{
-  width: 50%;
-  height: 8%;
-  border-radius: 2.5em;
+.btn{
+  width: 11vw;
+  height: 6vh;
+  border-radius: 2.5rem;
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: 120%;
+  font-size: 1.4rem;
   font-weight: 600;
   position: absolute;
-  left: 50%;
-  margin: 2% 0 0;
+  left: 20.5rem;
+  margin: -1vh 0 0;
+  margin-top: 2vh;
   transform: translateX(-50%);
   transition: 0.3s;
 }
-button:hover{
+.btn:hover{
   background-color: #61a364;
   color: #052a07;
 }
+
 .container{
   height: 100%;
   display: flex;

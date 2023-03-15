@@ -1,9 +1,11 @@
+<html>
 <div class="container">
 <div class="bg-image">
 </div>
-  <div class="linktohome">
-    <button class="home" routerLink="/homepage">< HOME</button>
-  </div>
+<div class="linktohome">
+
+  <button class="home" routerLink="/homepage"><ion-icon name="home"></ion-icon></button>
+</div>
     <div class="form-box">
       <div class="form-value">
 
@@ -59,7 +61,7 @@
       </div>
     </div>
     <div class="col ps-2">
-      <div class="m-1"><label>Gender</label></div>
+      <div class="m-1"><label class="gen">Gender</label></div>
       <div class="form-check form-check-inline">
         <div class="radio-container">
         <input type="radio" class="form-check-input" value="m" id="male" formControlName="gender">
@@ -85,7 +87,7 @@
   <div class="col ps-3">
     <div class="row">
       <div class="col-2">
-        <div class="m-1"><label for="year-dropdown">Batch</label></div>
+        <div class="m-1"><label class="batch" for="year-dropdown">Batch</label></div>
       </div>
       <div class="col-10">
         <select class="form-select" formControlName="year" id="year-dropdown">
@@ -107,8 +109,7 @@
         <div class="d-grid">
           <div class="loginstu">
 
-          <a routerLink="/studentlogin">Student Login</a><br>
-          <a routerLink="/facultylogin">Faculty Login</a>
+          <a routerLink="/studentlogin">Student Login</a>
         </div>
 
       </div>
@@ -118,10 +119,10 @@
   </div>
 
 </form>
-
+<a class="faculty" routerLink="/facultylogin">Are you a Faculty? Login here</a>
 
 </div>
 </div>
 </div>
 
-
+</html>
