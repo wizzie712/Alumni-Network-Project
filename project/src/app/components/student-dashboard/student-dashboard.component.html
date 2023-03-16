@@ -1,9 +1,15 @@
   <!-- Hero -->
 
   <body>
+
+     
+    <div id="textbox">
+      <p class="alignleft">ALUMNI CONNECT</p>
+      <p class="alignright">Student Dashboard</p>
+    </div>
+    <div style="clear: both;"></div>
     <section class="et-hero-tabs">
-      <h1>ALUMNI CONNECT</h1>
-      <h3>Student Dashboard</h3>
+      
       <div class="et-hero-tabs-container">
         <a class="et-hero-tab" href="#tab-lookforjob">Look for Job</a>
         <a class="et-hero-tab" href="#tab-postjobs">Post Jobs</a>
@@ -35,6 +41,16 @@
           <span class="fs-3"><div class="mainheading"><h2>Post a Job</h2></div></span>
         </div>
       </div>
+
+      <div class="col mb-4">
+        <div class="inputbox">
+        <input type="text" placeholder="Company Name" required class="form-control input-field" id="company" formControlName="company">
+      </div>
+        <div class="form-text text-danger" *ngIf="Company.errors?.['required'] && (Company.dirty || Company.touched)">
+          Required field
+        </div>
+      </div>
+
       <div class="col mb-3">
         <div class="col mb-4">
           <div class="inputbox">
@@ -44,14 +60,7 @@
             Required field
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="inputbox">
-          <input type="text" placeholder="Company Name" required class="form-control input-field" id="company" formControlName="company">
-        </div>
-          <div class="form-text text-danger" *ngIf="Company.errors?.['required'] && (Company.dirty || Company.touched)">
-            Required field
-          </div>
-        </div>
+
         <div class="col ps-3">
           <div class="dropdown">
           <div class="row">
