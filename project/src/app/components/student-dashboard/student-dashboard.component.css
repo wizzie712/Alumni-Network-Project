@@ -8,15 +8,29 @@
 a {
 text-decoration: none;
 }
+.alignleft {
+	float: left;
+  font-size: 2.5rem;
+  margin: 0;
+  letter-spacing: 1rem;
+  padding: 20px;
+}
+.alignright {
+	float: right;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  opacity: 0.8;
+  padding: 20px;
+}
 
 .et-hero-tabs {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  height: 10vh;
   position: relative;
-  background: #eee;
+  background: #978d8d;
   text-align: center;
   padding: 0 2em;
 }
@@ -71,14 +85,15 @@ text-decoration: none;
 }
 .et-hero-tab:hover {
     color:white;
-    background: rgba(102,177,241,0.8);
+    background: #e4c9b0;
     transition: all 0.5s ease;
   }
 
   .sdimg {
-    height: 100%;
+    height: 80%;
     width: 104%;
     margin-top: 0;
+    opacity: 0.8;
   }
 
 .et-hero-tab-slider {
@@ -86,7 +101,7 @@ text-decoration: none;
   bottom: 0;
   width: 0;
   height: 6px;
-  background: #66B1F1;
+  background: #809bce;
   transition: left 0.3s ease;
 }
 @media (min-width: 800px) {
@@ -118,29 +133,30 @@ text-decoration: none;
 
 .mainheading h2{
   font-size: 2em;
-  color: #0e7785;
+  color: #003559;
   text-align: center;
 }
 form {
   padding: 10;
-  width: 80%;
+  width: 90%;
   margin-right: auto;
-  margin-left: 10%;
+  margin-left: 5%;
   /* margin-top: 10%; */
   margin-bottom: auto;
   position: absolute;
   justify-content: center;
   background: transparent;
   align-items: center;
-  border: 2px solid rgba(255,255,255,0.5);
+  /* border: 2px solid rgba(255,255,255,0.5); */
   top: 2%;
   left: 0;
   padding: 20px;
   /* max-width: 450px; */
   backdrop-filter: blur(5px);
-  border-radius: 10px;
+  border-radius: 5px;
   justify-content: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
 }
 
 .col input{
@@ -154,7 +170,7 @@ form {
 }
 
 ::placeholder {
-  color: #000;
+  color: #707070;
 }
 
 label {
@@ -223,8 +239,8 @@ input[type="musthaves"]:focus {
   margin: -5px 0 -25px;
   transform: translateX(-50%);
   transition: 0.3s;
-  color: #000006;
-  background-color: #bbaaaa;
+  color: white;
+  background-color: #003559;
 }
 
 .popupbtn {
