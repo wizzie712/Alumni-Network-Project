@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
 a{
   margin: 0;
   padding: 0;
-  font-family: 'poppins',sans-serif;
+  font-family: 'Montserrat',sans-serif;
 }
 
-a{
+/* a{
 	font-family: "Poppins","sans-serif";
-}
+} */
 a:hover{
 	background-color: #3e8e41;
   	color: white;
