@@ -10,6 +10,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { StudentDashboardComponent } from './components/student-dashboard/student-dashboard.component';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
+import { PostJobsComponent } from './components/post-jobs/post-jobs.component';
+import { GuidanceComponent } from './components/guidance/guidance.component';
+import { StudentdashboardProfileComponent } from './components/studentdashboard-profile/studentdashboard-profile.component';
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -22,7 +25,10 @@ const routes: Routes = [
   { path: '', component:HomePageComponent},
   { path: 'studentdashboard', component:StudentDashboardComponent},
   { path: 'studentdetails', component:StudentDetailsComponent},
-  { path: 'studentprofile', component:StudentProfileComponent}
+  { path: 'studentprofile', component:StudentProfileComponent},
+  { path: 'postjobs', component:PostJobsComponent},
+  { path: 'guidance', component:GuidanceComponent},
+  { path: 'studentdashboardprofile', component: StudentdashboardProfileComponent}
 ];
 
 @NgModule({
