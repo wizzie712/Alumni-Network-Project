@@ -1,5 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { StudentDetailsComponent } from './components/student-details/student-de
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 
 import { Component, OnInit } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { PostJobsComponent } from './components/post-jobs/post-jobs.component';
 import { GuidanceComponent } from './components/guidance/guidance.component';
 import { StudentdashboardProfileComponent } from './components/studentdashboard-profile/studentdashboard-profile.component';
@@ -45,7 +46,9 @@ import { StudentdashboardProfileComponent } from './components/studentdashboard-
     RouterModule,
     IonicModule,
     IonicModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

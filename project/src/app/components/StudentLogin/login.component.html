@@ -13,7 +13,7 @@
     <div class="form-box">
       <div class="form-value">
 
-      <form class="border p-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+      <form class="border p-3" [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
 
 
   <div class="row g-0">
@@ -25,29 +25,29 @@
     <div class="col mb-3">
       <div class="inputbox">
         <ion-icon name="mail-outline"></ion-icon>
-      <input type="email" required class="form-control input-field" id="email" formControlName="logemail">
+      <input type="email" required class="form-control input-field" id="email" formControlName="stud_email">
       <label for="">Email</label>
     </div>
-      <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+       <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
         Email is required
       </div>
       <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
         Email is Invalid
-      </div>
+      </div> 
     </div>
     <div class="col mb-1">
       <div class="inputbox">
         <ion-icon name="lock-closed-outline"></ion-icon>
-      <input type="password" required class="form-control input-field" id="password" formControlName="logpassword">
+      <input type="password" required class="form-control input-field" id="password" formControlName="stud_password">
       <label for="">Password</label>
       </div>
-      <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
+       <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
         Password is required
-      </div>
+      </div> 
     </div>
     <div class="d-grid">
     <div class="row">
-    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary" >Submit</button>
+    <button type="submit"  class="btn btn-primary" >Submit</button>
   </div>
   </div>
     <div class="row">
