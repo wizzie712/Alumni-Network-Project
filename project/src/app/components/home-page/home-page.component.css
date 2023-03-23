@@ -1,4 +1,29 @@
-/*   		CARD ANIMATIONS          */
+@import url('css/aos.css');  	
+@import url('css/bootstrap.min.css');
+@import url('css/default.css');
+@import url('css/magnific-popup.css');
+@import url('css/materialdesignicons.min.css');
+@import url('css/menu.css');
+@import url('css/owl.carousel.css');
+@import url('css/owl.theme.css');
+@import url('css/owl.transitions.css');
+@import url('css/pe-icon-7-stroke.css');
+@import url('css/style.css');
+@import url('css/themify-icons.css');	
+
+/* fonts */
+@import url('fonts/materialdesignicons-webfont.eot');
+@import url('fonts/materialdesignicons-webfont.ttf');
+/* @import url('fonts/materialdesignicons-webfont.woff'); */
+@import url('fonts/materialdesignicons-webfont.woff2');
+@import url('fonts/Pe-icon-7-stroke.eot');
+@import url('fonts/Pe-icon-7-stroke.svg');
+@import url('fonts/Pe-icon-7-stroke.ttf');
+@import url('fonts/Pe-icon-7-stroke.woff');
+	
+	
+	
+	CARD ANIMATIONS         
 .container_foto {
 	background-color: rgba(39, 39, 41, 0.618);
 	padding: 0;
