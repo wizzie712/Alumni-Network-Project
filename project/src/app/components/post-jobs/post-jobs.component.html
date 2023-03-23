@@ -1,0 +1,159 @@
+  <!-- Hero -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <body>
+
+
+    <div id="textbox">
+      <p class="alignleft">ALUMNI CONNECT</p>
+      <p class="alignright">Student Dashboard</p>
+    </div>
+    <div style="clear: both;"></div>
+    <section class="et-hero-tabs">
+
+      <div class="et-hero-tabs-container">
+        <a class="et-hero-tab" routerLink="/studentdashboard">Look for Job</a>
+        <a class="et-hero-tab" routerLink="#tab-postjobs"><div style="text-decoration: underline;"><b>Post Jobs</b></div></a>
+        <a class="et-hero-tab" routerLink="/guidance">Guidance</a>
+        <a class="et-hero-tab" routerLink="/studentdashboardprofile">Profile</a>
+        <span class="et-hero-tab-slider"></span>
+      </div>
+    </section>
+
+    <!-- Main -->
+    <main class="et-main">
+
+      <section class="et-slide" id="tab-postjobs">
+        <div class="form-box">
+          <div class="form-value">
+
+          <form class="border p-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+
+
+      <div class="row g-1">
+        <div class="col text-center p-2 mb-3">
+          <span class="fs-3"><div class="mainheading"><h2>Post a Job</h2></div></span>
+        </div>
+      </div>
+      <div class="col mb-4">
+      <div class="col mb-3">
+        <div class="inputbox">
+        <input type="text" placeholder="Company Name" required class="form-control input-field" id="company" formControlName="company">
+      </div>
+        <div class="form-text text-danger" *ngIf="Company.errors?.['required'] && (Company.dirty || Company.touched)">
+          Required field
+        </div>
+      </div>
+
+      <div class="col mb-3">
+
+          <div class="inputbox">
+          <input type="text" placeholder="Designation" required class="form-control input-field" id="designation" formControlName="designation">
+        </div>
+          <div class="form-text text-danger" *ngIf="Designation.errors?.['required'] && (Designation.dirty || Designation.touched)">
+            Required field
+          </div>
+        </div>
+
+        <div class="col ps-3">
+          <div class="dropdown">
+          <div class="row">
+            <div class="col-2">
+              <div class="m-1"><label for="year-dropdown">Experience</label></div>
+            </div>
+            <div class="col-10">
+              <select class="form-select" formControlName="experience" id="type-dropdown">
+                <option value="" disabled selected>Select Experience</option>
+                <option *ngFor="let experience of experiences" [value]="experience">{{experience}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+          <!-- <div class="form-text text-danger" *ngIf="Experience.errors?.['required']">
+            Select Type
+          </div> -->
+      </div>
+        <div class="col ps-3">
+          <div class="dropdown">
+          <div class="row">
+            <div class="col-2">
+              <div class="m-1"><label for="type-dropdown">Type of job</label></div>
+            </div>
+            <div class="col-10">
+              <select class="form-select" formControlName="jobtype" id="type-dropdown">
+                <option value="" disabled selected>Select Type</option>
+                <option *ngFor="let jobtype of jobtypes" [value]="jobtype">{{jobtype}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col ps-3">
+        <div class="dropdown">
+        <div class="row">
+          <div class="col-2">
+            <div class="m-1"><label for="type-dropdown">Salary</label></div>
+          </div>
+          <div class="col-10">
+            <select class="form-select" formControlName="salary" id="type-dropdown">
+              <option value="" disabled selected>Select salary</option>
+              <option *ngFor="let salary of salaries" [value]="salary">{{salary}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="col mb-4">
+          <div class="inputbox">
+          <input type="text" placeholder="Location" required class="form-control input-field" id="location" formControlName="location">
+        </div>
+          <div class="form-text text-danger" *ngIf="Location.errors?.['required'] && (Location.dirty || Location.touched)">
+            Required field
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="inputbox">
+          <input type="text" placeholder="Must haves" required class="form-control input-field" id="musthaves" formControlName="musthaves">
+        </div>
+          <div class="form-text text-danger" *ngIf="Musthaves.errors?.['required'] && (Musthaves.dirty || Musthaves.touched)">
+            Required field
+          </div>
+        </div>
+
+        <div class="d-grid">
+        <div class="row">
+        <button type="submit" id="sub" (click)="showPopup()" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
+      </div>
+      </div>
+
+        <div class="row">
+            <div class="d-grid">
+              <div class="loginstu">
+
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </form>
+    <div class="popup-background" *ngIf="showPopupFlag">
+      <div class="popup">
+        <h2>Job posting submitted</h2>
+
+        <button class="popupbtn" (click)="hidePopup()">OK</button>
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+      </section>
+
+    </main>
+    <script src="src/app/components/StudentDashboard/stickynavbar.component.js"></script>
+
+  </body>
