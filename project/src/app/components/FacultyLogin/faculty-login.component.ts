@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, NgForm, FormBuilder } from '@angular/forms';
+import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-faculty-login',
@@ -8,32 +11,28 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FacultyLoginComponent implements OnInit{
   [x: string]: any;
-  constructor() { }
-
-  ngOnInit(): void {
+  angForm: FormGroup;
+  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
+  this.angForm = this.fb.group({
+  faculty_email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
+  faculty_password: ['', Validators.required]
+  });
   }
-
-  loginForm = new FormGroup({
-    logemail: new FormControl("", [
-      Validators.required,
-      Validators.email]),
-    logpassword: new FormControl("", [
-      Validators.required])
-});
-
-get Email(): FormControl {
-  return this.loginForm.get("logemail") as FormControl;
-}
-
-get Password(): FormControl {
-  return this.loginForm.get("logpassword") as FormControl;
-}
-
-loginSubmitted(){
-  console.log(this.loginForm);
-  // document.write("login successful");
-  alert('Login Successful');
-
-}
-}
+  ngOnInit() {
+  }
+  postdata(angForm1: { value: { faculty_email: any; faculty_password: any; }; })
+  {
+  this.dataService.facultylogin(angForm1.value.faculty_email,angForm1.value.faculty_password)
+  .pipe(first())
+  .subscribe(
+  data => {
+  //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/studentdashboard';
+  this.router.navigate(['/studentdashboard']);
+  },
+  error => {
+  });
+  }
+  get Email() { return this.angForm.get('faculty_email') as FormControl; }
+  get Password() { return this.angForm.get('faculty_password') as FormControl; }
+  }
 
