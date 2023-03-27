@@ -13,3 +13,16 @@ export class Users {
     this.stud_batch = stud_batch;
     }
     }
+
+
+export class Faculty{
+    public faculty_name: string;
+    public faculty_email: string;
+    public faculty_password:string;
+
+    constructor(faculty_name: string,faculty_email:string,faculty_password:string) {
+    this.faculty_name = faculty_name;
+    this.faculty_email = faculty_email;
+    this.faculty_password = faculty_password;
+    }
+    }

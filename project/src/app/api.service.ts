@@ -1,7 +1,7 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { Users } from './users';
+import { Faculty, Users } from './users';
 
 @Injectable({
   providedIn: 'any'
@@ -24,6 +24,17 @@ import { Users } from './users';
   return Users;
   }));
   }
+
+  public facultylogin(faculty_email: any, faculty_password: any) {
+    console.log(faculty_email,faculty_password);
+    return this.httpClient.post<any>(this.baseUrl + '/faculty.php', {faculty_email, faculty_password })
+    .pipe(map(Faculty => {
+    this.setToken(Faculty[0].faculty_name);
+    this.getLoggedInName.emit(true);
+    return Faculty;
+    }));
+    }
+    
   
   public userregistration(stud_name: any,stud_email: any,stud_password: any,stud_gender: any, stud_batch: any) {
   return this.httpClient.post<any>(this.baseUrl + '/register.php', {stud_name,stud_email,stud_password, stud_gender, stud_batch })
