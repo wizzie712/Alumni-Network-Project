@@ -27,7 +27,7 @@ export class FacultyLoginComponent implements OnInit{
   .subscribe(
   data => {
   //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/studentdashboard';
-  this.router.navigate(['/studentdashboard']);
+  this.router.navigate(['/homepage']);
   },
   error => {
   });

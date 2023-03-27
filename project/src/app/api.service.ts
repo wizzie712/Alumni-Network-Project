@@ -27,7 +27,7 @@ import { Faculty, Users } from './users';
 
   public facultylogin(faculty_email: any, faculty_password: any) {
     console.log(faculty_email,faculty_password);
-    return this.httpClient.post<any>(this.baseUrl + '/facultylogin.php', {faculty_email, faculty_password })
+    return this.httpClient.post<any>(this.baseUrl + '/faculty.php', {faculty_email, faculty_password })
     .pipe(map(Faculty => {
     this.setToken(Faculty[0].faculty_name);
     this.getLoggedInName.emit(true);
