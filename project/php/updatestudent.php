@@ -25,13 +25,13 @@ if(isset($postdata) && !empty($postdata)){
     $stud_gender = mysqli_real_escape_string($mysqli, trim($request->stud_gender));
     $stud_batch = mysqli_real_escape_string($mysqli, trim($request->stud_batch));
 
-    $sql = "UPDATE stud_register SET stud_name = '$stud_name', stud_password = '$stud_password', stud_gender = '$stud_gender', stud_batch = '$stud_batch' WHERE stud_email = '$stud_email'";
+    $sql = "UPDATE stud_register SET stud_name = '$stud_name', stud_email = '$stud_email',stud_password = '$stud_password', stud_gender = '$stud_gender', stud_batch = '$stud_batch' WHERE stud_email = '$stud_email'";
 
     if (mysqli_query($mysqli, $sql)) {
         $authdata = [
             'stud_name'=> $stud_name,
-            'stud_password' => $stud_password,
             'stud_email' => $stud_email,
+            'stud_password' => $stud_password,
             'stud_gender' => $stud_gender,
             'stud_batch' => $stud_batch
         ];

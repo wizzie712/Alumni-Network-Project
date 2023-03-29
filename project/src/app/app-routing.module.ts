@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'guidance', component:GuidanceComponent},
   { path: 'studentdashboardprofile', component: StudentdashboardProfileComponent},
   { path: 'crudlist',component:CrudlistComponent},
-  { path: 'editstudent',component:EditstudentComponent},
+  { path: 'editstudent/:stud_email',component:EditstudentComponent},
   { path: 'addstudent', component:AddstudentComponent}
 ];
 

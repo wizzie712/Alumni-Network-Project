@@ -66,13 +66,13 @@ getStudents() {
   return this.httpClient.get<Users[]>(this.baseUrl+'/viewstudent.php');
 } 
 getSingleStudent(stud_email:any) {
-  console.log(this.baseUrl+'/trash.php?id='+stud_email);
-  return this.httpClient.get<Users[]>(this.baseUrl+'/trash.php?id='+stud_email);
+  console.log(this.baseUrl+'/trash.php?stud_email='+stud_email);
+  return this.httpClient.get<Users[]>(this.baseUrl+'/trash.php?stud_email='+stud_email);
 } 
 
 deleteStudent(stud_email:any) {
   console.log(stud_email);
-  return this.httpClient.delete(this.baseUrl+'/deletestudent.php?id='+ stud_email);  
+  return this.httpClient.delete(this.baseUrl+'/deletestudent.php?stud_email='+ stud_email);  
 }  
 
 editStudent(stud_name: any,stud_email: any,stud_password: any, stud_gender: any, stud_batch: any) {
