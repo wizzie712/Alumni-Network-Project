@@ -13,6 +13,9 @@ import { StudentProfileComponent } from './components/student-profile/student-pr
 import { PostJobsComponent } from './components/post-jobs/post-jobs.component';
 import { GuidanceComponent } from './components/guidance/guidance.component';
 import { StudentdashboardProfileComponent } from './components/studentdashboard-profile/studentdashboard-profile.component';
+import { CrudlistComponent } from './components/crudlist/crudlist.component';
+import { EditstudentComponent } from './components/editstudent/editstudent.component';
+import { AddstudentComponent } from './components/addstudent/addstudent.component';
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -28,7 +31,10 @@ const routes: Routes = [
   { path: 'studentprofile', component:StudentProfileComponent},
   { path: 'postjobs', component:PostJobsComponent},
   { path: 'guidance', component:GuidanceComponent},
-  { path: 'studentdashboardprofile', component: StudentdashboardProfileComponent}
+  { path: 'studentdashboardprofile', component: StudentdashboardProfileComponent},
+  { path: 'crudlist',component:CrudlistComponent},
+  { path: 'editstudent',component:EditstudentComponent},
+  { path: 'addstudent', component:AddstudentComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,116 @@
+<html>
+<div class="container">
+<div class="bg-image">
+</div>
+<div class="linktohome">
+
+  <button class="home" routerLink="/homepage"><ion-icon name="home"></ion-icon></button>
+</div>
+    <div class="form-box">
+      <div class="form-value">
+
+      <form class="border p-3" [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
+
+
+  <div class="row g-0">
+    <div class="col text-center p-2 mb-3">
+      <span class="fs-3"><h2>Edit Student Details</h2></span>
+    </div>
+  </div>
+  <div class="col mb-3">
+    <div class="col mb-4">
+      <div class="inputbox">
+        <ion-icon name="person-outline"></ion-icon>
+      <input type="text" required class="form-control input-field" id="name" formControlName="stud_name">
+      <label for="">Name</label>
+    </div>
+     <div class="form-text text-danger" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
+      Name is required
+    </div>
+    <div class="form-text text-danger" *ngIf="Name.errors?.['minlength'] && (Name.touched || Name.dirty)">
+      Name is too short
+    </div>
+    <div class="form-text text-danger" *ngIf="Name.errors?.['pattern'] && (Name.touched || Name.dirty)">
+      Name should start with alphabet
+    </div> 
+    </div>
+    <div class="col mb-4">
+      <div class="inputbox">
+        <ion-icon name="mail-outline"></ion-icon>
+      <input type="email" required class="form-control input-field" id="email" formControlName="stud_email">
+      <label for="">Email</label>
+    </div>
+       <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+        Email is required
+      </div>
+      <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
+        Email is Invalid
+      </div> 
+    </div>
+    <div class="col mb-4">
+      <div class="inputbox">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      <input type="password" required class="form-control input-field" id="password" formControlName="stud_password">
+      <label for="">Password</label>
+      </div>
+      <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
+        Password is required
+      </div>
+      <div class="form-text text-danger" *ngIf="Password.errors?.['pattern'] && (Password.dirty || Password.touched)">
+        Password should have Special characters, Lower & Upper case, numbers and minimum 8 characters
+      </div> 
+    </div>
+    <div class="col ps-2">
+      <div class="m-1"><label class="gen">Gender</label></div>
+      <div class="form-check form-check-inline">
+        <div class="radio-container">
+        <input type="radio" class="form-check-input" value="m" id="male" formControlName="stud_gender">
+        <label for="male" class="form-check-label">Male</label>
+      </div>
+      </div>
+      <div class="form-check form-check-inline">
+        <div class="radio-container">
+        <input type="radio" class="form-check-input" value="f" id="female" formControlName="stud_gender">
+        <label for="female" class="form-check-label">Female</label>
+        </div>
+      </div>
+      <div class="form-check form-check-inline">
+        <div class="radio-container">
+        <input type="radio" class="form-check-input" value="o" id="others" formControlName="stud_gender">
+        <label for="others" class="form-check-label">Others</label>
+        </div>
+      </div>
+      <div class="form-text text-danger" *ngIf="Gender.errors?.['required']">
+        Select Gender
+      </div>
+  </div>
+  <div class="col ps-3">
+    <div class="row">
+      <div class="col-2">
+        <div class="m-1"><label class="batch" for="year-dropdown">Batch</label></div>
+      </div>
+      <div class="col-10">
+        <select class="form-select" formControlName="stud_batch" id="year-dropdown">
+          <option value="" disabled selected>Select Year</option>
+          <option *ngFor="let year of years" [value]="year">{{year}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-text text-danger" *ngIf="Year.errors?.['required']">
+      Select Year
+    </div>
+</div>
+    <div class="d-grid">
+    <div class="row">
+    <button type="submit" class="btn btn-primary">Update</button>
+  </div>
+  </div>
+
+  </div>
+
+</form>
+</div>
+</div>
+</div>
+
+</html>

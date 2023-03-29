@@ -21,6 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostJobsComponent } from './components/post-jobs/post-jobs.component';
 import { GuidanceComponent } from './components/guidance/guidance.component';
 import { StudentdashboardProfileComponent } from './components/studentdashboard-profile/studentdashboard-profile.component';
+import { CrudlistComponent } from './components/crudlist/crudlist.component';
+import { EditstudentComponent } from './components/editstudent/editstudent.component';
+import { AddstudentComponent } from './components/addstudent/addstudent.component';
 // import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @NgModule({
@@ -39,6 +42,9 @@ import { StudentdashboardProfileComponent } from './components/studentdashboard-
     PostJobsComponent,
     GuidanceComponent,
     StudentdashboardProfileComponent,
+    CrudlistComponent,
+    EditstudentComponent,
+    AddstudentComponent,
   ],
   imports: [
     BrowserModule,
