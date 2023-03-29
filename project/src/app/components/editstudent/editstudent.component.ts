@@ -28,7 +28,6 @@ export class EditstudentComponent implements OnInit {
       console.log(this.url_stud_email);
       //this.angForm.value.ucid = this.url_ucid;
       this.angForm.controls['stud_email'].setValue(this.url_stud_email);
-
       this.dataService.getSingleStudent(this.url_stud_email).subscribe((
         (data:any)=>{
           console.log(data);
