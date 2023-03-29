@@ -61,27 +61,23 @@ import { Faculty, Users } from './users';
   return false;
   }
   
-  //service for crud on users(students)
-  // getStudents() {
-  //     return this.httpClient.get<Users[]>(this.baseUrl+'/usersview.php');
-  //   } 
-  //   getSingleStudent(id:any) {
-  //     return this.httpClient.get<Users[]>(this.baseUrl+'view.php?id='+id);
-  //   } 
-    
-  //   deleteStudent(id:any) {
-  //     console.log(id);
-  //     return this.httpClient.delete(this.baseUrl+'delete.php?id='+ id);  
-  //   }  
-  
-  //   createStudent(student:any) {
-  //   //  console.log(id);
-  //     return this.httpClient.post(this.baseUrl+'insert.php', student);  
-  //   }  
-  
-  //   editStudent(student:any) {
-  //     //  console.log(id);
-  //       return this.httpClient.put(this.baseUrl+'update.php', student);  
-  //     }  
+ //service for crud on users(students)
+getStudents() {
+  return this.httpClient.get<Users[]>(this.baseUrl+'/viewstudent.php');
+} 
+getSingleStudent(stud_email:any) {
+  console.log(this.baseUrl+'/trash.php?stud_email='+stud_email);
+  return this.httpClient.get<Users[]>(this.baseUrl+'/trash.php?stud_email='+stud_email);
+} 
+
+deleteStudent(stud_email:any) {
+  console.log(stud_email);
+  return this.httpClient.delete(this.baseUrl+'/deletestudent.php?stud_email='+ stud_email);  
+}  
+
+editStudent(stud_name: any,stud_email: any,stud_password: any, stud_gender: any, stud_batch: any) {
+    //console.log(id);
+    return this.httpClient.put(this.baseUrl+'/updatestudent.php', {stud_name ,stud_email, stud_password,stud_gender, stud_batch});  
+  }  
     
   }
