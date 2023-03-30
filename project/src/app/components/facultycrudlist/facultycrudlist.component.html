@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<table class="table table-stripped">
+    <thead class="bg-primary">
+        <th>Sr. No</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Qualification</th>
+        <th>Designation</th>
+        <th>Password</th>
+        <th>Area of Interest</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let user of users; let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{user.faculty_name}}</td>
+            <td>{{user.faculty_email}}</td>
+            <td>{{user.faculty_dept}}</td>
+            <td>{{user.faculty_qualification}}</td>
+            <td>{{user.faculty_designation}}</td>
+            <td>{{user.faculty_password}}</td>
+            <td>{{user.faculty_aoi}}</td>
+            <td>  <button routerLink="/editfaculty/{{user.faculty_email}}"><span class="fa fa-pencil"></span></button>    <button (click)="deleteFaculty(user.faculty_email)" > <span class="fa fa-trash"></span></button>  </td>
+        </tr>
+
+    </tbody>
+   
+</table>
+<a routerLink="/addfaculty" class="float">
+    <i class="fa fa-plus my-float"></i>
+    </a>

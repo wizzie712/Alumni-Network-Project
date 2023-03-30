@@ -21,9 +21,9 @@ if (!$mysqli) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$stud_email = mysqli_real_escape_string($mysqli, $_GET['stud_email']);
+$stud_email = mysqli_real_escape_string($mysqli, $_GET['faculty_email']);
 
-$sql = "SELECT * FROM stud_register where stud_email = '$stud_email'";
+$sql = "SELECT * FROM faculty_creds where faculty_email = '$faculty_email'";
 
 $result = mysqli_query($mysqli, $sql);
 

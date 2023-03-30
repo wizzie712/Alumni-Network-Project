@@ -28,10 +28,11 @@ export class EditstudentComponent implements OnInit {
       console.log(this.url_stud_email);
       //this.angForm.value.ucid = this.url_ucid;
       this.angForm.controls['stud_email'].setValue(this.url_stud_email);
+
       this.dataService.getSingleStudent(this.url_stud_email).subscribe((
         (data:any)=>{
           console.log(data);
-          console.log(data.data['0'].email);
+          //console.log(data.data['0'].email);
           this.angForm.controls['stud_name'].setValue(data.data['0'].stud_name);
           this.angForm.controls['stud_email'].setValue(data.data['0'].stud_email);
           this.angForm.controls['stud_password'].setValue(data.data['0'].stud_password);
