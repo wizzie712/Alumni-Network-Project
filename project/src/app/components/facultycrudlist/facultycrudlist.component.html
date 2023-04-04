@@ -1,5 +1,23 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+    <header>Admin Dashboard</header>
+  <ul>
+<li><a routerLink="/crudlist"><i class="fa fa-graduation-cap" style="color: #f3f4f7;"></i>Our Students</a></li>
+<li><a routerLink="/facultycrudlist"><i class="fa-sharp fa-solid fa-chalkboard-user" style="color: #ffffff;"></i>Our Faculty</a></li>
+<li><a routerLink="#"><i class="fa fa-display-chart-up" style="color: #ffffff;"></i>Trends Ongoing</a></li>
+</ul>
+</div>
+<section>
 <table class="table table-stripped">
     <thead class="bg-primary">
         <th>Sr. No</th>
@@ -10,6 +28,7 @@
         <th>Designation</th>
         <th>Password</th>
         <th>Area of Interest</th>
+        <th>Edit</th>
     </thead>
 
     <tbody>
@@ -26,8 +45,10 @@
         </tr>
 
     </tbody>
-   
+
 </table>
 <a routerLink="/addfaculty" class="float">
     <i class="fa fa-plus my-float"></i>
     </a>
+  </section>
+  </body>

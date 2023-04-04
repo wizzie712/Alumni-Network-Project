@@ -1,5 +1,28 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+    <header>Admin Dashboard</header>
+  <ul>
+<li><a routerLink="/crudlist"><i class="fa fa-graduation-cap" style="color: #f3f4f7;"></i>Our Students</a></li>
+<li><a routerLink="/facultycrudlist"><i class="fa-sharp fa-solid fa-chalkboard-user" style="color: #ffffff;"></i>Our Faculty</a></li>
+<li><a routerLink="#"><i class="fa fa-display-chart-up" style="color: #ffffff;"></i>Trends Ongoing</a></li>
+</ul>
+</div>
+<section>
+  <div class="table-responsive">
 <table class="table table-stripped">
     <thead class="bg-primary">
         <th>Sr. No</th>
@@ -8,17 +31,11 @@
         <th>Password</th>
         <th>Gender</th>
         <th>Batch</th>
+        <th>Edit</th>
     </thead>
 
     <tbody>
-        <!-- <tr>
-            <td>1</td>
-            <td>2000000000</td>
-            <td>abcd</td>
-            <td>xyz@gmail.com</td>
-            <td>......</td>
-            <td>0</td>
-        </tr> -->
+
         <tr *ngFor="let user of users; let i = index;">
             <td>{{i+1}}</td>
             <td>{{user.stud_name}}</td>
@@ -30,8 +47,12 @@
         </tr>
 
     </tbody>
-   
+
 </table>
+</div>
 <a routerLink="/addstudent" class="float">
     <i class="fa fa-plus my-float"></i>
     </a>
+  </section>
+</body>
+</html>
