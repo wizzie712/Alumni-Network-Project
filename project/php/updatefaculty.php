@@ -21,13 +21,13 @@ if(isset($postdata) && !empty($postdata)){
     $request = json_decode($postdata);
     $faculty_name = trim($request->faculty_name);
     $faculty_email = mysqli_real_escape_string($mysqli, trim($request->faculty_email));
-    $faculty_dept = mysqli_real_escape_string($mysqli, trim($request->$faculty_dept));
+    $faculty_dept = trim($request->faculty_dept);
     $faculty_qualification = mysqli_real_escape_string($mysqli, trim($request->faculty_qualification));
     $faculty_designation = mysqli_real_escape_string($mysqli, trim($request->faculty_designation));
     $faculty_password = mysqli_real_escape_string($mysqli, trim($request->faculty_password));
     $faculty_aoi = mysqli_real_escape_string($mysqli, trim($request->faculty_aoi));
 
-    $sql = "UPDATE faculty_creds SET faculty_name = '$faculty_name', faculty_email = '$faculty_email',faculty_dept = ' $faculty_dept',faculty_qualification = ' $faculty_qualification',faculty_designation = '$faculty_designation', faculty_password = '$faculty_password', faculty_aoi = '$faculty_aoi' WHERE faculty_email = '$faculty_email'";
+    $sql = "UPDATE faculty_creds SET faculty_name = '$faculty_name', faculty_email = '$faculty_email',faculty_dept = '$faculty_dept',faculty_qualification = ' $faculty_qualification',faculty_designation = '$faculty_designation', faculty_password = '$faculty_password', faculty_aoi = '$faculty_aoi' WHERE faculty_email = '$faculty_email'";
 
     if (mysqli_query($mysqli, $sql)) {
         $authdata = [

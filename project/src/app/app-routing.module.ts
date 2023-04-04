@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'addstudent', component:AddstudentComponent},
   { path: 'facultycrudlist',component:FacultycrudlistComponent},
   { path: 'addfaculty',component:AddfacultyComponent},
-  { path: 'editfaculty',component:EditfacultyComponent}
+  { path: 'editfaculty/:faculty_email',component:EditfacultyComponent}
 ];
 
 @NgModule({

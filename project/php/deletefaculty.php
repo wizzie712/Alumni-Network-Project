@@ -15,7 +15,7 @@ if (mysqli_connect_errno()) {
   die('Error: Failed to connect to database');
 }
 
-$stud_email = $_GET['faculty_email'];
+$faculty_email = $_GET['faculty_email'];
 
 $sql = "DELETE FROM faculty_creds where faculty_email = '$faculty_email'";
 if (mysqli_query($mysqli, $sql)) {

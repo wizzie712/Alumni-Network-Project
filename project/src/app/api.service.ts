@@ -43,13 +43,18 @@ import { Faculty, Users } from './users';
   }));
   }
 
-  public facultyregistration(faculty_name: any,faculty_email: any,faculty_dept: any,faculty_qualification: any,faculty_designation: any,faculty_password: any,faculty_aoi: any) {
-    return this.httpClient.post<any>(this.baseUrl + '/register.php', {faculty_name,faculty_email,faculty_dept, faculty_qualification, faculty_designation, faculty_password, faculty_aoi })
-    .pipe(map(Faculty => {
-    return Faculty;
+  // public facultyregistration(faculty_name: any,faculty_email: any,faculty_dept: any,faculty_qualification: any,faculty_designation: any,faculty_password: any,faculty_aoi: any) {
+  //   return this.httpClient.post<any>(this.baseUrl + '/register.php', {faculty_name,faculty_email,faculty_dept, faculty_qualification, faculty_designation, faculty_password, faculty_aoi })
+  //   .pipe(map(Faculty => {
+  //   return Faculty;
+  //   }));
+  //   }
+  public facultyregistration(faculty_email: any,faculty_password: any) {
+       return this.httpClient.post<any>(this.baseUrl + '/facultyregister.php', {faculty_email, faculty_password })
+       .pipe(map(Faculty => {
+       return Faculty;
     }));
-    }
-
+  }
   
   //token
   setToken(token: string) {

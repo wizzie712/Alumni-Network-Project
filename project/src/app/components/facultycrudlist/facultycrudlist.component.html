@@ -22,7 +22,7 @@
             <td>{{user.faculty_designation}}</td>
             <td>{{user.faculty_password}}</td>
             <td>{{user.faculty_aoi}}</td>
-            <td>  <button routerLink="/editfaculty/{{user.faculty_email}}"><span class="fa fa-pencil"></span></button>    <button (click)="deleteFaculty(user.faculty_email)" > <span class="fa fa-trash"></span></button>  </td>
+            <td>  <button routerLink="/editfaculty/{{user.faculty_email}}"><span class="fa fa-pencil"></span></button>    <button (click)="deleteUser(user.faculty_email)" > <span class="fa fa-trash"></span></button>  </td>
         </tr>
 
     </tbody>

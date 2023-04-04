@@ -28,7 +28,7 @@ export class Faculty{
     this.faculty_name = faculty_name;
     this.faculty_email = faculty_email;
     this.faculty_dept = faculty_dept;
-    this. faculty_qualification =  faculty_qualification;
+    this.faculty_qualification =  faculty_qualification;
     this.faculty_designation = faculty_designation;
     this.faculty_password = faculty_password;
     this.faculty_aoi = faculty_aoi;

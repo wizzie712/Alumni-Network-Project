@@ -23,7 +23,7 @@ export class FacultycrudlistComponent implements OnInit {
 
   }
 
-  deleteFaculty(faculty_email:any){
+  deleteUser(faculty_email:any){
     //console.log(id);
     this.dataService.deleteFaculty(faculty_email).subscribe(
       (result:any)=>{
