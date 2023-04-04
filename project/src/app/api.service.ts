@@ -52,7 +52,9 @@ import { Faculty, Users } from './users';
   public facultyregistration(faculty_email: any,faculty_password: any) {
        return this.httpClient.post<any>(this.baseUrl + '/facultyregister.php', {faculty_email, faculty_password })
        .pipe(map(Faculty => {
-       return Faculty;
+        // this.setToken(Faculty[1].faculty_email);
+        // this.setToken(Faculty[5].faculty_password);
+        return Faculty;
     }));
   }
   

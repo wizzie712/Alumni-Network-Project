@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -27,7 +27,9 @@ this.dataService.facultyregistration(angForm1.value.faculty_email,angForm1.value
 .pipe(first())
 .subscribe(
 data => {
-this.router.navigate(['/homepage']);
+console.log("Line Before Redirect");
+this.router.navigate(['/facultycrudlist']);
+console.log("Line after Redirect");
 },
 error => {
 });
