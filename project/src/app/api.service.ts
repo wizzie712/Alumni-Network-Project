@@ -42,6 +42,21 @@ import { Faculty, Users } from './users';
   return Users;
   }));
   }
+
+  // public facultyregistration(faculty_name: any,faculty_email: any,faculty_dept: any,faculty_qualification: any,faculty_designation: any,faculty_password: any,faculty_aoi: any) {
+  //   return this.httpClient.post<any>(this.baseUrl + '/register.php', {faculty_name,faculty_email,faculty_dept, faculty_qualification, faculty_designation, faculty_password, faculty_aoi })
+  //   .pipe(map(Faculty => {
+  //   return Faculty;
+  //   }));
+  //   }
+  public facultyregistration(faculty_email: any,faculty_password: any) {
+       return this.httpClient.post<any>(this.baseUrl + '/facultyregister.php', {faculty_email, faculty_password })
+       .pipe(map(Faculty => {
+        // this.setToken(Faculty[1].faculty_email);
+        // this.setToken(Faculty[5].faculty_password);
+        return Faculty;
+    }));
+  }
   
   //token
   setToken(token: string) {
@@ -65,9 +80,19 @@ import { Faculty, Users } from './users';
 getStudents() {
   return this.httpClient.get<Users[]>(this.baseUrl+'/viewstudent.php');
 } 
+
+getFaculty(){
+  return this.httpClient.get<Users[]>(this.baseUrl+'/viewfaculty.php');
+}
+
 getSingleStudent(stud_email:any) {
-  console.log(this.baseUrl+'/trash.php?stud_email='+stud_email);
-  return this.httpClient.get<Users[]>(this.baseUrl+'/trash.php?stud_email='+stud_email);
+  console.log(this.baseUrl+'/singleuser.php?stud_email='+stud_email);
+  return this.httpClient.get<Users[]>(this.baseUrl+'/singleuser.php?stud_email='+stud_email);
+} 
+
+getSingleFaculty(faculty_email:any) {
+  console.log(this.baseUrl+'/singlefaculty.php?faculty_email='+faculty_email);
+  return this.httpClient.get<Users[]>(this.baseUrl+'/singlefaculty.php?faculty_email='+faculty_email);
 } 
 
 deleteStudent(stud_email:any) {
@@ -75,9 +100,19 @@ deleteStudent(stud_email:any) {
   return this.httpClient.delete(this.baseUrl+'/deletestudent.php?stud_email='+ stud_email);  
 }  
 
+deleteFaculty(faculty_email:any) {
+  console.log(faculty_email);
+  return this.httpClient.delete(this.baseUrl+'/deletefaculty.php?faculty_email='+ faculty_email);  
+}  
+
 editStudent(stud_name: any,stud_email: any,stud_password: any, stud_gender: any, stud_batch: any) {
     //console.log(id);
     return this.httpClient.put(this.baseUrl+'/updatestudent.php', {stud_name ,stud_email, stud_password,stud_gender, stud_batch});  
+  }  
+
+  editFaculty(faculty_name: any,faculty_email: any,faculty_dept: any, faculty_qualification: any,faculty_designation: any,faculty_password: any,faculty_aoi: any) {
+    //console.log(id);
+    return this.httpClient.put(this.baseUrl+'/updatefaculty.php', {faculty_name ,faculty_email,faculty_dept,faculty_qualification, faculty_designation, faculty_password, faculty_aoi});  
   }  
     
   }

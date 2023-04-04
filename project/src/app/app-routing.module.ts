@@ -16,6 +16,9 @@ import { StudentdashboardProfileComponent } from './components/studentdashboard-
 import { CrudlistComponent } from './components/crudlist/crudlist.component';
 import { EditstudentComponent } from './components/editstudent/editstudent.component';
 import { AddstudentComponent } from './components/addstudent/addstudent.component';
+import { FacultycrudlistComponent } from './components/facultycrudlist/facultycrudlist.component';
+import { AddfacultyComponent } from './components/addfaculty/addfaculty.component';
+import { EditfacultyComponent } from './components/editfaculty/editfaculty.component';
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -34,7 +37,10 @@ const routes: Routes = [
   { path: 'studentdashboardprofile', component: StudentdashboardProfileComponent},
   { path: 'crudlist',component:CrudlistComponent},
   { path: 'editstudent/:stud_email',component:EditstudentComponent},
-  { path: 'addstudent', component:AddstudentComponent}
+  { path: 'addstudent', component:AddstudentComponent},
+  { path: 'facultycrudlist',component:FacultycrudlistComponent},
+  { path: 'addfaculty',component:AddfacultyComponent},
+  { path: 'editfaculty/:faculty_email',component:EditfacultyComponent}
 ];
 
 @NgModule({
