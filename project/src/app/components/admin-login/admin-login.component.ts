@@ -7,11 +7,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit{
-  [x: string]: any;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   loginForm = new FormGroup({
     logemail: new FormControl("", [
@@ -21,6 +16,13 @@ export class AdminLoginComponent implements OnInit{
       Validators.required,
       Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,}')])
 });
+
+  [logemail: string]: any;
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
 
 get Email(): FormControl {
   return this.loginForm.get("logemail") as FormControl;
@@ -34,6 +36,9 @@ loginSubmitted(){
   console.log(this.loginForm);
   // document.write("login successful");
 alert('Login Successful');
+// // if (logemail === 'anushka.salvi@spit.ac.in') {
+// //   // console.log(this.form.value); // Process your form
+// }
 
 }
 }

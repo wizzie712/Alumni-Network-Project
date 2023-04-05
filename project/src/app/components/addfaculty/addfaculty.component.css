@@ -24,18 +24,17 @@ form {
   padding: 1rem;
   width:30vw;
   height: 55vh;
-  top:2rem;
-  left: 95rem;
-  /* position: absolute; */
+  top: 10rem;
+  left: 90rem;
+  position: absolute;
   justify-content: center;
-  /* background: transparent; */
-  background-color: #0e7785;
+  background: transparent;
   align-items: center;
   border: 10rem solid rgba(255,255,255,0.5);
   backdrop-filter: blur(0.2rem);
   border-radius: 1rem;
   justify-content: center;
-  box-shadow: 0 0 1rem rgba(166, 16, 16, 0.87);
+  box-shadow: 0 0 1rem rgba(8, 8, 8, 0.256);
 }
 .inputbox{
   position: relative;
@@ -200,7 +199,7 @@ input[type="password"]:focus {
   transition: 0.3s;
 }
 .btn:hover{
-  background-color: #a22d44;
+  background-color: #809bce;
   color: #052a07;
 }
 
