@@ -22,8 +22,8 @@ body {
   color: white;
   line-height: 70px;
   margin-left: 2px;
-  padding-left: 10px;
-  /* text-align: left; */
+  padding-left: 35px;
+  /* text-align: center; */
   background: #063146;
   user-select: none;
 }

@@ -23,18 +23,19 @@ h2{
 form {
   padding: 1rem;
   width:30vw;
-  height: 95vh;
+  height: 55vh;
   top:2rem;
   left: 95rem;
-  position: absolute;
+  /* position: absolute; */
   justify-content: center;
-  background: transparent;
+  /* background: transparent; */
+  background-color: #0e7785;
   align-items: center;
   border: 10rem solid rgba(255,255,255,0.5);
   backdrop-filter: blur(0.2rem);
   border-radius: 1rem;
   justify-content: center;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1rem rgba(166, 16, 16, 0.87);
 }
 .inputbox{
   position: relative;
@@ -161,74 +162,6 @@ input[type="password"]:focus {
   outline: none;
   border-color: #1E90FF;
 }
-.radio-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10%;
-}
-
-.radio-container label {
-  margin-right: 0%;
-  font-size: 100%;
-  color: #707070;
-}
-
-.radio-container input[type="radio"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: inline-block;
-  margin-right: 2%;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  outline: none;
-  position: relative;
-  top: -0.3em;
-}
-
-.radio-container input[type="radio"]:checked:before {
-  content: "";
-  display: block;
-  position: relative;
-  top: 0.03em;
-  left: 0.03em;
-  width: 0.625em;
-  height: 0.625em;
-  border-radius: 50%;
-  background-color: #326190;
-}
-
-input[type="radio"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: inline-block;
-  /* margin-right: 2px; */
-  /* margin-top: 0; */
-  /* margin-left: 20px; */
-  margin-block-start: 0.526em;
-  margin-inline-start: 0.526em;
-  width: 0.625em;
-  height: 0.625em;
-  border-radius: 200%;
-  border: 0.866em solid #141111;
-  outline: none;
-}
-
-input[type="radio"]:focus {
-  outline: 1.75em;
-  border-color: #1E90FF;
-}
-
-.form-select {
-  width: 14.2rem; /* Set the width to whatever value you prefer */
-  height: 2.82rem;
-  font-size: 1rem;
-  margin-left: 0.66rem;
-  color: #707070;
-}
 
 .home{
   position: absolute;
@@ -267,7 +200,7 @@ input[type="radio"]:focus {
   transition: 0.3s;
 }
 .btn:hover{
-  background-color: #61a364;
+  background-color: #a22d44;
   color: #052a07;
 }
 
@@ -275,6 +208,7 @@ input[type="radio"]:focus {
   height: 100%;
   display: flex;
   justify-content: center;
+  background-color:#0e7785;
   align-items: center;
 }
 
@@ -289,7 +223,7 @@ input[type="radio"]:focus {
     margin-left: -90vw;
     font-size: 1.6rem;
     }
-  
+
   h2{
     font-size: 1.7em;
     color: #0e7785;
@@ -340,7 +274,7 @@ input[type="radio"]:focus {
     input:valid ~ label{
     top: -1.1rem;
     }
-  
+
     .inputbox ion-icon{
       position: absolute;
       right: 1vw;
@@ -348,7 +282,7 @@ input[type="radio"]:focus {
       font-size: 1.2rem;
       top: 2vh;
     }
-  
+
     .col input{
       border: none;
       border-bottom: 0.0625rem solid #ccc;
@@ -358,7 +292,7 @@ input[type="radio"]:focus {
       color: #555;
       font-size: 1.6rem;
     }
-  
+
   .col placeholder{
     position:absolute;
     top:0;
@@ -369,15 +303,15 @@ input[type="radio"]:focus {
     font-size: 100%;
     pointer-events: none;
   }
-  
+
   .gen {
     margin-left: 0.8rem;
   }
-  
+
   .batch {
     margin-left: 1.25rem;
   }
-  
+
   .faculty {
     margin-left: 28rem;
     font-size: 1.2rem;
@@ -386,7 +320,7 @@ input[type="radio"]:focus {
     bottom: 0;
     left: 0;
   }
-  
+
   .bg-image {
     background-image: url('src/assets/images/stuReg.png');
     position: absolute;
@@ -402,8 +336,8 @@ input[type="radio"]:focus {
     height: 90%;
     text-align: left;
   }
-  
-  
+
+
   .loginstu{
     padding: 1vh 1.2vw;
     color: #fff;
@@ -428,7 +362,7 @@ input[type="radio"]:focus {
     border-bottom: 2px solid #ccc;
     font-size: 16px;
   }
-  
+
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="password"]:focus {
@@ -440,13 +374,13 @@ input[type="radio"]:focus {
     align-items: center;
     margin-bottom: 10%;
   }
-  
+
   .radio-container label {
     margin-right: 0%;
     font-size: 100%;
     color: #707070;
   }
-  
+
   .radio-container input[type="radio"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -461,7 +395,7 @@ input[type="radio"]:focus {
     position: relative;
     top: -0.3em;
   }
-  
+
   .radio-container input[type="radio"]:checked:before {
     content: "";
     display: block;
@@ -473,7 +407,7 @@ input[type="radio"]:focus {
     border-radius: 50%;
     background-color: #326190;
   }
-  
+
   input[type="radio"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -490,12 +424,12 @@ input[type="radio"]:focus {
     border: 0.866em solid #141111;
     outline: none;
   }
-  
+
   input[type="radio"]:focus {
     outline: 1.75em;
     border-color: #1E90FF;
   }
-  
+
   .form-select {
     width: 14.2rem; /* Set the width to whatever value you prefer */
     height: 2.82rem;
@@ -503,7 +437,7 @@ input[type="radio"]:focus {
     margin-left: 0.66rem;
     color: #707070;
   }
-  
+
   .home{
     position: absolute;
     justify-content: center;
@@ -544,7 +478,7 @@ input[type="radio"]:focus {
     background-color: #61a364;
     color: #052a07;
   }
-  
+
   .container{
     height: 100%;
     display: flex;
