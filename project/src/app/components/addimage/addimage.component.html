@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  </head>
+  <body>
+    <div>
+      <div class="wrapper">
+        <app-sidebar-tpo></app-sidebar-tpo>
+        <div class="main_content">
+          <div class="testbox">
+            <form action="/" [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
+              <div class="banner">
+                <h1>Testing Image</h1>
+              </div>
+              <div class="item">
+                  <div class="form-outline mb-4">
+                      <label class="form-label" for="form4Example1">Company Name</label>
+                      <input type="text" name="company_name" formControlName="company_name" class="form-control" />
+                    </div>
+              </div>
+              <div class="mb-3">
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form4Example1">Company Logo</label>
+                <input class="form-control" type="file"  name="company_logo_file" id="formFile" (change)="uploadfile($event)">
+              </div>
+              </div>    
+              
+               <div class="btn-block">
+                <button type="submit">Save</button>
+              </div>
+            </form>
+          </div>
+          </div>
+        </div>
+      </div>
+
+   
+  </body>
+</html>

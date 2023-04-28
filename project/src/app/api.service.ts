@@ -1,8 +1,8 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Faculty, Users } from './users';
-
+import { throwError } from 'rxjs';
 @Injectable({
   providedIn: 'any'
   })
@@ -115,4 +115,19 @@ editStudent(stud_name: any,stud_email: any,stud_password: any, stud_gender: any,
     return this.httpClient.put(this.baseUrl+'/updatefaculty.php', {faculty_name ,faculty_email,faculty_dept,faculty_qualification, faculty_designation, faculty_password, faculty_aoi});  
   }  
     
+  insertcompanydetails(company_name:any, company_logo_file: any){
+    var formData: any = new FormData();
+    formData.append("company_name",company_name);
+    formData.append("company_logo_file",company_logo_file);
+    return this.httpClient.post<any>(this.baseUrl + '/postjob.php', formData)
+    .pipe(
+      catchError((err: any)=>{
+        alert(err.message);
+        return throwError(err.message);
+      })
+    );
+  }
+  getScompanydetails() {
+    return this.httpClient.get<Users[]>(this.baseUrl+'/companydetailsview.php');
+  } 
   }

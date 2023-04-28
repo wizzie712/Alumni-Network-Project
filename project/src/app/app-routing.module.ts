@@ -19,6 +19,8 @@ import { AddstudentComponent } from './components/addstudent/addstudent.componen
 import { FacultycrudlistComponent } from './components/facultycrudlist/facultycrudlist.component';
 import { AddfacultyComponent } from './components/addfaculty/addfaculty.component';
 import { EditfacultyComponent } from './components/editfaculty/editfaculty.component';
+import { TestimageComponent } from './components/testimage/testimage.component';
+import { AddimageComponent } from './components/addimage/addimage.component';
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -40,7 +42,10 @@ const routes: Routes = [
   { path: 'addstudent', component:AddstudentComponent},
   { path: 'facultycrudlist',component:FacultycrudlistComponent},
   { path: 'addfaculty',component:AddfacultyComponent},
-  { path: 'editfaculty/:faculty_email',component:EditfacultyComponent}
+  { path: 'editfaculty/:faculty_email',component:EditfacultyComponent},
+  { path: 'testimage',component:TestimageComponent},
+  { path: 'addimage',component:AddimageComponent}
+
 ];
 
 @NgModule({
