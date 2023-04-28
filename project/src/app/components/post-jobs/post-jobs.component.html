@@ -30,114 +30,87 @@
 
           <form class="border p-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
 
-
-      <div class="row g-1">
-        <div class="col text-center p-2 mb-3">
-          <span class="fs-3"><div class="mainheading"><h2>Post a Job</h2></div></span>
-        </div>
-      </div>
-      <div class="col mb-4">
-      <div class="col mb-3">
-        <div class="inputbox">
-        <input type="text" placeholder="Company Name" required class="form-control input-field" id="company" formControlName="company">
-      </div>
-        <div class="form-text text-danger" *ngIf="Company.errors?.['required'] && (Company.dirty || Company.touched)">
-          Required field
-        </div>
-      </div>
-
-      <div class="col mb-3">
-
-          <div class="inputbox">
-          <input type="text" placeholder="Designation" required class="form-control input-field" id="designation" formControlName="designation">
-        </div>
-          <div class="form-text text-danger" *ngIf="Designation.errors?.['required'] && (Designation.dirty || Designation.touched)">
-            Required field
-          </div>
-        </div>
-
-        <div class="col ps-3">
-          <div class="dropdown">
-          <div class="row">
-            <div class="col-2">
-              <div class="m-1"><label for="year-dropdown">Experience</label></div>
+            <div class="signup-container">
+              <div class="left-container">
+                
+                <div class="puppy">
+                  <img src="assets/images/job.png"/>
+                  <h1>
+                    <!-- <img class="logo" src="assets/images/grad_new.png"/> -->
+                    
+                    Alumni <i class="fa fa-graduation-cap" style="font-size:38px;"></i> Connect
+                  </h1>
+                </div>
+                
+              </div>
+              <div class="right-container">
+                <header>
+                  <h1>Celebrate endings - for they precede new beginnings. </h1><br>
+                  <div class="set">
+                    <div class="pets-name">
+                      <label for="pets-name">Company Name </label>
+                      <input id="pets-name" placeholder="Pet's name" type="text">
+                    </div>
+                    <div class="pets-breed">
+                      <label for="pets-breed">Designation</label>
+                      <input id="pets-breed" placeholder="Pet's breed" type="text">
+                    </div>
+                  </div>
+                  <div class="set">
+                    <div class="pets-gender">
+                      <label for="pet-gender-female">Job type</label>
+                      <div class="radio-container">
+                        <input id="pet-gender-female" name="pet-gender" type="radio" value="female">
+                        <label for="pet-gender-female">Remote</label>
+                        <input id="pet-gender-male" name="pet-gender" type="radio" value="male">
+                        <label for="pet-gender-male">On-Site</label>
+                      </div>
+                    </div>
+                    <div class="pets-name">
+                      <label for="pets-name">Location </label>
+                      <input id="pets-name" placeholder="Pet's name" type="text">
+                    </div>
+                  </div>
+                  <div class="pets-weight">
+                    <label for="pet-weight-0-25">Experience</label>
+                    <div class="radio-container">
+                      <input id="pet-weight-0-25" name="pet-weight" type="radio" value="0-25">
+                      <label for="pet-weight-0-25">0-2yrs</label>
+                      <input id="pet-weight-25-50" name="pet-weight" type="radio" value="25-50">
+                      <label for="pet-weight-25-50">3-5yrs</label>
+                      <input id="pet-weight-50-100" name="pet-weight" type="radio" value="50-100">
+                      <label for="pet-weight-50-100">5-7yrs</label>
+                      <input id="pet-weight-100-plus" name="pet-weight" type="radio" value="100+">
+                      <label for="pet-weight-100-plus">8+ yrs</label>
+                    </div>
+                  </div>
+                  <div class="set">
+                    
+                    <div class="pets-name">
+                      <label for="dog-names">Salary</label>
+                      <select name="dog-names" id="dog-names">
+                        <option value="rigatoni">5-8 Lpa</option>
+                        <option value="dave">9-12 Lpa</option>
+                        <option value="pumpernickel">13-15 Lpa</option>
+                        <option value="reeses">15+ Lpa</option>
+                        <option value="reeses">N.A</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="pets-name">
+                    <label for="exampleFormControlTextarea1">Your Suggestions if any: </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+          
+                </header>
+                <footer>
+                  <div class="set">
+                    <button id="next">Submit</button>
+                  </div>
+                </footer>
+              </div>
             </div>
-            <div class="col-10">
-              <select class="form-select" formControlName="experience" id="type-dropdown">
-                <option value="" disabled selected>Select Experience</option>
-                <option *ngFor="let experience of experiences" [value]="experience">{{experience}}</option>
-              </select>
-            </div>
-          </div>
-        </div>
-          <!-- <div class="form-text text-danger" *ngIf="Experience.errors?.['required']">
-            Select Type
-          </div> -->
-      </div>
-        <div class="col ps-3">
-          <div class="dropdown">
-          <div class="row">
-            <div class="col-2">
-              <div class="m-1"><label for="type-dropdown">Type of job</label></div>
-            </div>
-            <div class="col-10">
-              <select class="form-select" formControlName="jobtype" id="type-dropdown">
-                <option value="" disabled selected>Select Type</option>
-                <option *ngFor="let jobtype of jobtypes" [value]="jobtype">{{jobtype}}</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col ps-3">
-        <div class="dropdown">
-        <div class="row">
-          <div class="col-2">
-            <div class="m-1"><label for="type-dropdown">Salary</label></div>
-          </div>
-          <div class="col-10">
-            <select class="form-select" formControlName="salary" id="type-dropdown">
-              <option value="" disabled selected>Select salary</option>
-              <option *ngFor="let salary of salaries" [value]="salary">{{salary}}</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
-        <div class="col mb-4">
-          <div class="inputbox">
-          <input type="text" placeholder="Location" required class="form-control input-field" id="location" formControlName="location">
-        </div>
-          <div class="form-text text-danger" *ngIf="Location.errors?.['required'] && (Location.dirty || Location.touched)">
-            Required field
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="inputbox">
-          <input type="text" placeholder="Must haves" required class="form-control input-field" id="musthaves" formControlName="musthaves">
-        </div>
-          <div class="form-text text-danger" *ngIf="Musthaves.errors?.['required'] && (Musthaves.dirty || Musthaves.touched)">
-            Required field
-          </div>
-        </div>
-
-        <div class="d-grid">
-        <div class="row">
-        <button type="submit" id="sub" (click)="showPopup()" [disabled]="loginForm.invalid" class="btn btn-primary">Submit</button>
-      </div>
-      </div>
-
-        <div class="row">
-            <div class="d-grid">
-              <div class="loginstu">
-
-            </div>
-
-          </div>
-        </div>
-
-
-      </div>
+          
 
     </form>
     <div class="popup-background" *ngIf="showPopupFlag">
