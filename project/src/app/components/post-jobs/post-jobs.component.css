@@ -113,6 +113,11 @@
 	 justify-content: space-between;
 	 width: 100%;
 }
+.right-container .pets-weights .radio-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
  .right-container footer {
 	 align-items: center;
 	 background: #fff;
@@ -133,6 +138,7 @@
 	 border: 1px solid transparent;
 	 color: #fff;
 	 margin-left: 80%;
+   
 	 height: 120%;
 	 font-weight: bold;
 

@@ -30,8 +30,8 @@ export class PostJobsComponent implements OnInit{
       Validators.required]),
     location: new FormControl("", [
       Validators.required]),
-    musthaves: new FormControl("", [
-      Validators.required]),
+      suggestions: new FormControl("", [
+        Validators.required]),
     jobtype: new FormControl("", [
       Validators.required])
 });
@@ -44,6 +44,10 @@ get Company(): FormControl {
   return this.loginForm.get("company") as FormControl;
 }
 
+get Jobtype(): FormControl {
+  return this.loginForm.get("jobtype") as FormControl;
+}
+
 get Experience(): FormControl {
   return this.loginForm.get("experience") as FormControl;
 }
@@ -54,6 +58,10 @@ get Salary(): FormControl {
 
 get Location(): FormControl {
   return this.loginForm.get("location") as FormControl;
+}
+
+get Suggestions(): FormControl {
+  return this.loginForm.get("suggestions") as FormControl;
 }
 
   ngAfterViewInit() {
