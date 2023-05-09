@@ -28,7 +28,7 @@
         <div class="form-box">
           <div class="form-value">
 
-          <form class="border p-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+          <form class="border p-3" [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
             <div class="mainform">
             <div class="signup-container">
               <div class="left-container">
@@ -49,38 +49,38 @@
                   <div class="set">
                     <div class="pets-name">
                       <label for="pets-name">Company Name </label>
-                      <input id="pets-name" placeholder="Company name" type="text" formControlName="company">
+                      <input id="pets-name" placeholder="Company name" type="text" formControlName="c_name">
                     </div>
                     <div class="pets-breed">
                       <label for="pets-breed">Designation</label>
-                      <input id="pets-breed" placeholder="Designation" type="text" formControlName="designation">
+                      <input id="pets-breed" placeholder="Designation" type="text" formControlName="c_designation">
                     </div>
                   </div>
                   <div class="set">
                     <div class="pets-gender">
                       <label for="pet-gender-female">Job type</label>
                       <div class="radio-container">
-                        <input id="pet-gender-female" name="pet-gender" type="radio" value="=Remote" formControlName="jobtype">
+                        <input id="pet-gender-female" name="c_jobtype" type="radio" value="Remote" formControlName="c_jobtype">
                         <label for="pet-gender-female">Remote</label>
-                        <input id="pet-gender-male" name="pet-gender" type="radio" value="On-Site" formControlName="jobtype">
+                        <input id="pet-gender-male" name="c_jobtype" type="radio" value="On-Site" formControlName="c_jobtype">
                         <label for="pet-gender-male">On-Site</label>
                       </div>
                     </div>
                     <div class="pets-name">
                       <label for="pets-name">Location </label>
-                      <input id="pets-name" placeholder="Location" type="text" formControlName="location">
+                      <input id="pets-name" placeholder="Location" type="text" formControlName="c_location">
                     </div>
                   </div>
                   <div class="pets-weight">
                     <label for="pet-weight-0-25">Experience</label>
                     <div class="radio-container">
-                      <input id="pet-weight-0-25" name="pet-weight" type="radio" value="0-2" formControlName="experience">
+                      <input id="pet-weight-0-25" name="c_experience" type="radio" value="0-2" formControlName="c_experience">
                       <label for="pet-weight-0-25">0-2yrs</label>
-                      <input id="pet-weight-25-50" name="pet-weight" type="radio" value="3-5" formControlName="experience">
+                      <input id="pet-weight-25-50" name="c_experience" type="radio" value="3-5" formControlName="c_experience">
                       <label for="pet-weight-25-50">3-5yrs</label>
-                      <input id="pet-weight-50-100" name="pet-weight" type="radio" value="5-7" formControlName="experience">
+                      <input id="pet-weight-50-100" name="c_experience" type="radio" value="5-7" formControlName="c_experience">
                       <label for="pet-weight-50-100">5-7yrs</label>
-                      <input id="pet-weight-100-plus" name="pet-weight" type="radio" value="8+" formControlName="experience">
+                      <input id="pet-weight-100-plus" name="c_experience" type="radio" value="8+" formControlName="c_experience">
                       <label for="pet-weight-100-plus">8+ yrs</label>
                     </div>
                   </div>
@@ -88,13 +88,13 @@
                     <div class="pets-weights">
                       <label for="pet-weights-0-25">Salary</label>
                       <div class="radio-container">
-                        <input id="pet-weights-0-25" name="pet-salary" type="radio" value="5-8 Lpa" formControlName="salary">
+                        <input id="pet-weights-0-25" name="c_salary" type="radio" value="5-8 Lpa" formControlName="c_salary">
                         <label for="pet-weights-0-25">5-8 LPA</label>
-                        <input id="pet-weights-25-50" name="pet-salary" type="radio" value="9-12 Lpa" formControlName="salary">
+                        <input id="pet-weights-25-50" name="c_salary" type="radio" value="9-12 Lpa" formControlName="c_salary">
                         <label for="pet-weights-25-50">9-12 LPA</label>
-                        <input id="pet-weights-50-100" name="pet-salary" type="radio" value="13-15 Lpa" formControlName="salary">
+                        <input id="pet-weights-50-100" name="c_salary" type="radio" value="13-15 Lpa" formControlName="c_salary">
                         <label for="pet-weights-50-100">13-15 LPA</label>
-                        <input id="pet-weights-100-plus" name="pet-salary" type="radio" value="15 Lpa" formControlName="salary">
+                        <input id="pet-weights-100-plus" name="c_salary" type="radio" value="15 Lpa" formControlName="c_salary">
                         <label for="pet-weights-100-plus">15+ LPA</label>
                       </div>
                     </div>
@@ -111,7 +111,7 @@
                   </div>
                   <div class="pets-name">
                     <label for="exampleFormControlTextarea1">Your Suggestions if any: </label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="suggestions"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="c_suggestions"></textarea>
                   </div>
 
                 </header>
