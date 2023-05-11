@@ -3,6 +3,7 @@ import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Faculty, Users } from './users';
 import { throwError } from 'rxjs';
+import { Companydetails } from './companydetails';
 
 @Injectable({
   providedIn: 'any'
@@ -116,7 +117,7 @@ editFaculty(faculty_name: any,faculty_email: any,faculty_dept: any, faculty_qual
     return this.httpClient.put(this.baseUrl+'/updatefaculty.php', {faculty_name ,faculty_email,faculty_dept,faculty_qualification, faculty_designation, faculty_password, faculty_aoi});  
   }
   
-insertcompanydetails(c_name:any, c_designation:any, c_jobtype:any, c_location :any, c_experience:any, c_salary:any, c_suggestions:any){
+insertcompanydetails(c_name:any, c_designation:any, c_jobtype:any, c_location :any, c_experience:any, c_salary:any, company_logo_file: any, c_suggestions:any){
   const formData: any = new FormData();
   formData.append("c_name",c_name);
   formData.append("c_designation",c_designation);
@@ -124,12 +125,14 @@ insertcompanydetails(c_name:any, c_designation:any, c_jobtype:any, c_location :a
   formData.append("c_location",c_location );
   formData.append("c_experience",c_experience);
   formData.append("c_salary",c_salary);
+  formData.append("company_logo_file",company_logo_file);
   formData.append("c_suggestions",c_suggestions);
   // console.log("FormData Before sending HTTPRequest " +formData["c_name"]);
   return this.httpClient.post<any>(this.baseUrl + '/postjob1.php', formData)
     .pipe(
       catchError((error: any) => {
         console.error('Error occurred: ', error);
+        console.log(company_logo_file);
         return throwError(error);
       }),
       map((response: any) => {
@@ -143,8 +146,8 @@ insertcompanydetails(c_name:any, c_designation:any, c_jobtype:any, c_location :a
 getScompanydetails() {
   return this.httpClient.get<Users[]>(this.baseUrl+'/companydetailsview.php');
 } 
-getsinglecompanydetails(company_id:any) {
-  //console.log(this.baseUrl+'/trash.php?id='+id);
-  return this.httpClient.get<Users[]>(this.baseUrl+'/singlecompanyview.php?id='+company_id);
-}
+// getsinglecompanydetails(company_id:any) {
+//   //console.log(this.baseUrl+'/trash.php?id='+id);
+//   return this.httpClient.get<Companydetails[]>(this.baseUrl+'/singlecompanyview.php?id='+company_id);
+// }
 }

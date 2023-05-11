@@ -19,7 +19,7 @@ if (!$mysqli) {
 }
 
 // Query the database to retrieve all data from a table
-$sql = "SELECT * FROM imagetest";
+$sql = "SELECT * FROM postjob";
 $result = mysqli_query($mysqli, $sql);
 
 // Check if there are any results

@@ -10,13 +10,40 @@ $db_username = 'root';
 $db_password = '';
 $db_name = 'alumniconnect';
 
+$target_dir = "../uploaded_company_logo/";
 $mysqli = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
     die('Error : ('. mysqli_connect_errno() .') '. mysqli_connect_error());
 }
+
+$status = "failed";
+$company_logo_name = basename($_FILES['company_logo_file']['name']);
+$target_file = $target_dir . $company_logo_name;
+$uploadok = 1;
+$image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+
+if(file_exists($target_file)){
+    $msg = 'sorry, file already exists';
+    $status = "failed";
+    $uploadok = 0;
+}
+
+if($_FILES['company_logo_file']['size'] > 500000){
+    $msg = 'sorry, file too large';
+    $status = "failed";
+    $uploadok = 0;
+}
+
+if($image_file_type != "jpg" && $image_file_type != "jpeg" && $image_file_type != "png" && $image_file_type != "gif"){
+    $msg = 'sorry, only jpg, jpeg, png and gif allowed';
+    $status = "failed";
+    $uploadok = 0;
+}
 $required = array("c_name","c_designation","c_jobtype","c_location","c_experience","c_salary","c_suggestions");
 $msg = "unknown error";
+$status = "failed";
 $status="success";
 
 foreach($required as $field){
@@ -24,25 +51,21 @@ foreach($required as $field){
         $status = "fail";
     }
 }
-
-if($status === "success") {
-    // $request=json_decode($postdata);
-    // $c_name =$trim($request->c_name);
-    // $c_designation = trim($request->c_designation);
-    // $c_jobtype =  trim($request->c_jobtype);
-    // $c_location = trim($request->c_location);
-    // $c_experience =  trim($request->c_experience);
-    // $c_salary = trim($request->c_salary);
-    // $c_suggestions =  trim($request->c_suggestions);
+if($uploadok == 0){
+    $msg = "file is not uploaded";
+    $status = "failed";
+}
+else{
+    if(($status === "success") && (move_uploaded_file($_FILES["company_logo_file"]["tmp_name"],$target_file))){
     $c_name = $_POST["c_name"];
     $c_designation = $_POST["c_designation"];
     $c_jobtype = $_POST["c_jobtype"];
     $c_location = $_POST["c_location"];
     $c_experience= $_POST["c_experience"];
     $c_salary = $_POST["c_salary"];
+    $company_logo_image_name = "http://localhost/project/uploaded_company_logo/".$company_logo_name;
     $c_suggestions = $_POST["c_suggestions"];
-    
-    $sql = "INSERT INTO postjob(c_name, c_designation,c_jobtype, c_location, c_experience, c_salary, c_suggestions) values('$c_name','$c_designation','$c_jobtype','$c_location','$c_experience','$c_salary','$c_suggestions')";
+    $sql = "INSERT INTO postjob(c_name, c_designation, c_jobtype, c_location, c_experience, c_salary, company_logo_image_name, c_suggestions) values('$c_name','$c_designation','$c_jobtype','$c_location','$c_experience','$c_salary','$company_logo_image_name','$c_suggestions')";
 
         if(mysqli_query($mysqli, $sql)){
             //$msg = $c_suggestions;
@@ -56,12 +79,13 @@ if($status === "success") {
         }
 }
 else{
-    //$msg = "1 - ".$_POST["c_name"]." 2 - ".$_POST["c_designation"]." 3 - ".$_POST["c_jobtype"]." 4 - ".$_POST["c_location"]." 5 - ".$_POST["c_experience"]." 6 - ".$_POST["c_salary"]." 7 - ".$_POST["c_suggestions"];
-    $msg = "received empty data ";
+    //$msg = "1 - ".$_POST["c_name"]." 2 - ".$_POST["c_designation"]." 3 - ".$_POST["c_jobtype"]." 4 - ".$_POST["c_location"]." 5 - ".$_POST["c_experience"]." 6 - ".$_POST["c_salary"]." 7 - ".$_POST["company_logo_image_name"]." 8 - ".$_POST["c_suggestions"];
+    $msg = "File upload failed.".$c_name;
     $status="fail";
 }
-    
+}
 $response = array('status' => $status , 'message' => $msg);
 echo json_encode($response);
 mysqli_close($mysqli);
+
 ?> 

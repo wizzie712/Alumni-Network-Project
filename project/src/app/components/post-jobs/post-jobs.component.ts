@@ -29,6 +29,7 @@ export class PostJobsComponent implements OnInit{
         Validators.required]),
       c_suggestions: new FormControl("", [
         Validators.required]),
+      company_logo_file:[null,Validators.required],
       c_jobtype: new FormControl("", [
         Validators.required])
   });
@@ -36,12 +37,21 @@ export class PostJobsComponent implements OnInit{
 
   ngOnInit(): void {
   }
-  postdata(angForm1: { value: { c_name:any; c_designation: any; c_jobtype: any; c_location: any; c_experience: any; c_salary:any;c_suggestions:any}; }){
+  uploadfile(event:any){
+    const file =  event.target.files ? event.target.files[0] : '';
+    //console.log(file); 
+    this.angForm.patchValue({
+      company_logo_file: file
+    });
+    this.angForm.get('company_logo_file')?.updateValueAndValidity()
+  }
+  postdata(angForm1: { value: { c_name:any; c_designation: any; c_jobtype: any; c_location: any; c_experience: any; c_salary:any; company_logo_file:any;c_suggestions:any}; }){
     //console.log(angForm1.value.ucid);
-this.dataService.insertcompanydetails(angForm1.value.c_name,angForm1.value.c_designation,angForm1.value.c_jobtype,angForm1.value.c_location,angForm1.value.c_experience,angForm1.value.c_salary,angForm1.value.c_suggestions)
+this.dataService.insertcompanydetails(angForm1.value.c_name,angForm1.value.c_designation,angForm1.value.c_jobtype,angForm1.value.c_location,angForm1.value.c_experience,angForm1.value.c_salary,angForm1.value.company_logo_file,angForm1.value.c_suggestions)
 .pipe(first())
 .subscribe(
 data => {
+  
   //this.router.navigate(['/studentdashboard']);
   window.location.reload();
  

@@ -110,6 +110,10 @@
                     </div> -->
                   </div>
                   <div class="pets-name">
+                    <label class="form-label" >Company Logo</label>
+                    <input class="form-control" type="file"  name="company_logo_file" id="formFile" (change)="uploadfile($event)">
+                  </div>
+                  <div class="pets-name">
                     <label for="exampleFormControlTextarea1">Your Suggestions if any: </label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="c_suggestions"></textarea>
                   </div>
