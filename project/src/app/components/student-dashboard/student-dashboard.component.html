@@ -25,8 +25,38 @@
     <main class="et-main">
 
       <section class="et-slide" id="tab-lookforjob">
-        <h1>Look for Job</h1>
-        <h3>something about Look for Job</h3>
+        <div class="card-deck" id="first_deck">
+          <div class="card" *ngFor="let company of companydetails; let i = index;">
+            <div class="company_logo"><img class="card-img-top" src={{company.company_logo_image_name}} alt="Company logo"></div>
+            <div class="card-body">
+              <div class="title-category">
+                <span class="company_name_display">
+                  <h5 class="card-title">{{company.c_name}}</h5>
+                </span>
+              </div>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-success"><i class="icon ion-briefcase"></i>   {{ company.c_designation}}</li>
+                <li class="list-group-item list-group-item-success"><i class="icon ion-briefcase"></i>   {{ company.c_jobtype}}</li>
+                <li class="list-group-item list-group-item-success"><i class="icon ion-location"></i>   {{ company.c_location}}</li>
+                <li class="list-group-item list-group-item-success"><i class="icon icon ion-star"></i> {{ company.c_experience}}</li>
+                <li class="list-group-item list-group-item-success"><i class="icon ion-person"></i>  {{ company.c_suggestions}}</li>
+                <li class="list-group-item list-group-item-success"><i class="fa fa-inr"></i>   {{company.c_salary}}</li>
+              </ul>
+    
+              <!-- <ul class="list-group">
+                <li class="list-group-item list-group-item-danger"><i class="icon ion-clock"></i> <pre> {{ company.last_date_to_apply }} {{ company.deadline_time }}</pre></li>
+                </ul> -->
+              
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn" id="left-panel-link" >Register</button>
+              <!-- <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal1" id="right-panel-link" routerLink="/viewcompanydetails/{{company.company_id}}">
+      Learn More
+    </button> -->
+            </div>
+          </div>
+        </div>
+         <div class="sep"></div>
       </section>
           </main>
     <script src="src/app/components/StudentDashboard/stickynavbar.component.js"></script>

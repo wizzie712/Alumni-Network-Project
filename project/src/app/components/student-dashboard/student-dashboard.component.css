@@ -4,7 +4,32 @@
   padding: 0;
   font-family: 'poppins',sans-serif;
 }
+.company_logo{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  min-width: 30vw;
+  min-height: 30vh;
+  max-width: 30vw;
+  max-height: 30vh;
+}
 
+.company_logo img{
+  min-width: 15vw;
+  min-height: 15vh;
+  max-width: 25vw;
+  max-height: 25vh;
+}
+
+.compnay_name_display{
+display: inline-block;
+}
+.compnay_category_display{
+display: inline-block;
+position: absolute;
+right: 2.5vw;
+}
 a {
 text-decoration: none;
 }

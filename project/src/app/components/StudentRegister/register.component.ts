@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
