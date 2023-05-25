@@ -70,6 +70,9 @@ small {
   /* background-color: red; */
 }
 
+.lookjob{
+  height: 100%;
+}
 header {
   height: 10px;
   background-color: #02b8dd;
@@ -196,6 +199,7 @@ header nav ul li a {
 }
 #secondary-content article:first-child {
   margin-right: 20px;
+  margin-left: 55px;
 }
 #secondary-content article .overlay {
   background: rgba(255, 255, 255, .95);
@@ -232,8 +236,8 @@ article h4 {
 .button-2 {
   display: block;
   margin: 0 auto;
-  border: 2px solid #02b8dd;
-  color: #02b8dd;
+  border: 2px solid #5f6dd3;
+  color: #5f6dd3;
   border-radius: 3px;
   width: 380px;
   height: 70px;
@@ -241,7 +245,7 @@ article h4 {
   line-height: 50px;
 }
 .button-2:hover {
-  background-color: #02b8dd;
+  background-color: #5f6dd3;
   color: #fff;
 }
 
@@ -358,4 +362,62 @@ footer {
   background:none!important;
   height:100%;
   width:80%;
+}
+
+/*  card images */
+
+.images h3{
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 400px;
+  border-bottom: 1px solid #02b8dd;
+  padding: 20px 0 20px 0;
+}
+
+.images {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;*/
+  height: 120vh; 
+  background: rgb(239, 236, 236, 0.684);
+  width: 100%;
+}
+.scene {
+  width: 1000px;
+  display: flex;
+  /* justify-content: space-between; */
+  perspective: 800px;
+  margin-left: 22%;
+}
+.scene .card {
+  position: relative;
+  width: 450px;
+  height: 300px;
+  color: white;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+  margin: 2px;
+  
+}
+.scene .card:hover {
+  transform: rotateY(0.5turn);
+}
+.scene .card .card__face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: 1s ease-in-out;
+  /* -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4)); */
+}
+.scene .card .card__face img {
+  width: 240px;
+  height: 300px;
+  object-fit: cover;
+}
+.scene .card .card__face--back {
+  transform: rotateY(0.5turn);
 }
