@@ -65,6 +65,25 @@ border-bottom: 1px solid #003559;
 border-bottom: 1px solid rgba(0,0,0,0.05);
 border-top: 1px solid rgba(255,255,255,0.05);
 }
+h1{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+.home{
+  margin-left: 4rem;
+  margin-top: 1rem;
+  width: 5rem;
+  height:5rem;
+  padding: 1rem ;
+  font-size: 2.5rem;
+  background-color: #003559;
+  color: white;
+  border: none;
+  border-radius: 50rem;
+  transition: 0.3s;
+}
 
 .wrapper .sidebar ul li a{
 color: #f5f4f9;
@@ -107,6 +126,6 @@ margin-bottom: 20px;
 }
 
 .container{
-margin-top: 15vh;
-margin-left: 18.5vw;
+margin-top: 4vh;
+margin-left: 8.5vw;
 }

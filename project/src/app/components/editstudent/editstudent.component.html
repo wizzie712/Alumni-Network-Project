@@ -4,7 +4,7 @@
 </div>
 <div class="linktohome">
 
-  <button class="home" routerLink="/crudlist"><ion-icon name="home"></ion-icon></button>
+  <button class="home" routerLink="/crudlist"><ion-icon name="arrow-back-circle-outline"></ion-icon></button>
 </div>
     <div class="form-box">
       <div class="form-value">
@@ -32,7 +32,7 @@
     </div>
     <div class="form-text text-danger" *ngIf="Name.errors?.['pattern'] && (Name.touched || Name.dirty)">
       Name should start with alphabet
-    </div> 
+    </div>
     </div>
     <div class="col mb-4">
       <div class="inputbox">
@@ -45,7 +45,7 @@
       </div>
       <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
         Email is Invalid
-      </div> 
+      </div>
     </div>
     <div class="col mb-4">
       <div class="inputbox">
@@ -58,7 +58,7 @@
       </div>
       <div class="form-text text-danger" *ngIf="Password.errors?.['pattern'] && (Password.dirty || Password.touched)">
         Password should have Special characters, Lower & Upper case, numbers and minimum 8 characters
-      </div> 
+      </div>
     </div>
     <div class="col ps-2">
       <div class="m-1"><label class="gen">Gender</label></div>
