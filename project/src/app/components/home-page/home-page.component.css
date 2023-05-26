@@ -226,7 +226,7 @@ article h4 {
   padding: 60px 0;
   text-align: center;
 }
-#cta h3 {
+#cta h3, #features h3 {
   display: block;
   margin: 0 auto 20px auto;
   width: 400px;
