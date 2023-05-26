@@ -7,11 +7,12 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
+  font-size: 15px;
 }
 .sidebar {
-  margin-top: -15px;
+  margin-top: -25px;
   position: fixed;
-  left: -300px;
+  /* left: -300px; */
   width: 280px;
   height: 110%;
   background: #042331;
@@ -98,7 +99,7 @@ section{
 
 table{
      margin-top: 10vh;
-    margin-left: 3vw;
+    margin-left: 12.5vw;
     max-width: fit-content;
     min-width: 77vw;
 }

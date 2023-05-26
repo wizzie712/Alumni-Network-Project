@@ -1,123 +1,131 @@
-body{
-    color: #6F8BA4;
-    margin-top:20px;
-}
-.section {
-    padding: 100px 0;
-    position: relative;
-}
-.gray-bg {
-    background-color: #f5f5f5;
-}
-img {
-    max-width: 100%;
-}
-img {
-    vertical-align: middle;
-    border-style: none;
-}
-/* About Me 
----------------------*/
-.about-text h3 {
-  font-size: 45px;
-  font-weight: 700;
-  margin: 0 0 6px;
-}
-@media (max-width: 767px) {
-  .about-text h3 {
-    font-size: 35px;
-  }
-}
-.about-text h6 {
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-@media (max-width: 767px) {
-  .about-text h6 {
-    font-size: 18px;
-  }
-}
-.about-text p {
-  font-size: 18px;
-  max-width: 450px;
-}
-.about-text p mark {
-  font-weight: 600;
-  color: #20247b;
+body {
+  background: #f7f7ff;
+  margin-top: 20px;
 }
 
-.about-list {
-  padding-top: 10px;
-}
-.about-list .media {
-  padding: 5px 0;
-}
-.about-list label {
-  color: #20247b;
-  font-weight: 600;
-  width: 88px;
-  margin: 0;
+.card {
   position: relative;
-}
-.about-list label:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 11px;
-  width: 1px;
-  height: 12px;
-  background: #20247b;
-  -moz-transform: rotate(15deg);
-  -o-transform: rotate(15deg);
-  -ms-transform: rotate(15deg);
-  -webkit-transform: rotate(15deg);
-  transform: rotate(15deg);
-  margin: auto;
-  opacity: 0.5;
-}
-.about-list p {
-  margin: 0;
-  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid transparent;
+  border-radius: .25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
 }
 
-@media (max-width: 991px) {
-  .about-avatar {
-    margin-top: 30px;
-  }
+.me-2 {
+  margin-right: .7rem !important;
 }
 
-.about-section .counter {
-  padding: 22px 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+list-style: none;
+text-decoration: none;
+font-family: 'Poppins', sans-serif;
 }
-.about-section .counter .count-data {
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+body{
+ background-color: #f3f5f9;
 }
-.about-section .counter .count {
-  font-weight: 700;
-  color: #20247b;
-  margin: 0 0 5px;
+
+.wrapper{
+display: flex;
+position: relative;
 }
-.about-section .counter p {
-  font-weight: 600;
-  margin: 0;
+
+.wrapper .sidebar{
+margin-top: 9.4vh;
+width: 15vw;
+height: 100%;
+background: #809BCE;
+padding: 30px 0px;
+position: fixed;
 }
-mark {
-    background-image: linear-gradient(rgba(252, 83, 86, 0.6), rgba(252, 83, 86, 0.6));
-    background-size: 100% 3px;
-    background-repeat: no-repeat;
-    background-position: 0 bottom;
-    background-color: transparent;
-    padding: 0;
-    color: currentColor;
+
+/* .wrapper .sidebar h2{
+color: #fff;
+text-transform: uppercase;
+text-align: center;
+margin-bottom: 30px;
+font-size: 20px;
+} */
+
+.wrapper .sidebar ul li{
+padding: 15px;
+border-bottom: 1px solid #003559;
+border-bottom: 1px solid rgba(0,0,0,0.05);
+border-top: 1px solid rgba(255,255,255,0.05);
 }
-.theme-color {
-    color: #fc5356;
+h1{
+  text-align: center;
 }
-.dark-color {
-    color: #20247b;
+h3{
+  text-align: center;
+}
+.home{
+  margin-left: 4rem;
+  margin-top: 1rem;
+  width: 5rem;
+  height:5rem;
+  padding: 1rem ;
+  font-size: 2.5rem;
+  background-color: #003559;
+  color: white;
+  border: none;
+  border-radius: 50rem;
+  transition: 0.3s;
+}
+
+.wrapper .sidebar ul li a{
+color: #f5f4f9;
+display: block;
+font-size: 22px;
+}
+
+.wrapper .sidebar ul li a .fas{
+width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+background-color:  #003559;
+}
+
+.wrapper .sidebar ul li:hover a{
+color: #fff;
+}
+
+.wrapper .main_content{
+width: 100%;
+margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+padding: 20px;
+background: #fff;
+color:  #003559;
+border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+margin: 20px;
+color: #717171;
+line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+margin-bottom: 20px;
+}
+
+.container{
+margin-top: 4vh;
+margin-left: 8.5vw;
 }
