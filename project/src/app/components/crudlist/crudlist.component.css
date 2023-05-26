@@ -7,9 +7,10 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
+  font-size: 15px;
 }
 .sidebar {
-  margin-top: -15px;
+  margin-top: -25px;
   position: fixed;
   /* left: -300px; */
   width: 280px;
