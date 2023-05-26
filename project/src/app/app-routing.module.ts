@@ -19,6 +19,7 @@ import { AddstudentComponent } from './components/addstudent/addstudent.componen
 import { FacultycrudlistComponent } from './components/facultycrudlist/facultycrudlist.component';
 import { AddfacultyComponent } from './components/addfaculty/addfaculty.component';
 import { EditfacultyComponent } from './components/editfaculty/editfaculty.component';
+import { FacultyDashboardComponent } from './components/faculty-dashboard/faculty-dashboard.component';
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'editstudent/:stud_email',component:EditstudentComponent},
   { path: 'addstudent', component:AddstudentComponent},
   { path: 'facultycrudlist',component:FacultycrudlistComponent},
+  { path: 'facultydashboard',component:FacultyDashboardComponent},
   { path: 'addfaculty',component:AddfacultyComponent},
   { path: 'editfaculty/:faculty_email',component:EditfacultyComponent}
 ];
