@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
  * {
 	 /* box-sizing: border-box; */
 	 margin: 0;
@@ -19,8 +21,8 @@
 .signup-container {
 	 display: grid;
 	 grid-template-areas: "left right";
-	 max-width: 900px;
-	 border: 2px rgb(237, 237, 241);
+	 max-width: 1100px;
+	 border: 2px rgb(7, 7, 106);
 }
  .left-container {
 	 background: #469c9d;
@@ -28,12 +30,12 @@
 	 padding: 40px 0 0 0;
 	 position: relative;
 	 text-align: center;
-	 width: 300px;
+	 width: 400px;
 }
  .left-container h1 {
-	 color: rgba(0, 0, 0, .8);
+	 color: rgba(19, 19, 19, 0.8);
 	 display: inline-block;
-	 font-size: 24px;
+	 font-size: 5rem;
 	 margin-bottom: 60%;
 }
  .logo{
@@ -41,7 +43,7 @@
 	height: 10%;
  }
  .left-container .puppy {
-	 bottom: -5px;
+	 bottom: 23%;
 	 position: absolute;
 	 text-align: center;
 }
@@ -63,7 +65,7 @@
 	 background: #7f7e7c2e;
 	 display: grid;
 	 grid-template-areas: "." ".";
-	 width: 500px;
+	 width: 700px;
 }
  .right-container h1:nth-of-type(1) {
 	 color: rgba(0, 0, 0, .8);
