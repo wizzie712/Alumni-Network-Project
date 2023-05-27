@@ -21,7 +21,7 @@ import { Companydetails } from './companydetails';
   console.log(stud_email,stud_password);
   return this.httpClient.post<any>(this.baseUrl + '/login.php', {stud_email, stud_password })
   .pipe(map(Users => {
-  this.setToken(Users[0].stud_name);
+  this.setToken(Users[0].stud_name,Users[0].stud_email);
   this.getLoggedInName.emit(true);
   return Users;
   }));
@@ -31,7 +31,7 @@ import { Companydetails } from './companydetails';
     console.log(faculty_email,faculty_password);
     return this.httpClient.post<any>(this.baseUrl + '/faculty.php', {faculty_email, faculty_password })
     .pipe(map(Faculty => {
-    this.setToken(Faculty[0].faculty_name);
+    this.setToken(Faculty[0].faculty_name,Faculty[0].faculty_email);
     this.getLoggedInName.emit(true);
     return Faculty;
     }));
@@ -61,14 +61,24 @@ import { Companydetails } from './companydetails';
   }
   
   //token
-  setToken(token: string) {
+  setToken(token: string,email:string) {
   localStorage.setItem('token', token);
+   localStorage.setItem('email', email);
+  localStorage.setItem('username', token);
   }
   getToken() {
   return localStorage.getItem('token');
   }
+  getUsername(){
+    return localStorage.getItem('username');
+  }
+   getEmail() {
+     return localStorage.getItem('email');
+    }
   deleteToken() {
   localStorage.removeItem('token');
+  localStorage.removeItem('email');
+  localStorage.removeItem('username');
   }
   isLoggedIn() {
   const usertoken = this.getToken();
@@ -146,6 +156,73 @@ insertcompanydetails(c_name:any, c_designation:any, c_jobtype:any, c_location :a
 getScompanydetails() {
   return this.httpClient.get<Users[]>(this.baseUrl+'/companydetailsview.php');
 } 
+
+insertstudentprofiledetails(sp_name:any, sp_email:any, sp_dob:any, sp_designation:any, sp_company:any, sp_linkedin:any, sp_mobile: any, sp_address:any,sp_about:any){
+  alert("insert student details invoked.");
+  const formData: any = new FormData();
+  formData.append("sp_name",sp_name);
+  formData.append("sp_email",sp_email);
+  formData.append("sp_dob",sp_dob);
+  formData.append("sp_designation",sp_designation);
+  formData.append("sp_company",sp_company);
+  formData.append("sp_linkedin",sp_linkedin);
+  formData.append("sp_mobile",sp_mobile);
+  formData.append("sp_address",sp_address);
+  formData.append("sp_about",sp_about);
+  // console.log("FormData Before sending HTTPRequest " +formData["c_name"]);
+  return this.httpClient.post<any>(this.baseUrl + '/profilebasic.php', formData)
+    .pipe(
+      catchError((error: any) => {
+        console.error('Error occurred: ', error);
+        //console.log(profile_pic);
+        //console.log(formData);
+        return throwError(error);
+      }),
+      map((response: any) => {
+        console.log('Response received: ', response);
+        //alert(response);
+        return response;
+      })
+    ); 
+}
+
+updateminiprofile(profile_pic_file:any){
+  const formData: any = new FormData();
+  
+  console.log(profile_pic_file.value.profile_pic);
+  formData.append("profile_pic_file",profile_pic_file.value.profile_pic);
+  //formData.append("email","nikhilphadke38@gmail.com");
+  formData.append("email",this.getEmail());
+  //console.log(formData.data);
+return this.httpClient.post<any>(this.baseUrl + '/updateuserprofilepicture.php', formData)
+.pipe(
+  catchError((error: any) => {
+    console.error('Error occurred: ', error);
+    return throwError(error);
+  }),
+  map((response: any) => {
+    console.log('Response received: ', response);
+    return response;
+  })
+);
+}
+
+getStudentProfileImage(){
+  const formData: any = new FormData();
+  formData.append("email",this.getEmail());
+  return this.httpClient.post<any>(this.baseUrl + '/updateuserprofilepicture.php', formData)
+.pipe(
+  catchError((error: any) => {
+    console.error('Error occurred: ', error);
+    return throwError(error);
+  }),
+  map((response: any) => {
+    console.log('Response received: ', response);
+    return response;
+  })
+); 
+}
+
 // getsinglecompanydetails(company_id:any) {
 //   //console.log(this.baseUrl+'/trash.php?id='+id);
 //   return this.httpClient.get<Companydetails[]>(this.baseUrl+'/singlecompanyview.php?id='+company_id);

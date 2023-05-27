@@ -4,6 +4,73 @@
 	 margin: 0;
 	 padding: 0;
 }
+.nav {
+  background-color: #003559;
+  color: #E4C9B0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav .navbar-nav mr-auto {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+
+
+.nav li {
+  margin-right: 20px;
+}
+.nav .nav-item{
+    margin-right: 20px;
+}
+.nav a {
+  color: #E4C9B0;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.nav button {
+  color: #E4C9B0;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.nav .navbar-brand {
+    color: #E4C9B0;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+  }
+.nav .nav-link{
+    color: #E4C9B0;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.nav .nav-link:hover{
+    background-color: #809BCE;
+}
+
+.nav a:hover {
+  background-color: #809BCE;
+}
  .mainform {
 	 align-items: center;
 	 background: #fffdfc;

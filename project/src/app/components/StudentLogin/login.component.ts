@@ -26,10 +26,12 @@ export class LoginComponent implements OnInit {
   .pipe(first())
   .subscribe(
   data => {
-  //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/studentdashboard';
-  this.router.navigate(['/studentdashboard']);
+  const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/studentdashboard';
+  //this.router.navigate(['/studentdashboard']);
+  window.location.href = redirect;
   },
   error => {
+    alert("User name or password is incorrect")
   });
   }
   get Email() { return this.angForm.get('stud_email') as FormControl; }
