@@ -1,7 +1,16 @@
 <body>
   <section class="et-hero-tabs">
-    <h1>ALUMNI CONNECT</h1>
-    <h3>Student Dashboard</h3>
+    <nav class="nav"></nav>
+    <a  routerLink="home" routerLinkActive="active"><img src="./assets/images/spit.png"></a>
+      <ul>
+        <li><a *ngIf='loginbtn' routerLink="home" routerLinkActive="active">Alumni Connect</a></li>
+        <li><a *ngIf='loginbtn' routerLink="login" routerLinkActive="active">Login</a></li>
+        <li class="nav-item"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()"><i class="icon ion-power"></i> Not {{logged_in_username}}, logout?</button></li>
+      </ul>
+    </nav>
+    <!-- <h1>ALUMNI CONNECT</h1>
+    <h3>Student Dashboard</h3> -->
+
     <div class="et-hero-tabs-container">
       <a class="et-hero-tab" href="#tab-lookforjob">Look for Job</a>
       <a class="et-hero-tab" href="#tab-postjobs">Post Jobs</a>

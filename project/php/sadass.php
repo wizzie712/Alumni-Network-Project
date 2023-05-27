@@ -41,7 +41,7 @@ if($image_file_type != "jpg" && $image_file_type != "jpeg" && $image_file_type !
     $status = "failed";
     $uploadok = 0;
 }
-$required = array("sp_name","sp_email","sp_dob","sp_designation","sp_company","sp_linkedin","sp_mobile","sp_address","sp_about");
+$required = array("sp_name","sp_email","sp_dob","sp_designation","sp_company","sp_linkedin","sp_mobile","sp_address","sp_about","sp_profile_image");
 $msg = "unknown error";
 $status = "failed";
 $status="success";
@@ -66,8 +66,8 @@ else{
         $sp_mobile = $_POST["sp_mobile"];
         $sp_address = $_POST["sp_address"];
         $sp_about = $_POST["sp_about"];
-        // $sp_profile_image = "http://localhost/project/uploaded_profile_pic/".$profile_pic_name;   
-    $sql = "INSERT INTO stud_profile(sp_name,sp_email,sp_dob,sp_designation,sp_company,sp_linkedin,sp_mobile,sp_address,sp_about) values('$sp_name','$sp_email','$sp_dob','$sp_designation','$sp_company','$sp_linkedin','$sp_mobile','$sp_address','$sp_about')";
+        $sp_profile_image = "http://localhost/project/uploaded_profile_pic/".$profile_pic_name;   
+    $sql = "INSERT INTO stud_profile(sp_name,sp_email,sp_dob,sp_designation,sp_company,sp_linkedin,sp_mobile,sp_address,sp_about,sp_profile_image) values('$sp_name','$sp_email','$sp_dob','$sp_designation','$sp_company','$sp_linkedin','$sp_mobile','$sp_address','$sp_about','$sp_profile_image')";
 
         if(mysqli_query($mysqli, $sql)){
             //$msg = $c_suggestions;
