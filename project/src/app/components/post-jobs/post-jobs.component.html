@@ -43,7 +43,7 @@
               </div>
               <div class="right-container">
                 <header>
-                  <h1>Celebrate endings - for they precede new beginnings. </h1><br>
+                  <h2>Job Details </h2><br>
                   <div class="set">
                     <div class="pets-name">
                       <label for="pets-name">Company Name </label>
@@ -69,7 +69,9 @@
                       <input id="pets-name" placeholder="Location" type="text" formControlName="c_location">
                     </div>
                   </div>
+
                   <div class="pets-weight">
+                    <div class="experience">
                     <label for="pet-weight-0-25">Experience</label>
                     <div class="radio-container">
                       <input id="pet-weight-0-25" name="c_experience" type="radio" value="0-2" formControlName="c_experience">
@@ -81,10 +83,12 @@
                       <input id="pet-weight-100-plus" name="c_experience" type="radio" value="8+" formControlName="c_experience">
                       <label for="pet-weight-100-plus">8+ yrs</label>
                     </div>
+                    </div>
                   </div>
-                  <div class="set"> 
-                    <div class="pets-weights">
-                      <label for="pet-weights-0-25">Salary</label>
+
+                    <div class="pets-weight">
+                      <div class="salary">
+                    <label for="pet-weight-0-25">Salary</label>
                       <div class="radio-container">
                         <input id="pet-weights-0-25" name="c_salary" type="radio" value="5-8 Lpa" formControlName="c_salary">
                         <label for="pet-weights-0-25">5-8 LPA</label>
@@ -107,21 +111,24 @@
                       </select>
                     </div> -->
                   </div>
-                  <div class="pets-name">
-                    <label class="form-label" >Company Logo</label>
-                    <input class="form-control" type="file"  name="company_logo_file" id="formFile" (change)="uploadfile($event)">
+                  <div class="pets-weight">
+                    <div class="logo">
+                    <label for="pet-weight">Logo</label>
+                    <input class="form-control" type="file" name="company_logo_file" id="formFile" (change)="uploadfile($event)">
                   </div>
-                  <div class="pets-name">
-                    <label for="exampleFormControlTextarea1">Your Suggestions if any: </label>
+                  </div>
+                  <div class="pets-weight">
+                    <label for="pet-weight">Your Suggestions if any:</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="c_suggestions"></textarea>
                   </div>
 
-                </header>
-                <footer>
+
+                  <footer>
                   <div class="set">
                     <button id="next">Submit</button>
                   </div>
                 </footer>
+              </header>
               </div>
             </div>
           </div>
