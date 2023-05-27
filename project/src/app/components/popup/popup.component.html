@@ -1,0 +1,21 @@
+
+<div class="popup-container">
+  <form class="border p-3" [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
+  <div class="popup-content">
+    <div class="popup-header">
+
+      <h1 class="popup-heading">Add your experience!</h1>
+      <button class="close-button" (click)="closePopup()">&times;</button>
+
+    </div>
+
+    <div class="popup-body">
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" cols="80"></textarea>
+    </div>
+
+    <div class="popup-footer">
+      <button class="submit-button">Submit</button>
+    </div>
+  </div>
+</form>
+</div>

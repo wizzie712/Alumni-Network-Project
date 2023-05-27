@@ -28,6 +28,7 @@ import { FacultycrudlistComponent } from './components/facultycrudlist/facultycr
 import { AddfacultyComponent } from './components/addfaculty/addfaculty.component';
 import { EditfacultyComponent } from './components/editfaculty/editfaculty.component';
 import { FacultyDashboardComponent } from './components/faculty-dashboard/faculty-dashboard.component';
+import { PopupComponent } from './components/popup/popup.component';
 // import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @NgModule({
@@ -53,6 +54,7 @@ import { FacultyDashboardComponent } from './components/faculty-dashboard/facult
     AddfacultyComponent,
     EditfacultyComponent,
     FacultyDashboardComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
