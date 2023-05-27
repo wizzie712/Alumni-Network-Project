@@ -81,7 +81,7 @@
 	 font-family: 'Montserrat', sans-serif;
 	 font-size: 14px;
 	 font-weight: 400;
-	 height: 100vh;
+	 height: 120vh;
 	 justify-items: center;
 	 weight: 100vw;
 }
@@ -133,6 +133,10 @@
 	 display: grid;
 	 grid-template-areas: "." ".";
 	 width: 700px;
+   min-height: 120px;
+}
+h2 {
+  font-size: 30px;
 }
  .right-container h1:nth-of-type(1) {
 	 color: rgba(0, 0, 0, .8);
@@ -142,10 +146,13 @@
  .right-container .set {
 	 display: flex;
 	 justify-content: space-between;
+   background-color: #eee;
 	 margin: 10px 0;
 }
+
  .right-container input {
 	 border: 1px solid rgba(0, 0, 0, .1);
+   width: 50px;
 	 border-radius: 4px;
 	 height: 38px;
 	 line-height: 38px;
@@ -156,6 +163,7 @@
 }
  .right-container header {
 	 padding: 40px;
+   background-color: #eee;
 }
  .right-container label, .right-container input, .right-container .pets-photo {
 	 width: 176px;
@@ -189,7 +197,7 @@
 }
  .right-container footer {
 	 align-items: center;
-	 background: #fff;
+	 /* background: #fff; */
 	 display: grid;
 	 padding: 5px 40px;
 }
@@ -207,7 +215,7 @@
 	 border: 1px solid transparent;
 	 color: #fff;
 	 margin-left: 80%;
-   
+
 	 height: 120%;
 	 font-weight: bold;
 
@@ -217,8 +225,26 @@
 }
  .pets-name label, .pets-breed label, .pets-birthday label, .pets-gender label, .pets-spayed-neutered label, .pets-weight label {
 	 display: block;
+   text-align: left;
 	 margin-bottom: 5px;
+   margin-top: 15px;
 }
+.pets-weight, .pets-weights, .company, .suggestion{
+  margin-top: 10px;
+}
+.experience {
+  text-align: left;
+  margin-top: 20px;
+}
+.salary {
+  text-align: left;
+  margin-top: 5px;
+}
+/* .logo {
+  margin-top: 20px;
+  /* text-align: left;
+} */
+
  .radio-container {
 	 background: #fff;
 	 border: 1px solid rgba(0, 0, 0, .1);
@@ -283,19 +309,19 @@ a {
     background: #978d8d;
     text-align: center;
     padding: 0 2em;
-  }
-  .et-slide {
+  } */
+  /* .et-slide {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 00vh;
     position: relative;
     background: #eee;
     text-align: center;
     padding: 0 2em;
-  }
-  .et-slide h1 {
+  } */
+  /*.et-slide h1 {
         font-size: 2rem;
         margin: 0;
         letter-spacing: 1rem;
@@ -410,7 +436,7 @@ text-decoration: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* min-height: 120vh; */
   position: relative;
   background: #eee;
   text-align: center;
