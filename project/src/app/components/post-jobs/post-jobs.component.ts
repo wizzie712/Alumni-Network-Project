@@ -12,7 +12,9 @@ import { first } from 'rxjs';
 })
 export class PostJobsComponent implements OnInit{
 
-
+  loginbtn: boolean = false;
+  logoutbtn: boolean = false;
+  logged_in_username:any;
   stickyNavigation: StickyNavigation | undefined;
   angForm: FormGroup;
   constructor(private fb: FormBuilder,private router: Router,private renderer: Renderer2,private dataService: ApiService) {
@@ -36,7 +38,34 @@ export class PostJobsComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.dataService.getLoggedInName.subscribe(name => this.changeName(name));
+    if(this.dataService.isLoggedIn())
+    {
+    console.log("loggedin");
+    this.loginbtn=false;
+    this.logoutbtn=true
+    this.logged_in_username = this.dataService.getUsername();
+    //this.logged_in_username = "mohit";
+    console.log(this.logged_in_username);
+    }
+    else{
+      this.loginbtn=true;
+      this.logoutbtn=false
+  
+      }
+    
   }
+  private changeName(name: boolean): void {
+    this.logoutbtn = name;
+    this.loginbtn = !name;
+    }
+    logout()
+    {
+    this.dataService.deleteToken();
+    this.router.navigate(['/studentlogin']).then(()=>{
+      window.location.reload();
+    });
+    }
   uploadfile(event:any){
     const file =  event.target.files ? event.target.files[0] : '';
     //console.log(file); 
