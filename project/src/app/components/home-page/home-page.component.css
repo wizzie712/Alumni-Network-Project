@@ -141,9 +141,7 @@ header nav ul li a {
   color: #fff;
 }
 
-#features ul {
-  /* margin: 40px 0; */
-}
+
 #features ul li {
   width: 270px;
   padding-top: 140px;
@@ -299,9 +297,9 @@ footer {
   white-space:nowrap;
 }
 
-.rec:first-of-type {    /* For increasing performance 
-                       ID/Class should've been used. 
-                       For a small demo 
+.rec:first-of-type {    /* For increasing performance
+                       ID/Class should've been used.
+                       For a small demo
                        it's okaish for now */
   animation: showup 7s infinite;
 }
@@ -378,7 +376,7 @@ footer {
   /* display: flex;
   justify-content: center;
   align-items: center;*/
-  height: 120vh; 
+  height: 120vh;
   background: rgb(239, 236, 236, 0.684);
   width: 100%;
 }
@@ -398,7 +396,7 @@ footer {
   transition: 1s ease-in-out;
   transform-style: preserve-3d;
   margin: 2px;
-  
+
 }
 .scene .card:hover {
   transform: rotateY(0.5turn);
