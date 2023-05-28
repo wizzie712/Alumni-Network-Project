@@ -165,12 +165,12 @@
         <div class="contact">
             <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
             <p>Got questions, suggestions, or just want to say hello? Contact us and let's connect!</p>
-            <form action="mailto: anushka.salvi@spit.ac.in" method="post" enctype="text/plain">
+            <form action="contactus.php" method="POST">
               <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-              <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+              <input class="w3-input w3-section w3-border" type="email" placeholder="Email" required name="Email">
               <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-              <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
-              <button class="w3-button w3-black w3-section" type="submit">
+              <textarea name="body" placeholder="Type your message here..."></textarea>              
+              <button class="w3-button w3-black w3-section" type="submit" name="submit" value="submit">
                 <i class="fa fa-paper-plane"></i> SEND MESSAGE
               </button>
             </form>
