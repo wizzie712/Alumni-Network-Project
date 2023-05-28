@@ -8,11 +8,18 @@
 
   <body>
 
-
-    <div id="textbox">
+    <nav class="nav">
+      <!-- <a  routerLink="home" routerLinkActive="active"><img src="./assets/images/spitlogo.png"></a> -->
+        <ul>
+          <li><a *ngIf='logoutbtn' routerLink="" routerLinkActive="active">Alumni Connect</a></li>
+          <!-- <li><a *ngIf='loginbtn' routerLink="login" routerLinkActive="active">Login</a></li> -->
+          <li class="nav-item"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()"><i class="icon ion-power"></i>  {{logged_in_username}}, logout</button></li>
+        </ul>
+      </nav>
+    <!-- <div id="textbox">
       <p class="alignleft">ALUMNI CONNECT</p>
       <p class="alignright">Student Dashboard</p>
-    </div>
+    </div> -->
     <div style="clear: both;"></div>
     <section class="et-hero-tabs">
 
