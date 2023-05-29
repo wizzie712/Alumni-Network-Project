@@ -10,6 +10,7 @@ import StickyNavigation from './stickynavbar.component.js';
 })
 export class GuidanceComponent implements OnInit{
 
+  
 
   stickyNavigation: StickyNavigation | undefined;
 

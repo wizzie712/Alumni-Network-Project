@@ -30,29 +30,32 @@
       <a href="#" class="button-1" hidden>Get Started</a>
     </div>
   </div>
-</div>
+</div> 
 
 
 
 <div id="features">
   <div class="wrapper">
     <h3>Our Values</h3>
-      <ul>
+      <ul style="list-style-type:none">
           <li class="feature-1">
               <h4>Integrity</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis turpis ac libero interdum, id fringilla purus feugiat. Etiam malesuada mattis nibh at bibendum.</p>
+              <p>We value integrity, honesty, and strong moral principles. As an educational institution, our goal is to uplift students and help them achieve great heights. We take pride in maintaining consistent moral and ethical standards.</p>
           </li>
           <li class="feature-2">
               <h4>Excellance</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis turpis ac libero interdum, id fringilla purus feugiat. Etiam malesuada mattis nibh at bibendum.</p>
+              <p>We currently hold a position in the 101 to 150 bracket of the NIRF. This success is attributed to the dedicated 
+                efforts of the management and faculty members, who continuously strive for improvement and progress.</p>
           </li>
           <li class="feature-3">
               <h4>Social Sensitivity</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis turpis ac libero interdum, id fringilla purus feugiat. Etiam malesuada mattis nibh at bibendum.</p>
+              <p>Our new curriculum focuses on relevant education that can make a difference. The institution promotes values of social 
+                service through participation in social welfare schemes and collaborations with NGOs.</p>
           </li>
           <li class="feature-4">
             <h4>Globalization</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis turpis ac libero interdum, id fringilla purus feugiat. Etiam malesuada mattis nibh at bibendum.</p>
+            <p>believes in the concept of Vasudev Kutumbakam, considering the whole universe as our family. The institution continuously 
+              aims to enhance the quality of education without any discrimination in line with global trends and standards.</p>
         </li>
           <div class="clear"></div>
       </ul>
@@ -121,44 +124,74 @@
   <div class="wrapper">
       <article>
           <h3>Looking for a job?</h3>
-          <p>Looking for a job is like trying to find a needle in a haystack, except the needle is a job offer and the haystack is made of résumés. It's a journey filled with twists and turns, rejection and triumphs, and enough interviews to make your head spin. But with the right mindset, strategy, and a little bit of luck, you'll be able to navigate the job market and land your dream gig. So put on your detective hat, polish your résumé, and get ready for the adventure of a lifetime.</p>
+          <p style="font-size: 16px; line-height: 25px;">Looking for a job is like trying to find a needle in a haystack, except the needle is a job offer and the haystack is made of résumés. It's a journey filled with twists and turns, rejection and triumphs, and enough interviews to make your head spin. But with the right mindset, strategy, and a little bit of luck, you'll be able to navigate the job market and land your dream gig. So put on your detective hat, polish your résumé, and get ready for the adventure of a lifetime.</p>
       </article>
   </div>
 </div>
 
 <div id="secondary-content">
-  <img id="lookjob" src="assets/images/applyJob.jpg" style="width: 300px; margin-left: -30%;"/>
+  
 
   <div class="wrapper">
-      <article style="background-image: url('images/article-image-1.jpg');">
+      
           <div class="overlay">
-              <h4>Secondary Content</h4>
-              <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod leo a nibh dignissim tincidunt nam.</small></p>
-              <a href="#" class="more-link">View more</a>
+              <!-- <h4>{{company.c_name}}</h4>
+              <tr>
+                <td>Job Role: </td>&nbsp;&nbsp;&nbsp;
+                <td> {{ company.c_designation}}</td>
+              </tr>
+              <tr>
+                <tr>
+                  <td>Location: </td>&nbsp;&nbsp;&nbsp;
+                  <td> {{ company.c_location}}</td>
+                </tr> -->
+                <tr>
+                  <div class="newjob">
+                  <td *ngFor="let company of companydetails.slice(0, 2); let i = index;" class="column-spacing">
+                    <div class="jobcard">
+                      <img src="{{company.company_logo_image_name}}" class="card-img-top" />
+                      <div class="card-body">
+                        <h5 class="card-title">{{company.c_name}}</h5>
+                        <p class="card-text">
+                          
+                            Job Role: &nbsp;&nbsp;&nbsp; {{ company.c_designation}}
+                            <br>
+                            Location: &nbsp;&nbsp;&nbsp; {{ company.c_location}}
+                            
+                        </p>
+                        <a routerLink="/studentlogin" class="applyNow">Apply Now</a>
+                      </div>
+                    </div>
+                  </td>
+                </div>
+                <td>
+                  <img id="lookjob" src="assets/images/applyJob.jpg" style="width: 400px; margin-left: 200px;">
+                  <a href="#" class="more-link" style="margin-left: 100px;" >View more</a>
+                </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <!-- <td><a href="#" class="more-link" >View more</a></td> -->
+                </tr>
+                
           </div>
-      </article>
-      <article style="background-image: url('images/article-image-2.jpg');">
-          <div class="overlay">
-              <h4>Secondary Content</h4>
-              <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod leo a nibh dignissim tincidunt nam.</small></p>
-              <a href="#" class="more-link">View more</a>
-          </div>
-      </article>
-
+      
 
       <div class="clear">
 
       </div>
+
+      <!-- ******************************* -->
+      
   </div>
 </div>
 
 <div id="cta">
   <div class="wrapper">
       <h3>Post a job?</h3>
-        <p>Ready to unleash the hounds of talent? Post a job and let the floodgates of awesomeness open!</p>
-        <p>Ready to join the "matchmaker" industry? Post a job and let the magic of professional matchmaking unfold!</p>
-        <p>Ready to unleash your job opportunity into the wild? Post it here and let the job-seekers come flocking!</p>
-      <a href="#" class="button-2">
+        <p style="font-size: 20px;">Ready to unleash your job opportunity into the wild? Post it here and let the job-seekers come flocking!</p>
+      <a routerLink ="/studentlogin" class="button-2">
         Lets Go!!
         <!-- <img src="assets/images/joblink.gif" style="width: 60%; height: 70%; float:right;" alt="Computer man" > -->
     </a>
@@ -175,7 +208,7 @@
               <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
               <input class="w3-input w3-section w3-border" type="email" placeholder="Email" required name="Email">
               <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-              <textarea name="body" placeholder="Type your message here..."></textarea>
+              <textarea name="body" placeholder="Type your message here..." rows="3" cols="81" style="padding-left: 5px;" ></textarea><br>
               <button class="w3-button w3-black w3-section" type="submit" name="submit" value="submit">
                 <i class="fa fa-paper-plane"></i> SEND MESSAGE
               </button>
@@ -195,34 +228,11 @@
 </div>
 
 
-<footer>
+<footer style="background-color: rgb(48, 47, 47);">
   <div class="wrapper">
-      <div id="footer-info">
-          <p>Copyright 2014 CompanyName. All rights reserved.</p>
-          <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
-      </div>
-      <div id="footer-links">
-          <ul>
-              <li><h5>Company</h5></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Meet The Team</a></li>
-              <li><a href="#">What We Do</a></li>
-              <li><a href="#">Careers</a></li>
-          </ul>
-          <ul>
-              <li><h5>Company</h5></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Meet The Team</a></li>
-              <li><a href="#">What We Do</a></li>
-              <li><a href="#">Careers</a></li>
-          </ul>
-          <ul>
-              <li><h5>Company</h5></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Meet The Team</a></li>
-              <li><a href="#">What We Do</a></li>
-              <li><a href="#">Careers</a></li>
-          </ul>
+      <div id="footer-info" style="color: antiquewhite;" >
+          <p >Copyright 2023 Sardar Patel Institute Of Technology. All rights reserved.</p>
+          <!-- <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p> -->
       </div>
       <div class="clear"></div>
   </div>

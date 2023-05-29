@@ -12,6 +12,10 @@
           <!-- <li class="nav-item"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()"><i class="icon ion-power"></i>  {{logged_in_username}}, logout</button></li>
         </ul> -->
       </nav>
+      <div id="textbox">
+        <!-- <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
+        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i> Hey {{logged_in_username}}, logout</button></p> -->
+      </div>
 
     <!-- <div id="textbox">
       <p class="alignleft">ALUMNI CONNECT</p>
@@ -83,7 +87,7 @@
           </a></button> -->
 
           <a (click)="openPopup()" *ngIf="!showPopup" class="float">
-            <ion-icon name="add-circle-outline" style="color: aliceblue; font-size: 45px; padding-top: 3px;"></ion-icon>
+            <ion-icon name="add-circle-outline" style="color: aliceblue; font-size: 60px; padding-top: 2px;"></ion-icon>
 
             </a>
 
