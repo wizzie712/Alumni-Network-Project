@@ -53,7 +53,10 @@
             <div class="card-block text-center text-white">
                 <div class="m-b-25">
                     <img src="assets/images/bnc.jpg" class="img-radius" alt="User-Profile-Image">
-                </div>
+                    <br><br>
+                    <input type="file" name="profilePhoto" id="profilePhoto">
+
+                  </div>
                 <h6 class="f-w-600">Hembo Tingor</h6><br>
                 <p class="role">Web Designer</p>
                 <!-- <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> -->
@@ -62,29 +65,36 @@
         <div class="col-sm-8">
             <div class="card-block"><br>
                 <h6 class="m-b-20 p-b-5 b-b-default f-w-600">
-                  Personal Information  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i routerLink="/studentprofile" class='fa fa-edit edit' title="Edit" id="edit" style="font-size: 33px;"></i>
+                  Personal Information  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i (click)="enableInput()" class='fa fa-edit edit' title="Edit" id="edit" style="font-size: 33px;"></i>
                 </h6>
+                <h3>Click on the edit button to start editing!</h3>
                 <div class="row">
                 <div class="col-sm-6">
                         <p class="m-b-10 f-w-600">Name</p>
-                        <h6 class="text-muted f-w-400">Anushka Salvi</h6>
+                        <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="name" name="name" placeholder="Name"> </h6>
                     </div>
                     <div class="col-sm-6">
                       <p class="m-b-10 f-w-600">Email</p>
-                      <h6 class="text-muted f-w-400">rntng@gmail.com</h6>
+                      <h6 class="text-muted f-w-400"><input type="email" [disabled]="isInputDisabled" id="email" name="email" placeholder="Email-Id"> </h6>
                   </div>
                   </div><br>
                 <div class="row">
                     <div class="col-sm-6">
-                        <p class="m-b-10 f-w-600">Location</p>
-                        <h6 class="text-muted f-w-400">State,Country</h6>
+                        <p class="m-b-10 f-w-600">Phone</p>
+                        <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="dob" name="dob" placeholder="Mobile No"></h6>
                     </div>
                     <div class="col-sm-6">
-                        <p class="m-b-10 f-w-600">Phone</p>
-                        <h6 class="text-muted f-w-400">98979989898</h6>
-                    </div>
+                      <p class="m-b-10 f-w-600">Date of Birth</p>
+                      <h6 class="text-muted f-w-400"><input type="date" [disabled]="isInputDisabled" id="dob" name="dob"></h6>
+                  </div>
+                </div><br>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Location</p>
+                    <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="email" name="email" placeholder="State,Country"></h6>
                 </div>
+              </div>
 
                 <br><br><br>
 
@@ -92,11 +102,11 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <p class="m-b-10 f-w-600">Job Role</p>
-                        <h6 class="text-muted f-w-400">Sam Disuja</h6>
+                        <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="designation" name="designation" placeholder="Job Role"></h6>
                     </div>
                     <div class="col-sm-6">
                         <p class="m-b-10 f-w-600">Company</p>
-                        <h6 class="text-muted f-w-400">Dinoter husainm</h6>
+                        <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="company" name="company" placeholder="Company Name"></h6>
                     </div>
                 </div>
 
@@ -109,7 +119,7 @@
                       </label>
                       </p>
                         
-                        <h6 class="text-muted f-w-400">Sam Disuja</h6>
+                        <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="linkedin" name="linkedin" placeholder="Linked-Id"></h6>
                     </div>
                     <div class="col-sm-6">
                         <p class="m-b-10 f-w-600">

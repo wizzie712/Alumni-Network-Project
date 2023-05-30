@@ -64,6 +64,11 @@
       </ul>
   </div>
 </div>
+
+<br><br><br>
+
+<!-- images tile -->
+
 <div class="images">
   <h3> Gallery </h3> <br><br>
   <div class="scene">
@@ -140,48 +145,47 @@
 
   <div class="wrapper">
       
-          <div class="overlay">
-              <!-- <h4>{{company.c_name}}</h4>
-              <tr>
-                <td>Job Role: </td>&nbsp;&nbsp;&nbsp;
-                <td> {{ company.c_designation}}</td>
-              </tr>
-              <tr>
-                <tr>
-                  <td>Location: </td>&nbsp;&nbsp;&nbsp;
-                  <td> {{ company.c_location}}</td>
-                </tr> -->
-                <tr>
-                  <div class="newjob">
-                  <td *ngFor="let company of companydetails.slice(0, 2); let i = index;" class="column-spacing">
-                    <div class="jobcard">
-                      <img src="{{company.company_logo_image_name}}" class="card-img-top" />
-                      <div class="card-body">
-                        <h5 class="card-title">{{company.c_name}}</h5>
-                        <p class="card-text">
-                          
-                            Job Role: &nbsp;&nbsp;&nbsp; {{ company.c_designation}}
-                            <br>
-                            Location: &nbsp;&nbsp;&nbsp; {{ company.c_location}}
-                            
-                        </p>
-                        <a routerLink="/studentlogin" class="applyNow">Apply Now</a>
-                      </div>
-                    </div>
-                  </td>
+    <div class="overlay">
+          <tr>
+            <div class="newjob">
+            <td *ngFor="let company of companydetails.slice(0, 2); let i = index;" class="column-spacing">
+              <div class="jobcard">
+                <img src="{{company.company_logo_image_name}}" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">{{company.c_name}}</h5>
+                  <p class="card-text">
+                    
+                      Job Role: &nbsp;&nbsp;&nbsp; {{ company.c_designation}}
+                      <br>
+                      Location: &nbsp;&nbsp;&nbsp; {{ company.c_location}}
+                      
+                  </p>
+                  <a routerLink="/studentlogin" class="applyNow">Apply Now</a>
                 </div>
-                <td>
-                  <img id="lookjob" src="assets/images/applyJob.jpg" style="width: 400px; margin-left: 200px;">
-                  <a href="#" class="more-link" style="margin-left: 100px;" >View more</a>
-                </td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <!-- <td><a href="#" class="more-link" >View more</a></td> -->
-                </tr>
-                
+              </div>
+            </td>
           </div>
+          <td>
+            <!-- <img id="lookjob" src="assets/images/applyJob.jpg" style="width: 400px; margin-left: 200px;">
+            <a href="#" class="more-link" style="margin-left: 100px;" >View more</a> -->
+            <div style="position: relative;">
+              <img src="assets/images/applyJob.jpg" alt="Image" style="width: 80%; height: 75%;"><br>
+              <a href="#" class="read-more" style="border: 2px solid dark gray;">
+                Read more <span class="sr-only">about this is some title</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="10 10 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <!-- <td><a href="#" class="more-link" >View more</a></td> -->
+          </tr>
+          
+    </div>
       
 
       <div class="clear">
