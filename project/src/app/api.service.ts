@@ -240,5 +240,8 @@ getStudentProfileDetails(){
 ); 
 }
 
+getTestimonials(){
+  return this.httpClient.get<Users[]>(this.baseUrl+'/getTestimonials.php');
+}
 
 }
