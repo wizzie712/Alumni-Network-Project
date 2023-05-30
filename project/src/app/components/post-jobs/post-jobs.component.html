@@ -4,7 +4,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <body>
     <!-- <nav class="nav">
-       <a  routerLink="home" routerLinkActive="active"><img src="./assets/images/spitlogo.png"></a> 
+       <a  routerLink="home" routerLinkActive="active"><img src="./assets/images/spitlogo.png"></a>
         <ul>
           <li><a *ngIf='logoutbtn' routerLink="" routerLinkActive="active">Alumni Connect</a></li>
           <li><a *ngIf='loginbtn' routerLink="login" routerLinkActive="active">Login</a></li>
@@ -14,7 +14,7 @@
 
       <div id="textbox">
         <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
-        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i> 
+        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
           Hey {{logged_in_username}}, logout
         </button></p>
       </div>
@@ -99,6 +99,8 @@
                       <div class="salary">
                     <label for="pet-weight-0-25">Salary</label>
                       <div class="radio-container">
+                        <input id="pet-weights" name="c_salary" type="radio" value="N/A" formControlName="c_salary">
+                        <label for="pet-weights">N/A</label>
                         <input id="pet-weights-0-25" name="c_salary" type="radio" value="5-8 Lpa" formControlName="c_salary">
                         <label for="pet-weights-0-25">5-8 LPA</label>
                         <input id="pet-weights-25-50" name="c_salary" type="radio" value="9-12 Lpa" formControlName="c_salary">
