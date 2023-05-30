@@ -8,9 +8,13 @@
 </head>
 
 <body>
+    <div id="textbox">
+        <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
+        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i> 
+          Hey {{logged_in_username}}, logout
+        </button></p>
+      </div>
 
-  <h1>Alumni Connect</h1>
-  <h3>Edit Profile</h3>
   <button class="home" routerLink="/studentdashboardprofile"><ion-icon name="arrow-back-circle-outline"></ion-icon></button>
     <div class="wrapper">
         <div class="container">
@@ -20,21 +24,17 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex flex-column align-items-center text-center">
-                                  <a href="https://example.com">
-                                    <!-- <input type="file" id="actual-btn"/> -->
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Click me!" /> -->
-
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
-                                        class="rounded-circle p-1 bg-primary" width="110">
-                                      </a>
-                                      <input type="file" id="actual-btn"/>
-                                    <!-- <div class="mt-3">
-                                        <h4>John Doe</h4>
-                                        <p class="text-secondary mb-1">Full Stack Developer</p>
-                                      <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                                        <button class="btn btn-primary">Follow</button>
-                                        <button class="btn btn-outline-primary">Message</button>
-                                    </div> -->
+                                        <img src="{{profile_pic_url}}" onerror="if (this.src != 'error.jpg') this.src = 'https://bootdey.com/img/Content/avatar/avatar6.png';" 
+                                        alt="add alternative text here"class="rounded-circle p-1 bg-primary" width="110">
+                                        <br><h6 class="mb-0">Edit Profile picture here:</h6><br>
+                                        <input class="form-control" type="file"  name="profile_pic" id="formFile" (change)="uploadfile($event)">
+                                    <div class="mt-3">
+                                        <!-- <h4><input class="student_name_profile" type="text" value="{{student_name }}" #studentname></h4>
+                                        <h6><input class="student_name_profile" type="text" value="{{student_email }}" disabled></h6> -->
+                                                                                   
+                                    </div>
+                                    <!-- <input type="submit" id="mini-profile-save" class="btn btn-primary px-4" value="Save Changes" onsubmit="mini_profile_save(studentname,studentdescriptiom)">  -->
+                                    <button id="mini-profile-save" class="btn btn-primary px-4" (click)="mini_profile_save()"> Save Changes</button>
                                 </div>
                                 <hr class="my-4">
                                 <!-- <ul class="list-group list-group-flush">
@@ -114,7 +114,7 @@
                                         <h6 class="mb-0">Full Name</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" required class="form-control input-field" id="name" formControlName="stud_name" value="John Doe">
+                                        <input type="text" required class="form-control input-field" id="name" formControlName="sp_name">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -122,7 +122,7 @@
                                         <h6 class="mb-0">Email</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" required class="form-control input-field" id="email" formControlName="stud_email" value="john@example.com">
+                                        <input type="text" required class="form-control input-field" id="email" formControlName="sp_email" [readonly]="true" >
                                     </div>
                                 </div>
                                 <div class="row mb-3">
