@@ -29,6 +29,8 @@ import { AddfacultyComponent } from './components/addfaculty/addfaculty.componen
 import { EditfacultyComponent } from './components/editfaculty/editfaculty.component';
 import { FacultyDashboardComponent } from './components/faculty-dashboard/faculty-dashboard.component';
 import { PopupComponent } from './components/popup/popup.component';
+import { OurstudentsComponent } from './components/ourstudents/ourstudents.component';
+import { OurfacultyComponent } from './components/ourfaculty/ourfaculty.component';
 // import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @NgModule({
@@ -55,6 +57,8 @@ import { PopupComponent } from './components/popup/popup.component';
     EditfacultyComponent,
     FacultyDashboardComponent,
     PopupComponent,
+    OurstudentsComponent,
+    OurfacultyComponent,
   ],
   imports: [
     BrowserModule,
