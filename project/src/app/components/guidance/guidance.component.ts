@@ -14,7 +14,7 @@ export class GuidanceComponent implements OnInit{
   loginbtn: boolean = false;
   logoutbtn: boolean = false;
   logged_in_username:any;
-  
+  testimonials: any;
 
   stickyNavigation: StickyNavigation | undefined;
 
@@ -35,7 +35,17 @@ export class GuidanceComponent implements OnInit{
       this.logoutbtn=false
   
       }
-  }
+      
+      this.dataService.getTestimonials().subscribe(
+        (testimonials: any[]) => {
+          this.testimonials = testimonials;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+      
   private changeName(name: boolean): void {
     this.logoutbtn = name;
     this.loginbtn = !name;
@@ -47,6 +57,8 @@ export class GuidanceComponent implements OnInit{
       window.location.reload();
     });
     }
+
+    
 
 
   ngAfterViewInit() {
