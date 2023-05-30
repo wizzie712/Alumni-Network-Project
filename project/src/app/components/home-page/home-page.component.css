@@ -108,7 +108,11 @@ header nav ul li a {
   margin-right: 20px;
 }
 .vid{
-  margin-bottom: 5%;
+  margin-bottom: 15%;
+  margin-left: -13%;
+  width: 1200px;
+  height: 900px;
+  /* background-color: red; */
 }
 
 #hero-image {
