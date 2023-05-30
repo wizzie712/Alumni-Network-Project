@@ -15,6 +15,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  font-size: 2rem;
 }
 
 .nav ul {
@@ -621,10 +622,14 @@ figure {
 }
 
 article img {
-  max-width: 100%;
+  width: 300px;
+  height: 150px;
   transform-origin: center;
   transform: scale(var(--img-scale));
   transition: transform 0.4s ease-in-out;
+  border-radius: 50%;
+  margin-left: 16px;
+  margin-top: 15px;
 }
 
 .article-body {

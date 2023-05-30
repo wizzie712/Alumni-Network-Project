@@ -8,18 +8,13 @@
 </head>
 
 <body>
-    <nav class="nav">
-        <!-- <a  routerLink="home" routerLinkActive="active"><img src="./assets/images/spitlogo.png"></a> -->
-          <ul>
-            <li><a *ngIf='logoutbtn' routerLink="" routerLinkActive="active">Alumni Connect</a></li>
-            <!-- <li><a *ngIf='loginbtn' routerLink="login" routerLinkActive="active">Login</a></li> -->
-            <li class="nav-item"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()"><i class="icon ion-power"></i>  {{logged_in_username}}, logout</button></li>
-          </ul>
-        </nav>
-    
-<!-- 
-  <h1>Alumni Connect</h1>
-  <h3>Edit Profile</h3> -->
+    <div id="textbox">
+        <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
+        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i> 
+          Hey {{logged_in_username}}, logout
+        </button></p>
+      </div>
+
   <button class="home" routerLink="/studentdashboardprofile"><ion-icon name="arrow-back-circle-outline"></ion-icon></button>
     <div class="wrapper">
         <div class="container">
@@ -29,7 +24,7 @@
                         <div class="card" id="mini-profile">
                             <div class="card-body">
                                 <div class="d-flex flex-column align-items-center text-center">
-                                        <img src="{{profile_pic}}" onerror="if (this.src != 'error.jpg') this.src = 'https://bootdey.com/img/Content/avatar/avatar6.png';" 
+                                        <img src="{{profile_pic_url}}" onerror="if (this.src != 'error.jpg') this.src = 'https://bootdey.com/img/Content/avatar/avatar6.png';" 
                                         alt="add alternative text here"class="rounded-circle p-1 bg-primary" width="110">
                                         <br><h6 class="mb-0">Edit Profile picture here:</h6><br>
                                         <input class="form-control" type="file"  name="profile_pic" id="formFile" (change)="uploadfile($event)">
@@ -55,7 +50,7 @@
                                         <h6 class="mb-0">Full Name</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" required class="form-control input-field" id="name" formControlName="sp_name" >
+                                        <input type="text" required class="form-control input-field" id="name" formControlName="sp_name">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -63,7 +58,7 @@
                                         <h6 class="mb-0">Email</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" required class="form-control input-field" id="email" formControlName="sp_email" >
+                                        <input type="text" required class="form-control input-field" id="email" formControlName="sp_email" [readonly]="true" >
                                     </div>
                                 </div>
                                 <div class="row mb-3">

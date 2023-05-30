@@ -4,15 +4,14 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <body>
 
-    <nav class="nav">
-      <!-- <a  routerLink="home" routerLinkActive="active"><img src="./assets/images/spitlogo.png"></a> -->
-        <ul>
-          <li><a *ngIf='logoutbtn' routerLink="" routerLinkActive="active">Alumni Connect</a></li>
-          <!-- <li><a *ngIf='loginbtn' routerLink="login" routerLinkActive="active">Login</a></li> -->
-          <li class="nav-item"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()"><i class="icon ion-power"></i>  {{logged_in_username}}, logout</button></li>
-        </ul>
-      </nav>
-  
+    
+    <div id="textbox">
+        <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
+        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i> 
+          Hey {{logged_in_username}}, logout
+        </button></p>
+      </div>
+
     <!-- <div id="textbox">
       <p class="alignleft">ALUMNI CONNECT</p>
       <p class="alignright">Student Dashboard</p> -->
@@ -34,54 +33,64 @@
 
 
       <section class="et-slide" id="tab-guidance" style="">
-        <main class="l-card">
-          <section class="l-card__text">
-            <p>
-              This is a comment card appearing above a dotted background, and that's really cool!
-            </p>
-          </section>
-          <section class="l-card__user">
-            <div class="l-card__userImage">
-              <img src="https://avatars.githubusercontent.com/u/20525486?v=4" alt="Naruto">
-            </div>
-            <div class="l-card__userInfo">
-              <span>Naruto Uzumaki</span>
-              <span>Seventh Hokage</span>
-            </div>
-          </section>
-        </main>
-        <main class="l-card">
-          <section class="l-card__text">
-            <p>
-              This is a comment card appearing above a dotted background, and that's really cool!
-            </p>
-          </section>
-          <section class="l-card__user">
-            <div class="l-card__userImage">
-              <img src="https://avatars.githubusercontent.com/u/20525486?v=4" alt="Naruto">
-            </div>
-            <div class="l-card__userInfo">
-              <span>Naruto Uzumaki</span>
-              <span>Seventh Hokage</span>
-            </div>
-          </section>
-        </main>
-        <main class="l-card">
-          <section class="l-card__text">
-            <p>
-              This is a comment card appearing above a dotted background, and that's really cool!iudciusdbfclswgfwgiuvghbrvtefiu;chsnalkzm8yefw iojckmlxtyfwhdjkncxt78fdjcxn 4yfhdnm ,5824riuhejfknad,m cx56t4rgyhbvdjn rt4yfehjnckm xrueiofjdklcm, efygdbkzc rqkea;ls,cxytiurhjfkndvc,m nbhfgrytyruhfdkjnm,sx.z,a;lskwie8u4rhjfdsnm, a.;wpqo04utirhejkfdsnm,a.
-            </p>
-          </section>
-          <section class="l-card__user">
-            <div class="l-card__userImage">
-              <img src="https://avatars.githubusercontent.com/u/20525486?v=4" alt="Naruto">
-            </div>
-            <div class="l-card__userInfo">
-              <span>Naruto Uzumaki</span>
-              <span>Seventh Hokage</span>
-            </div>
-          </section>
-        </main>
+
+        <div id="testimonials">
+          <ul>
+            <li>
+              <p class="testimonial-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat iaculis tellus, nec sagittis ante auctor sed. Nullam sit amet augue sed sapien commodo imperdiet. Sed id nunc placerat, volutpat tortor et, iaculis turpis.</p>
+              <div class="testimonial-profile">
+                <div class="img-cover"></div>
+                <svg><circle></circle></svg>
+                <img src="https://source.unsplash.com/128x128/?boy,face" alt="">
+                <span>Name Here</span>
+                <br><small data-social="facebook">Feb 2, 2017</small>
+              </div>
+            </li><li>
+              <p class="testimonial-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat iaculis tellus, nec sagittis ante auctor sed.</p>
+              <div class="testimonial-profile">
+                <div class="img-cover"></div>
+                <svg><circle></circle></svg>
+                <img src="https://source.unsplash.com/128x128/?girl,face" alt="">
+                <span>Name Here</span>
+                <br><small data-social="twitter">May 5, 2017</small>
+              </div>
+            </li><li>
+              <p class="testimonial-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat iaculis tellus, nec sagittis ante auctor sed. Nullam sit amet augue sed sapien commodo imperdiet.</p>
+              <div class="testimonial-profile">
+                <div class="img-cover"></div>
+                <svg><circle></circle></svg>
+                <img src="https://source.unsplash.com/128x128/?man,face" alt="">
+                <span>Name Here</span>
+                <br><small data-social="google">Jun 17, 2017</small>
+              </div>
+            </li><li>
+              <p class="testimonial-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat iaculis tellus, nec sagittis ante auctor sed. Nullam sit amet augue sed sapien commodo imperdiet. Sed id nunc placerat.</p>
+              <div class="testimonial-profile">
+                <div class="img-cover"></div>
+                <svg><circle></circle></svg>
+                <img src="https://source.unsplash.com/128x128/?woman,face" alt="">
+                <span>Name Here</span>
+                <br><small data-social="facebook">Jan 11, 2018</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- <button (click)="openPopup()" *ngIf="!showPopup">
+          <a class="float">
+          <i class="fa fa-plus my-float"></i>
+          </a></button> -->
+
+          <a (click)="openPopup()" *ngIf="!showPopup" class="float">
+            <ion-icon name="add-circle-outline" style="color: aliceblue; font-size: 60px; padding-top: 2px;"></ion-icon>
+
+            </a>
+
+        <!-- Add the popup component -->
+        <app-popup *ngIf="showPopup" (closed)="closePopup()"></app-popup>
+
+
+
       </section>
 
     </main>
@@ -89,6 +98,6 @@
 
 
 
-    
+
 
   </body>

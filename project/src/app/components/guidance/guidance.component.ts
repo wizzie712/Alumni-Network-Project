@@ -1,9 +1,9 @@
 import { Component,OnInit,Renderer2 } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import StickyNavigation from './stickynavbar.component.js';
 import { ApiService } from 'src/app/api.service';
-import { HttpClient } from '@angular/common/http';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-guidance',
@@ -14,13 +14,13 @@ export class GuidanceComponent implements OnInit{
   loginbtn: boolean = false;
   logoutbtn: boolean = false;
   logged_in_username:any;
+  
 
   stickyNavigation: StickyNavigation | undefined;
 
-  constructor(private router: Router,private renderer: Renderer2,private dataService: ApiService,private http: HttpClient) {}
+  constructor(private fb: FormBuilder,private router: Router,private renderer: Renderer2,private dataService: ApiService) {}
   ngOnInit(): void {
-  
-  this.dataService.getLoggedInName.subscribe(name => this.changeName(name));
+    this.dataService.getLoggedInName.subscribe(name => this.changeName(name));
     if(this.dataService.isLoggedIn())
     {
     console.log("loggedin");
@@ -35,19 +35,36 @@ export class GuidanceComponent implements OnInit{
       this.logoutbtn=false
   
       }
+  }
+  private changeName(name: boolean): void {
+    this.logoutbtn = name;
+    this.loginbtn = !name;
     }
-  
-      private changeName(name: boolean): void {
-        this.logoutbtn = name;
-        this.loginbtn = !name;
-        }
-        logout()
-        {
-        this.dataService.deleteToken();
-        this.router.navigate(['/studentlogin']).then(()=>{
-          window.location.reload();
-        });
-        }
-      
+    logout()
+    {
+    this.dataService.deleteToken();
+    this.router.navigate(['/studentlogin']).then(()=>{
+      window.location.reload();
+    });
+    }
+
+
+  ngAfterViewInit() {
+    this.stickyNavigation = new StickyNavigation();
+
+}
+
+
+
+showPopup = false;
+
+  openPopup() {
+    this.showPopup = true;
+  }
+
+  closePopup() {
+    this.showPopup = false;
+  }
+
 }
 

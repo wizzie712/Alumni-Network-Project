@@ -12,6 +12,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class StudentProfileComponent implements OnInit {
   profile_pic:any;
+  profile_pic_url:any;
   loginbtn: boolean = false;
   logoutbtn: boolean = false;
   logged_in_username:any;
@@ -39,15 +40,29 @@ export class StudentProfileComponent implements OnInit {
     if(this.dataService.isLoggedIn())
     {
     console.log("loggedin");
-    this.dataService.getStudentProfileImage().subscribe(
+    
+    this.dataService.getStudentProfileDetails().subscribe(
       (result:any)=>{
         console.log(result.data);
-        this.profile_pic = result.data;
+        //this is for profile pic
+       this.profile_pic_url=result.data['0'].sp_profile_image;
+       //this.profile_pic_url='https://yt3.googleusercontent.com/MjEWybBlBXVZigapX__tR_PyJRx-_OGwEZfWZKyS_jJrlgeeF67h69wN2HOhFohiDA7YNeIG=s900-c-k-c0x00ffffff-no-rj';
+        //this is for the form
+        this.angForm.controls['sp_name'].setValue(result.data['0'].stud_name);
+        this.angForm.controls['sp_dob'].setValue(result.data['0'].sp_dob);
+        this.angForm.controls['sp_designation'].setValue(result.data['0'].sp_designation);
+        this.angForm.controls['sp_company'].setValue(result.data['0'].sp_company);
+        this.angForm.controls['sp_linkedin'].setValue(result.data['0'].sp_linkedin);
+        this.angForm.controls['sp_mobile'].setValue(result.data['0'].sp_mobile);
+        this.angForm.controls['sp_address'].setValue(result.data['0'].sp_address);
+        this.angForm.controls['sp_about'].setValue(result.data['0'].sp_about);
+        //this.profile_pic = result.data;
       }
-    )  
+    )
     this.loginbtn=false;
     this.logoutbtn=true
     this.logged_in_username = this.dataService.getUsername();
+    this.angForm.controls['sp_email'].setValue(this.dataService.getEmail());
     //this.logged_in_username = "mohit";
     console.log(this.logged_in_username);
     }
@@ -98,23 +113,7 @@ export class StudentProfileComponent implements OnInit {
     });
 
   }
-  // profile_basic(form:FormGroup){
-  //   //alert(form.value.student_full_name);
-  //   //console.log(form.value);
-  //   this.dataService.insertstudentprofiledetails(form).pipe(first())
-  //   .subscribe(
-  //   data => {
-  //     if(data.status == 'fail'){
-  //       console.log(data.message);
-  //     }
-  //     else{
-  //       //this.router.navigate(['']);
-  //     }
-  //   },
-  //   error => {
-  //     alert("error while insterting basic profile "+error.message);
-  //   });
-  // }
+
   postdata(angForm1: { value: { sp_name:any, sp_email:any, sp_dob:any, sp_designation:any, sp_company:any, sp_linkedin:any, sp_mobile: any, sp_address:any,sp_about:any}; })
   {
   this.dataService.insertstudentprofiledetails(angForm1.value.sp_name,angForm1.value.sp_email,angForm1.value.sp_dob,angForm1.value. sp_designation,angForm1.value.sp_company,angForm1.value.sp_linkedin,angForm1.value.sp_mobile,angForm1.value.sp_address,angForm1.value.sp_about)
@@ -122,7 +121,7 @@ export class StudentProfileComponent implements OnInit {
   .subscribe(
   data => {
   //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/studentdashboard';
-  window.location.reload();
+  //window.location.reload();
   },
   error => {
   });
