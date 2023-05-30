@@ -223,8 +223,25 @@ getStudentProfileImage(){
 ); 
 }
 
-// getsinglecompanydetails(company_id:any) {
-//   //console.log(this.baseUrl+'/trash.php?id='+id);
-//   return this.httpClient.get<Companydetails[]>(this.baseUrl+'/singlecompanyview.php?id='+company_id);
-// }
+//this is for getting details from db in editprofile page
+getStudentProfileDetails(){
+  const formData: any = new FormData();
+  formData.append("email",this.getEmail());
+  return this.httpClient.post<any>(this.baseUrl + '/completeStudentProfile.php', formData)
+.pipe(
+  catchError((error: any) => {
+    console.error('Error occurred: ', error);
+    return throwError(error);
+  }),
+  map((response: any) => {
+    console.log('Response received: ', response);
+    return response;
+  })
+); 
+}
+
+getTestimonials(){
+  return this.httpClient.get<Users[]>(this.baseUrl+'/getTestimonials.php');
+}
+
 }

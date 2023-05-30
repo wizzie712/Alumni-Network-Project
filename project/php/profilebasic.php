@@ -14,21 +14,21 @@ $db_name = 'alumniconnect';
 $mysqli = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
-    die('Error : ('. mysqli_connect_errno() .') '. mysqli_connect_error());
+    die('Error: ('. mysqli_connect_errno() .') '. mysqli_connect_error());
 }
 
-$required = array("sp_name","sp_email","sp_dob","sp_designation","sp_company","sp_linkedin","sp_mobile","sp_address","sp_about");
+$required = array("sp_email", "sp_dob", "sp_designation", "sp_company", "sp_linkedin", "sp_mobile", "sp_address", "sp_about");
 $msg = "unknown error";
 $status = "success";
 
-foreach($required as $field){
-    if($_POST[$field] == ""){
+foreach ($required as $field) {
+    if ($_POST[$field] == "") {
         $status = "fail";
     }
 }
 
-if($status === "success") {
-    $sp_name = $_POST["sp_name"];
+if ($status === "success") {
+    $stud_name = $_POST["sp_name"];
     $sp_email = $_POST["sp_email"];
     $sp_dob = $_POST["sp_dob"];
     $sp_designation = $_POST["sp_designation"];
@@ -37,17 +37,42 @@ if($status === "success") {
     $sp_mobile = $_POST["sp_mobile"];
     $sp_address = $_POST["sp_address"];
     $sp_about = $_POST["sp_about"];
+    $sp_name = $_POST["sp_name"];
 
-    $sql = "INSERT INTO stud_profile(sp_name,sp_email,sp_dob,sp_designation,sp_company,sp_linkedin,sp_mobile,sp_address,sp_about) values('$sp_name','$sp_email','$sp_dob','$sp_designation','$sp_company','$sp_linkedin','$sp_mobile','$sp_address','$sp_about')";
-            
-    if(mysqli_query($mysqli, $sql)){
-        $msg = 'Record inserted or updated successfully';
-        $status = "success";
-    } else{
-        $msg = "Failed to insert or update record";
-        $status = "fail";
+    // Check if the record already exists with the same email
+    $existingRecordQuery = "SELECT * FROM stud_profile WHERE sp_email = '$sp_email'";
+    $existingRecordResult = mysqli_query($mysqli, $existingRecordQuery);
+
+    if (mysqli_num_rows($existingRecordResult) > 0) {
+        // Update the existing record
+        $updateQuery = "UPDATE stud_profile SET sp_dob = '$sp_dob', sp_designation = '$sp_designation', sp_company = '$sp_company', sp_linkedin = '$sp_linkedin', sp_mobile = '$sp_mobile', sp_address = '$sp_address', sp_about = '$sp_about' WHERE sp_email = '$sp_email'";
+        if (mysqli_query($mysqli, $updateQuery)) {
+            $msg = 'Record updated successfully';
+            $status = "success";
+
+            // Update sp_name in stud_register table
+            $updateNameQuery = "UPDATE stud_register SET stud_name = '$stud_name' WHERE stud_email = '$sp_email'";
+            if (mysqli_query($mysqli, $updateNameQuery)) {
+                $msg .= ' and sp_name updated in stud_register table';
+            } else {
+                $msg .= ' but failed to update sp_name in stud_register table';
+            }
+        } else {
+            $msg = "Failed to update record";
+            $status = "fail";
+        }
+    } else {
+        // Insert a new record
+        $insertQuery = "INSERT INTO stud_profile(sp_email, sp_dob, sp_designation, sp_company, sp_linkedin, sp_mobile, sp_address, sp_about) VALUES ('$sp_email', '$sp_dob', '$sp_designation', '$sp_company', '$sp_linkedin', '$sp_mobile', '$sp_address', '$sp_about')";
+        if (mysqli_query($mysqli, $insertQuery)) {
+            $msg = 'Record inserted successfully';
+            $status = "success";
+        } else {
+            $msg = "Failed to insert record";
+            $status = "fail";
+        }
     }
-} else{
+} else {
     $msg = "Received empty data";
     $status = "fail";
 }
