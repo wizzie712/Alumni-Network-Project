@@ -24,7 +24,7 @@
       <div class="et-hero-tabs-container">
         <a class="et-hero-tab" routerLink="/studentdashboard">Look for Job</a>
         <a class="et-hero-tab" routerLink="#postjobs"><b><div style="text-decoration: underline;">Post Jobs </div></b></a>
-        <a class="et-hero-tab" routerLink="/guidance">Guidance</a>
+        <a class="et-hero-tab" routerLink="/guidance">Insights</a>
         <a class="et-hero-tab" routerLink="/studentdashboardprofile">Profile</a>
         <span class="et-hero-tab-slider"></span>
       </div>
@@ -99,6 +99,8 @@
                       <div class="salary">
                     <label for="pet-weight-0-25">Salary</label>
                       <div class="radio-container">
+                        <input id="pet-weights" name="c_salary" type="radio" value="N/A" formControlName="c_salary">
+                        <label for="pet-weights">N/A</label>
                         <input id="pet-weights-0-25" name="c_salary" type="radio" value="5-8 Lpa" formControlName="c_salary">
                         <label for="pet-weights-0-25">5-8 LPA</label>
                         <input id="pet-weights-25-50" name="c_salary" type="radio" value="9-12 Lpa" formControlName="c_salary">
