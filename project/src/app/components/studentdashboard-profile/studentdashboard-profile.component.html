@@ -54,9 +54,11 @@
               <div class="d-flex flex-column align-items-center text-center">
                 <div class="m-b-25">
                   <img src="{{profile_pic_url}}" class="img-radius" onerror="if (this.src != 'error.jpg') this.src = 'https://bootdey.com/img/Content/avatar/avatar6.png'; " >
-                    <br><br>
+                    <br><br><br>
+                    
                     <input *ngIf="isEditMode" type="file" name="profile_pic" id="formFile" (change)="uploadfile($event)">
-                    <button id="mini-profile-save" class="btn btn-primary px-4" (click)="mini_profile_save()"> Save Changes</button>
+                    <br><br>
+                    <button *ngIf="isEditMode" id="mini-profile-save" class="btn btn-primary px-4" style="background-color: white; color: darkblue; border: white; font-size: 12px;" (click)="mini_profile_save()"> Save Changes</button>
                   </div>
                   </div>
                 <h6 class="f-w-600">{{stud_name_bolte}}</h6><br>
@@ -73,7 +75,8 @@
                   <i *ngIf="notEditMode" (click)="enableInput()" class='fa fa-edit edit' title="Edit" id="edit" style="font-size: 33px;"></i>
                   <button *ngIf="isEditMode" class="close-button" (click)="closeEditMode()">Reset</button>
                   </h6>
-                <h3  *ngIf="notEditMode" >Click on the edit button to start editing!</h3>
+                <h3 style="font-size: 12px; margin-top: -12px; text-align: left;"  *ngIf="notEditMode" >Click on the edit button to start editing!</h3>
+                <br><br>
                 <div class="row">
                 <div class="col-sm-6">
                         <p class="m-b-10 f-w-600">Name</p>
