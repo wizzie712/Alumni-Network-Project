@@ -1,3 +1,5 @@
+
+
 import { Component,OnInit,Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -14,6 +16,9 @@ export class StudentdashboardProfileComponent implements OnInit{
   loginbtn: boolean = false;
   logoutbtn: boolean = false;
   logged_in_username:any;
+
+  // to enable edit in input boxes
+  isInputDisabled = true;
 
   stickyNavigation: StickyNavigation | undefined;
 
@@ -120,7 +125,10 @@ showPopupFlag: boolean = false;
     this.showPopupFlag = false;
   }
 
-
+// enabling input boxes
+enableInput() {
+  this.isInputDisabled = false;
+}
 
 }
 
