@@ -8,10 +8,9 @@
    <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
      Hey {{logged_in_username}}, logout
    </button></p> -->
-
    <div id="textbox">
-    <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
-    <p class="alignright">
+     <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
+     <p class="alignright">
       <tr>
         <td>
       Hey {{logged_in_username}},
@@ -22,16 +21,17 @@
     </button>
   </td>
   </tr>
-  </p>  </div>
+  </p>   </div>
  </div>
  <div style="clear: both;"></div>
 <section class="et-hero-tabs">
 
  <div class="et-hero-tabs-container">
-  <a class="et-hero-tab" routerLink="/ourstudents">Our Students</a>
-   <a class="et-hero-tab" routerLink="/ourfaculty"><b><div style="text-decoration: underline;">Our Faculty </div></b></a>
-   <a class="et-hero-tab" routerLink="/facultyinsights">Insights</a>
-   <a class="et-hero-tab" routerLink="/facultyprofile">Profile</a>
+   <a class="et-hero-tab" routerLink="/studentdashboard">Look for Job</a>
+    <a class="et-hero-tab" routerLink="/postjobs">Post Jobs</a>
+    <a class="et-hero-tab" routerLink="/guidance">Insights</a>
+    <a class="et-hero-tab" routerLink="/ouralumni"><b><div style="text-decoration: underline;">Ex-Classmates </div></b></a>
+    <a class="et-hero-tab" routerLink="/studentdashboardprofile">Profile</a>
    <span class="et-hero-tab-slider"></span>
  </div>
 </section>
@@ -40,24 +40,48 @@
 <main class="et-main">
 
  <section class="et-slide" id="tab-postjobs">
+   <tr>
+     <td>
+   <div class="classof">Class Of :</div>
+ </td>
+ <td>
+   <div class="scrollmenu1">
+     <a href="#home">2008</a>
+     <a href="#news">2009</a>
+     <a href="#contact">2010</a>
+     <a href="#about">2011</a>
+     <a href="#support">2012</a>
+     <a href="#blog">2013</a>
+     <a href="#tools">2014</a>
+     <a href="#base">2015</a>
+     <a href="#base">2016</a>
+     <a href="#base">2017</a>
+     <a href="#custom">2018</a>
+     <a href="#more">2019</a>
+     <a href="#logo">2020</a>
+     <a href="#friends">2021</a>
+     <a href="#partners">2022</a>
+     <a href="#people">2023</a>
+   </div>
+ </td>
+ </tr>
 
-  <tr>
-    <td>
-  <div class="classof">Department :</div>
+ <tr>
+   <td>
+ <div class="classof">Department :</div>
 </td>
 <td>
-  <div class="scrollmenu2">
-    <a href="#home" disabled>UG:</a>
-    <a href="#news">EXTC</a>
-    <a href="#contact">AI/ML</a>
-    <a href="#about">CE</a>
-    <a href="#about">DS</a>
-    <a href="#about">|</a>
-    <a href="#home" disabled>PG:</a>
-    <a href="#news">MCA</a>
-    <a href="#contact">EXTC</a>
-    <a href="#about">CE</a>
-  </div>
+ <div class="scrollmenu2">
+   <button class="disabledbtn" disabled>UG :</button>
+   <a href="#news">EXTC</a>
+   <a href="#contact">AI/ML</a>
+   <a href="#about">CE</a>
+   <a href="#about">DS</a>
+   <button class="disabledbtn" disabled>PG :</button>
+   <a href="#news">MCA</a>
+   <a href="#contact">EXTC</a>
+   <a href="#about">CE</a>
+ </div>
 </td>
 </tr>
 

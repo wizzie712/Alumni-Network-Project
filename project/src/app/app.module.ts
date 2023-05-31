@@ -33,6 +33,7 @@ import { OurstudentsComponent } from './components/ourstudents/ourstudents.compo
 import { OurfacultyComponent } from './components/ourfaculty/ourfaculty.component';
 import { FacultyprofileComponent } from './components/facultyprofile/facultyprofile.component';
 import { FacultyinsightsComponent } from './components/facultyinsights/facultyinsights.component';
+import { OuralumniComponent } from './components/ouralumni/ouralumni.component';
 // import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @NgModule({
@@ -63,6 +64,7 @@ import { FacultyinsightsComponent } from './components/facultyinsights/facultyin
     OurfacultyComponent,
     FacultyprofileComponent,
     FacultyinsightsComponent,
+    OuralumniComponent,
   ],
   imports: [
     BrowserModule,

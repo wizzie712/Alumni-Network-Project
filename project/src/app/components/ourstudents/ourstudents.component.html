@@ -10,8 +10,18 @@
     </button></p> -->
     <div id="textbox">
       <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
-      <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i> Hey {{logged_in_username}}, logout</button></p>
-    </div>
+      <p class="alignright">
+        <tr>
+          <td>
+        Hey {{logged_in_username}},
+      </td>
+      <td>
+      <button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
+        <ion-icon title="Logout" name="power-outline" style="font-size: 2rem; margin-bottom: -5px;"></ion-icon>
+      </button>
+    </td>
+    </tr>
+    </p>    </div>
   </div>
   <div style="clear: both;"></div>
 <section class="et-hero-tabs">

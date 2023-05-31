@@ -86,7 +86,7 @@ text-decoration: none;
 }
 .alignright {
 	float: right;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.3rem;
   opacity: 0.8;
   padding: 20px;
@@ -400,6 +400,6 @@ input[type=file]{
   padding: 5px;
   border-radius: 20px;
   background-color: #cdd2db;
-  
+
 }
 
