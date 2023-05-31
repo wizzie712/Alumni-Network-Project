@@ -47,7 +47,7 @@ export class FacultyprofileComponent implements OnInit {
     logout()
     {
     this.dataService.deleteToken();
-    this.router.navigate(['/studentlogin']).then(()=>{
+    this.router.navigate(['/facultylogin']).then(()=>{
       window.location.reload();
     });
     }

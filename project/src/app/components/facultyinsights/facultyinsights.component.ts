@@ -54,7 +54,7 @@ export class FacultyinsightsComponent {
     logout()
     {
     this.dataService.deleteToken();
-    this.router.navigate(['/studentlogin']).then(()=>{
+    this.router.navigate(['/facultylogin']).then(()=>{
       window.location.reload();
     });
     }
