@@ -15,6 +15,9 @@ export class StudentdashboardProfileComponent implements OnInit{
   logoutbtn: boolean = false;
   logged_in_username:any;
 
+  // to enable edit in input boxes
+  isInputDisabled = true;
+
   stickyNavigation: StickyNavigation | undefined;
 
   constructor(private router: Router,private renderer: Renderer2,private dataService: ApiService,private http: HttpClient) {}
@@ -120,7 +123,10 @@ showPopupFlag: boolean = false;
     this.showPopupFlag = false;
   }
 
-
+// enabling input boxes
+enableInput() {
+  this.isInputDisabled = false;
+}
 
 }
 
