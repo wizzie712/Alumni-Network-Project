@@ -1,0 +1,76 @@
+  <!-- Hero -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <body>
+
+
+    <div id="textbox">
+        <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
+        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
+          Hey {{logged_in_username}}, logout
+        </button></p>
+      </div>
+
+    <!-- <div id="textbox">
+      <p class="alignleft">ALUMNI CONNECT</p>
+      <p class="alignright">Student Dashboard</p> -->
+    <!-- </div> -->
+    <div style="clear: both;"></div>
+    <section class="et-hero-tabs">
+
+      <div class="et-hero-tabs-container">
+        <a class="et-hero-tab" routerLink="/ourstudents">Our Students</a>
+        <a class="et-hero-tab" routerLink="/ourfaculty">Our Faculty</a>
+        <a class="et-hero-tab" routerLink="/facultyinsights"><b><div style="text-decoration: underline;">Insights</div></b></a>
+        <a class="et-hero-tab" routerLink="/facultyprofile">Profile</a>
+        <span class="et-hero-tab-slider"></span>
+      </div>
+    </section>
+
+    <!-- Main -->
+    <main class="et-main">
+
+
+      <section class="et-slide" id="tab-guidance" style="">
+        <div id="testimonials">
+          <ul>
+            <li *ngFor="let testimonial of testimonials">
+              <p class="testimonial-body">{{ testimonial.stud_testimonial }}</p>
+              <div class="testimonial-profile">
+                <div class="img-cover"></div>
+                <svg><circle></circle></svg>
+                <img [src]="testimonial.sp_profile_image" alt="">
+                <span>{{ testimonial.stud_name }}</span>
+                <br><small>{{ testimonial.stud_date }}</small>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- <button (click)="openPopup()" *ngIf="!showPopup">
+          <a class="float">
+          <i class="fa fa-plus my-float"></i>
+          </a></button> -->
+
+          <a (click)="openPopup()" *ngIf="!showPopup" class="float">
+            <ion-icon name="add-circle-outline" style="color: aliceblue; font-size: 60px; padding-top: 2px;"></ion-icon>
+
+            </a>
+
+        <!-- Add the popup component -->
+        <app-popup *ngIf="showPopup" (closed)="closePopup()"></app-popup>
+
+
+
+      </section>
+
+    </main>
+    <script src="src/app/components/StudentDashboard/stickynavbar.component.js"></script>
+
+
+
+
+
+  </body>

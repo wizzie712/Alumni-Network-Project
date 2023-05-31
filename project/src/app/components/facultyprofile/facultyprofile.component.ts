@@ -17,6 +17,8 @@ export class FacultyprofileComponent implements OnInit {
 
   // to enable edit in input boxes
   isInputDisabled = true;
+  isEditMode: boolean = false;
+  notEditMode: boolean = true;
 
   stickyNavigation: StickyNavigation | undefined;
 
@@ -35,7 +37,7 @@ export class FacultyprofileComponent implements OnInit {
     else{
       this.loginbtn=true;
       this.logoutbtn=false
-  
+
       }
   }
   private changeName(name: boolean): void {
@@ -49,10 +51,18 @@ export class FacultyprofileComponent implements OnInit {
       window.location.reload();
     });
     }
-  
+
     // enabling input boxes
     enableInput() {
       this.isInputDisabled = false;
+      this.isEditMode = true;
+      this.notEditMode = false;
+    }
+
+    closeEditMode() {
+      this.isEditMode = false;
+      this.isInputDisabled = true;
+      this.notEditMode = true;
     }
 
 }

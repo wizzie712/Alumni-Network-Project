@@ -55,28 +55,29 @@
                 <div class="m-b-25">
                   <img src="{{profile_pic_url}}" class="img-radius" onerror="if (this.src != 'error.jpg') this.src = 'https://bootdey.com/img/Content/avatar/avatar6.png'; " >
                     <br><br>
-                    <input type="file" name="profile_pic" id="formFile" (change)="uploadfile($event)">
+                    <input *ngIf="isEditMode" type="file" name="profile_pic" id="formFile" (change)="uploadfile($event)">
                     <button id="mini-profile-save" class="btn btn-primary px-4" (click)="mini_profile_save()"> Save Changes</button>
                   </div>
                   </div>
                 <h6 class="f-w-600">{{stud_name_bolte}}</h6><br>
                 <p class="role">{{sp_designation_bolte}}</p>
-                
+
                 <!-- <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i> -->
             </div>
         </div>
         <div class="col-sm-8">
             <div class="card-block"><br>
-              <form action="" [formGroup]="angForm" (ngSubmit)="postdata(angForm)">  
+              <form action="" [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
                 <h6 class="m-b-20 p-b-5 b-b-default f-w-600">
                   Personal Information  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <i (click)="enableInput()" class='fa fa-edit edit' title="Edit" id="edit" style="font-size: 33px; cursor: pointer;"></i>
-                </h6>
-                <h3>Click on the edit button to start editing!</h3>
+                  <i *ngIf="notEditMode" (click)="enableInput()" class='fa fa-edit edit' title="Edit" id="edit" style="font-size: 33px;"></i>
+                  <button *ngIf="isEditMode" class="close-button" (click)="closeEditMode()">Reset</button>
+                  </h6>
+                <h3  *ngIf="notEditMode" >Click on the edit button to start editing!</h3>
                 <div class="row">
                 <div class="col-sm-6">
                         <p class="m-b-10 f-w-600">Name</p>
-                        <h6 class="text-muted f-w-400"><input type="text" name="name" [disabled]="isInputDisabled" formControlName="sp_name"  id="name" placeholder="Name"> </h6>
+                        <h6 class="text-muted f-w-400"><input type="text" name="name" [disabled]="isInputDisabled" formControlName="stud_name"  id="name" placeholder="Name"> </h6>
                     </div>
                     <div class="col-sm-6">
                       <p class="m-b-10 f-w-600">Email</p>
@@ -122,16 +123,16 @@
                           <a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="linkedin" data-abc="true"><i class="mdi mdi-linkedin feather icon-linkedin linkedin" aria-hidden="true"></i></a>
                       </label>
                       </p>
-                        
+
                         <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="sp_linkedin" formControlName="sp_linkedin" placeholder="Linked-Id"></h6>
                     </div>
-                   
+
                 </div>
                 <div class="row">
                   <div class="col-sm-3"></div>
                   <div class="col-sm-9 text-secondary">
                       <div class="set">
-                      <button id="next">Submit</button>
+                        <button *ngIf="isEditMode" name="submit" id="submit">Save Changes</button>
                       </div>
                   </div>
               </div>
