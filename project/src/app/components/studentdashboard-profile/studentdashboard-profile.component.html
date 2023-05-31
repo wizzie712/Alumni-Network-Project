@@ -18,8 +18,18 @@
       </nav> -->
       <div id="textbox">
         <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
-        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i> Hey {{logged_in_username}}, logout</button></p>
-      </div>
+        <p class="alignright">
+          <tr>
+            <td>
+          Hey {{logged_in_username}},
+        </td>
+        <td>
+        <button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
+          <ion-icon title="Logout" name="power-outline" style="font-size: 2rem; margin-bottom: -5px;"></ion-icon>
+        </button>
+      </td>
+      </tr>
+      </p>      </div>
 
     <div style="clear: both;"></div>
     <section class="et-hero-tabs">
@@ -28,6 +38,7 @@
         <a class="et-hero-tab" routerLink="/studentdashboard">Look for Job</a>
         <a class="et-hero-tab" routerLink="/postjobs">Post Jobs</a>
         <a class="et-hero-tab" routerLink="/guidance">Insights</a>
+        <a class="et-hero-tab" routerLink="/ouralumni"> Ex-Classmates</a>
         <a class="et-hero-tab" routerLink="#about"><div style="text-decoration: underline;"><b>Profile</b></div></a>
         <span class="et-hero-tab-slider"></span>
       </div>
@@ -55,7 +66,7 @@
                 <div class="m-b-25">
                   <img src="{{profile_pic_url}}" class="img-radius" onerror="if (this.src != 'error.jpg') this.src = 'https://bootdey.com/img/Content/avatar/avatar6.png'; " >
                     <br><br><br>
-                    
+
                     <input *ngIf="isEditMode" type="file" name="profile_pic" id="formFile" (change)="uploadfile($event)">
                     <br><br>
                     <button *ngIf="isEditMode" id="mini-profile-save" class="btn btn-primary px-4" style="background-color: white; color: darkblue; border: white; font-size: 12px;" (click)="mini_profile_save()"> Save Changes</button>

@@ -7,9 +7,18 @@
 
     <div id="textbox">
         <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
-        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
-          Hey {{logged_in_username}}, logout
-        </button></p>
+        <p class="alignright">
+          <tr>
+            <td>
+          Hey {{logged_in_username}},
+        </td>
+        <td>
+        <button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
+          <ion-icon title="Logout" name="power-outline" style="font-size: 2rem; margin-bottom: -5px;"></ion-icon>
+        </button>
+      </td>
+      </tr>
+      </p>
       </div>
 
     <!-- <div id="textbox">
@@ -23,6 +32,7 @@
         <a class="et-hero-tab" routerLink="/studentdashboard">Look for Job</a>
         <a class="et-hero-tab" routerLink="/postjobs">Post Jobs</a>
         <a class="et-hero-tab" routerLink="#tab-guidance"><div style="text-decoration: underline;"><b>Insights</b></div></a>
+        <a class="et-hero-tab" routerLink="/ouralumni"> Ex-Classmates</a>
         <a class="et-hero-tab" routerLink="/studentdashboardprofile">Profile</a>
         <span class="et-hero-tab-slider"></span>
       </div>
