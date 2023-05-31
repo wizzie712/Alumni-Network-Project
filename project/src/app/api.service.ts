@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Faculty, Users } from './users';
 import { throwError } from 'rxjs';
 import { Companydetails } from './companydetails';
+import { getLocaleDateFormat } from '@angular/common';
 
 @Injectable({
   providedIn: 'any'
@@ -157,25 +158,24 @@ getScompanydetails() {
   return this.httpClient.get<Users[]>(this.baseUrl+'/companydetailsview.php');
 } 
 
-insertstudentprofiledetails(sp_name:any, sp_email:any, sp_dob:any, sp_designation:any, sp_company:any, sp_linkedin:any, sp_mobile: any, sp_address:any,sp_about:any){
-  alert("insert student details invoked.");
+insertstudentprofiledetails(sp_name:any, sp_email:any, sp_dob:any, sp_location:any, sp_designation:any, sp_company:any, sp_linkedin:any, sp_mobile: any){
+  //alert("insert student details invoked.");
   const formData: any = new FormData();
   formData.append("sp_name",sp_name);
   formData.append("sp_email",sp_email);
   formData.append("sp_dob",sp_dob);
+  formData.append("sp_location",sp_location);
   formData.append("sp_designation",sp_designation);
   formData.append("sp_company",sp_company);
   formData.append("sp_linkedin",sp_linkedin);
   formData.append("sp_mobile",sp_mobile);
-  formData.append("sp_address",sp_address);
-  formData.append("sp_about",sp_about);
   // console.log("FormData Before sending HTTPRequest " +formData["c_name"]);
   return this.httpClient.post<any>(this.baseUrl + '/profilebasic.php', formData)
     .pipe(
       catchError((error: any) => {
         console.error('Error occurred: ', error);
         //console.log(profile_pic);
-        //console.log(formData);
+        console.log(formData);
         return throwError(error);
       }),
       map((response: any) => {
@@ -242,6 +242,56 @@ getStudentProfileDetails(){
 
 getTestimonials(){
   return this.httpClient.get<Users[]>(this.baseUrl+'/getTestimonials.php');
+}
+
+// insertTestimonials(sp_email:any,stud_testimonial:any,stud_date:any){
+//   const formData:any = new FormData();
+//   formData.append("s_email",sp_email);
+//   formData.append("stud_testimonial",stud_testimonial);
+//   formData.append("stud_date",stud_date);
+//   return this.httpClient.post<any>(this.baseUrl + '/addTestimonials.php', formData)
+//     .pipe(
+//       catchError((error: any) => {
+//         console.error('Error occurred: ', error);
+//         return throwError(error);
+//       }),
+//       map((response: any) => {
+//         console.log('Response received: ', response);
+//         //alert(response);
+//         return response;
+//       })
+//     );
+// }
+insertTestimonials(stud_testimonial: any) {
+  const currentDate: Date = new Date();
+
+// Extract individual components of the date
+const year: number = currentDate.getFullYear();
+const month: number = currentDate.getMonth() + 1; // Note: Months are zero-based
+const day: number = currentDate.getDate();
+
+// Create a formatted date string
+const formattedDate: string = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+
+console.log(formattedDate); // Output: "2023-05-31"
+  const formData: any = new FormData();
+  formData.append("sp_email", this.getEmail());
+  formData.append("stud_testimonial", stud_testimonial);
+  formData.append("stud_date", formattedDate);
+  console.log(this.getEmail());
+  console.log('stud_testimonial:', stud_testimonial); // Log the stud_testimonial value
+  console.log('stud_date:',formattedDate); // Log the stud_date value
+  return this.httpClient.post<any>(this.baseUrl + '/addTestimonials.php', formData)
+    .pipe(
+      catchError((error: any) => {
+        console.error('Error occurred:', error);
+        return throwError(error);
+      }),
+      map((response: any) => {
+        console.log('Response received:', response); // Log the response received from the server
+        return response;
+      })
+    );
 }
 
 }

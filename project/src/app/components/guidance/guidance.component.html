@@ -36,13 +36,13 @@
         <div id="testimonials">
           <ul>
             <li *ngFor="let testimonial of testimonials">
-              <p class="testimonial-body">{{ testimonial.body }}</p>
+              <p class="testimonial-body">{{ testimonial.stud_testimonial }}</p>
               <div class="testimonial-profile">
                 <div class="img-cover"></div>
                 <svg><circle></circle></svg>
-                <img [src]="testimonial.image" alt="">
-                <span>{{ testimonial.name }}</span>
-                <br><small>{{ testimonial.date }}</small>
+                <img [src]="testimonial.sp_profile_image" alt="">
+                <span>{{ testimonial.stud_name }}</span>
+                <br><small>{{ testimonial.stud_date }}</small>
               </div>
             </li>
           </ul>

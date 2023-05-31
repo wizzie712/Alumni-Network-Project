@@ -360,4 +360,25 @@ text-align: left;
   transition: all 0.3s ease-in-out;
 }
 
+/* input type */
+.row input[type=text], input[type=email], input[type=date] {
+  width: 100%;
+  padding: 5px 0px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid grey;
+  border-width:0px 0px 2px 0px;
+}
+input[type=text]:focus {
+  outline:none;
+  border-image: linear-gradient(to right, #DEAFDB 0%, #EFB9AD 100%) 1;
+  border-width:0px 0px 2px 0px;
+}
 
+/* file input for profile photo */
+
+input[type=file]{
+  text-align: center;
+  font-size: 12px;
+  /* background-color: #809bce; */
+}
