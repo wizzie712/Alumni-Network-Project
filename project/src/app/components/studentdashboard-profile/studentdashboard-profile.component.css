@@ -86,7 +86,7 @@ text-decoration: none;
 }
 .alignright {
 	float: right;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 0.3rem;
   opacity: 0.8;
   padding: 20px;
@@ -249,7 +249,7 @@ body {
 
 .m-b-25 {
   margin-bottom: 25px;
-  
+
 }
 
 .img-radius {
@@ -380,5 +380,26 @@ input[type=text]:focus {
 input[type=file]{
   text-align: center;
   font-size: 12px;
+  margin-left: 35px;
   /* background-color: #809bce; */
 }
+
+#submit{
+  margin-top: 50px;
+  padding: 2%;
+  font-size: 15px;
+  background-color: #14557beb;
+  color: white;
+  border-radius: 5%;
+  margin-left: 150px;
+}
+
+.close-button {
+  margin-right: 0;
+  font-size: 1.2rem;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #cdd2db;
+
+}
+

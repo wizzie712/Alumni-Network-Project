@@ -19,6 +19,9 @@ export class StudentdashboardProfileComponent implements OnInit{
     logoutbtn: boolean = false;
     logged_in_username:any;
     isInputDisabled: boolean = true;
+    isEditMode: boolean = false;
+    notEditMode: boolean = true;
+
 
     [x: string]: any;
     angForm: FormGroup;
@@ -37,16 +40,16 @@ export class StudentdashboardProfileComponent implements OnInit{
     this.angForm_profile_pic= this.fb.group({
       profile_pic:[]
     })
-    
+
     }
     ngOnInit() {
-      
+
         this.dataService.getLoggedInName.subscribe(name => this.changeName(name));
       if(this.dataService.isLoggedIn())
-      { 
+      {
       console.log("loggedin");
        // enabling input boxes
-      
+
       this.dataService.getStudentProfileDetails().subscribe(
         (result:any)=>{
           console.log(result.data);
@@ -77,10 +80,10 @@ export class StudentdashboardProfileComponent implements OnInit{
         this.loginbtn=true;
         this.logoutbtn=false
         }
-  
-        
+
+
     }
-     
+
     private changeName(name: boolean): void {
       this.logoutbtn = name;
       this.loginbtn = !name;
@@ -92,12 +95,22 @@ export class StudentdashboardProfileComponent implements OnInit{
         window.location.reload();
       });
       }
-      enableInput(){
-        this.isInputDisabled = false;
-        }
+
+         // enabling input boxes
+    enableInput() {
+      this.isInputDisabled = false;
+      this.isEditMode = true;
+      this.notEditMode = false;
+    }
+
+    closeEditMode() {
+      this.isEditMode = false;
+      this.isInputDisabled = true;
+      this.notEditMode = true;
+    }
     uploadfile(event:any){
       const file =  event.target.files ? event.target.files[0] : '';
-      //console.log(file); 
+      //console.log(file);
       this.angForm_profile_pic.patchValue({
         profile_pic: file
       });
@@ -122,9 +135,9 @@ export class StudentdashboardProfileComponent implements OnInit{
       error => {
         alert("error while updating profile pic mini profile"+error.message);
       });
-  
+
     }
-   
+
     postdata(angForm1: { value: { sp_name:any, sp_email:any, sp_dob:any, sp_location:any, sp_designation:any, sp_company:any, sp_linkedin:any, sp_mobile: any}; })
     {
     this.dataService.insertstudentprofiledetails(angForm1.value.sp_name,angForm1.value.sp_email,angForm1.value.sp_dob,angForm1.value.sp_location,angForm1.value.sp_designation,angForm1.value.sp_company,angForm1.value.sp_linkedin,angForm1.value.sp_mobile)
@@ -137,7 +150,7 @@ export class StudentdashboardProfileComponent implements OnInit{
     error => {
     });
     }
-   
+
     get Email() { return this.angForm.get('sp_email') as FormControl; }
     get Name() { return this.angForm.get('sp_name') as FormControl; }
     get Dob() { return this.angForm.get('sp_dob') as FormControl; }
@@ -146,5 +159,5 @@ export class StudentdashboardProfileComponent implements OnInit{
     get Company() { return this.angForm.get('sp_company') as FormControl; }
     get Mobile() { return this.angForm.get('sp_mobile') as FormControl; }
     get Linkedin() { return this.angForm.get('sp_linkedin') as FormControl; }
-  
+
   }
