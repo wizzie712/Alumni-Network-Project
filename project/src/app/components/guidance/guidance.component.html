@@ -4,10 +4,10 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <body>
 
-    
+
     <div id="textbox">
         <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
-        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i> 
+        <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
           Hey {{logged_in_username}}, logout
         </button></p>
       </div>
@@ -22,7 +22,7 @@
       <div class="et-hero-tabs-container">
         <a class="et-hero-tab" routerLink="/studentdashboard">Look for Job</a>
         <a class="et-hero-tab" routerLink="/postjobs">Post Jobs</a>
-        <a class="et-hero-tab" routerLink="#tab-guidance"><div style="text-decoration: underline;"><b>Guidance</b></div></a>
+        <a class="et-hero-tab" routerLink="#tab-guidance"><div style="text-decoration: underline;"><b>Insights</b></div></a>
         <a class="et-hero-tab" routerLink="/studentdashboardprofile">Profile</a>
         <span class="et-hero-tab-slider"></span>
       </div>
@@ -47,7 +47,7 @@
             </li>
           </ul>
         </div>
-        
+
 
         <!-- <button (click)="openPopup()" *ngIf="!showPopup">
           <a class="float">

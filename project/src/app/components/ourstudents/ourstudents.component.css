@@ -344,6 +344,12 @@ div.scrollmenu1 a:hover {
   background-color: #777;
 }
 
+.disabledbtn {
+  font-size: 2rem;
+  padding: 2%;
+  color: #eee;
+}
+
 div.scrollmenu2 {
   margin-top: 0px;
   margin-bottom: 55px;
