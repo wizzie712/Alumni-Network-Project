@@ -44,19 +44,18 @@
        <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
         Password is required
       </div>
-    </div>
+    </div><br>
     <div class="d-grid">
     <div class="row">
-    <button type="submit"  class="btn btn-primary" >Submit</button>
+    <button type="submit"  class="btn btn-primary" >Submit</button><br>
     <!-- <p>Forgot your password? <a href="#">Click here</a>.</p> -->
   </div>
   </div>
     <div class="row">
         <div class="d-grid">
-          <div class="loginstu">
+          <div class="loginstu" style="font-size: 1.5rem;">
 
-          <a routerLink="/studentregister">Register as a Student</a><br>
-          <a routerLink="/facultylogin">Faculty Login</a>
+          <a style="color: black;">Not a member yet? &nbsp;</a><a routerLink="/studentregister">Register Now.</a><br>
         </div>
 
       </div>
