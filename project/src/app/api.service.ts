@@ -275,13 +275,13 @@ const formattedDate: string = `${year}-${month.toString().padStart(2, '0')}-${da
 
 console.log(formattedDate); // Output: "2023-05-31"
   const formData: any = new FormData();
-  formData.append("sp_email", this.getEmail());
+  formData.append("stud_email", this.getEmail());
   formData.append("stud_testimonial", stud_testimonial);
   formData.append("stud_date", formattedDate);
   console.log(this.getEmail());
   console.log('stud_testimonial:', stud_testimonial); // Log the stud_testimonial value
   console.log('stud_date:',formattedDate); // Log the stud_date value
-  return this.httpClient.post<any>(this.baseUrl + '/addTestimonials.php', formData)
+  return this.httpClient.post<any>(this.baseUrl+'/addTestimonials.php', formData)
     .pipe(
       catchError((error: any) => {
         console.error('Error occurred:', error);

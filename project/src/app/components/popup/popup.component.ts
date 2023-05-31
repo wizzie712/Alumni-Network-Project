@@ -15,7 +15,7 @@ export class PopupComponent implements OnInit {
   constructor(private fb: FormBuilder,private router: Router,private renderer: Renderer2,private dataService: ApiService) {
     this.angForm = this.fb.group({
 
-      c_suggestions: new FormControl("", [
+      stud_testimonial: new FormControl("", [
         Validators.required])
 
   });
@@ -27,7 +27,6 @@ postData() {
       .subscribe(
         data => {
           console.log('Response received:', data);
-          // Handle success
         },
         error => {
           console.error('Error occurred:', error);

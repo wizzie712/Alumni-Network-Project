@@ -13,49 +13,44 @@ $db_name = 'alumniconnect';
 $mysqli = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
-    die('Error: ('. mysqli_connect_errno() .') '. mysqli_connect_error());
+    $response = array('status' => 'fail', 'message' => 'Failed to connect to the database');
+    echo json_encode($response);
+    exit();
 }
 
-$required = array("sp_email","stud_testimonial","stud_date");
-$msg = "unknown error";
-$status = "success";
+$required = array("stud_email","stud_testimonial","stud_date");
 
 foreach ($required as $field) {
     if (empty($_POST[$field])) {
-        $status = "fail";
+        $response = array('status' => 'fail', 'message' => 'Required field is missing');
+        echo json_encode($response);
+        exit();
     }
 }
+$stud_email = $_POST["stud_email"];
+$stud_testimonial = $_POST["stud_testimonial"];
+$stud_date = date('Y-m-d'); // Get the current date
 
-if ($status === "success") {
-    $stud_testimonial = $_POST["stud_testimonial"];
-    $stud_date = date('Y-m-d'); // Get the current date
+// Retrieve sp_email from stud_profile table
+$selectQuery = "SELECT stud_email FROM stud_register WHERE stud_email = '$stud_email'";
+$result = mysqli_query($mysqli, $selectQuery);
+if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $stud_email = $row['stud_email'];
 
-    // Retrieve sp_email from stud_profile table
-    $selectQuery = "SELECT sp_email FROM stud_profile LIMIT 1";
-    $result = mysqli_query($mysqli, $selectQuery);
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $sp_email = $row['sp_email'];
-
-        // Insert the data into stud_guidance table
-        $insertQuery = "INSERT INTO stud_guidance(sp_email, stud_testimonial, stud_date) VALUES ('$sp_email', '$stud_testimonial', '$stud_date')";
-        if (mysqli_query($mysqli, $insertQuery)) {
-            $msg = 'Record inserted successfully';
-            $status = "success";
-        } else {
-            $msg = "Failed to insert record";
-            $status = "fail";
-        }
+    // Insert the data into stud_guidance table
+    $insertQuery = "INSERT INTO stud_guidance(stud_email, stud_testimonial, stud_date) VALUES ('$stud_email', '$stud_testimonial', '$stud_date')";
+    if (mysqli_query($mysqli, $insertQuery)) {
+        $response = array('status' => 'success', 'message' => 'Record inserted successfully');
+        echo json_encode($response);
     } else {
-        $msg = "No data found in stud_profile";
-        $status = "fail";
+        $response = array('status' => 'fail', 'message' => 'Failed to insert record: ' . mysqli_error($mysqli));
+        echo json_encode($response);
     }
 } else {
-    $msg = "Received empty data";
-    $status = "fail";
+    $response = array('status' => 'fail', 'message' => 'No data found in stud_profile');
+    echo json_encode($response);
 }
 
-$response = array('status' => $status, 'message' => $msg);
-echo json_encode($response);
 mysqli_close($mysqli);
 ?>

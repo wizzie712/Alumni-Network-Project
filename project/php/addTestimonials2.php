@@ -16,7 +16,7 @@ if (mysqli_connect_errno()) {
     die('Error: ('. mysqli_connect_errno() .') '. mysqli_connect_error());
 }
 
-$required = array("sp_email","stud_testimonial","stud_date");
+$required = array("stud_email","stud_testimonial","stud_date");
 $msg = "unknown error";
 $status = "success";
 
@@ -26,23 +26,23 @@ foreach ($required as $field) {
     }
 }
 
-if (empty($_POST["sp_email"])) {
+if (empty($_POST["stud_email"])) {
     $status = "fail";
 }
 if ($status === "success") {
-    $sp_email = $_POST["sp_email"];
+    $sp_email = $_POST["stud_email"];
     $stud_testimonial = $_POST["stud_testimonial"];
     $stud_date = date('Y-m-d'); // Get the current date
 
     // Retrieve sp_email from stud_profile table based on a condition
-    $selectQuery = "SELECT sp_email FROM stud_profile WHERE sp_email = '$sp_email'";
+    $selectQuery = "SELECT stud_email FROM stud_register WHERE stud_email = '$stud_email'";
     $result = mysqli_query($mysqli, $selectQuery);
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        $sp_email = $row['sp_email'];
+        $sp_email = $row['stud_email'];
 
         // Insert the data into stud_guidance table
-        $insertQuery = "INSERT INTO stud_guidance(sp_email, stud_testimonial, stud_date) VALUES ('$sp_email', '$stud_testimonial', '$stud_date')";
+        $insertQuery = "INSERT INTO stud_guidance(stud_email, stud_testimonial, stud_date) VALUES ('$stud_email', '$stud_testimonial', '$stud_date')";
         if (mysqli_query($mysqli, $insertQuery)) {
             $msg = 'Record inserted successfully';
             $status = "success";
