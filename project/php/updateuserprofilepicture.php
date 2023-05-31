@@ -93,6 +93,7 @@ if (!empty($update_fields)) {
     }
 }
 
+$msg .= mysqli_error($mysqli);
 $response = array('status' => $status, 'message' => $msg);
 echo json_encode($response);
 mysqli_close($mysqli);
