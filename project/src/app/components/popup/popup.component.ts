@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, Renderer2 } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { first } from 'rxjs';
+import { first, pipe } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -20,19 +20,21 @@ export class PopupComponent implements OnInit {
 
   });
 }
-postdata(angForm1: { value: { c_suggestions:any}; }){
-//   //console.log(angForm1.value.ucid);
-// this.dataService.insertcompanydetails(angForm1.value.c_suggestions)
-// .pipe(first())
-// .subscribe(
-// data => {
-
-// //this.router.navigate(['/studentdashboard']);
-// window.location.reload();
-
-// },
-// error => {
-// });
+postData() {
+  if (this.angForm.valid) {
+    const stud_testimonial = this.angForm.value.stud_testimonial;
+    this.dataService.insertTestimonials(stud_testimonial)
+      .subscribe(
+        data => {
+          console.log('Response received:', data);
+          // Handle success
+        },
+        error => {
+          console.error('Error occurred:', error);
+          // Handle error
+        }
+      );
+  }
 }
   ngOnInit(): void {
     throw new Error('Method not implemented.');

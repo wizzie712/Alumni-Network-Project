@@ -1,6 +1,6 @@
 
 <div class="popup-container">
-  <form class="border p-3" [formGroup]="angForm" (ngSubmit)="postdata(angForm)">
+  <form class="border p-3" [formGroup]="angForm" (ngSubmit)="postData()">
   <div class="popup-content">
     <div class="popup-header">
 
@@ -10,11 +10,11 @@
     </div>
 
     <div class="popup-body">
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" cols="80" placeholder="Start writing here..."></textarea>
+      <textarea class="form-control"formControlName='stud_testimonial'  id="stud_testimonial" rows="8" cols="80" placeholder="Start writing here..."></textarea>
     </div>
     <br><br>
     <div class="popup-footer">
-      <button class="submit-button">Post Now</button>
+      <button type = "submit" class="submit-button">Submit</button>
     </div>
   </div>
 </form>

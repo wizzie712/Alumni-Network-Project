@@ -11,6 +11,7 @@ import { first } from 'rxjs';
   styleUrls: ['./guidance.component.css']
 })
 export class GuidanceComponent implements OnInit{
+  
   loginbtn: boolean = false;
   logoutbtn: boolean = false;
   logged_in_username:any;
