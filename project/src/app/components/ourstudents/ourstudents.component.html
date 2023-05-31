@@ -8,6 +8,10 @@
     <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
       Hey {{logged_in_username}}, logout
     </button></p> -->
+    <div id="textbox">
+      <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
+      <p class="alignright"><button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i> Hey {{logged_in_username}}, logout</button></p>
+    </div>
   </div>
   <div style="clear: both;"></div>
 <section class="et-hero-tabs">

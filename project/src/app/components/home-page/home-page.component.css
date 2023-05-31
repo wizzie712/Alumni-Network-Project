@@ -388,7 +388,7 @@ footer {
   display: flex;
   /* justify-content: space-between; */
   perspective: 800px;
-  margin-left: 22%;
+  margin-left: 18%;
 }
 .scene .card {
   position: relative;
