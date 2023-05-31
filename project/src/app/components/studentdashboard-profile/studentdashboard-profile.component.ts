@@ -28,7 +28,7 @@ export class StudentdashboardProfileComponent implements OnInit{
     angForm_profile_pic: FormGroup;
     constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
     this.angForm = this.fb.group({
-    sp_name: ['', Validators.required],
+    stud_name: ['', Validators.required],
     sp_email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
     sp_dob: ['', Validators.required],
     sp_location: ['', Validators.required],
@@ -59,7 +59,7 @@ export class StudentdashboardProfileComponent implements OnInit{
          this.sp_designation_bolte = result.data['0'].sp_designation;
          //this.profile_pic_url='https://yt3.googleusercontent.com/MjEWybBlBXVZigapX__tR_PyJRx-_OGwEZfWZKyS_jJrlgeeF67h69wN2HOhFohiDA7YNeIG=s900-c-k-c0x00ffffff-no-rj';
           //this is for the form
-          this.angForm.controls['sp_name'].setValue(result.data['0'].stud_name);
+          this.angForm.controls['stud_name'].setValue(result.data['0'].stud_name);
           this.angForm.controls['sp_dob'].setValue(result.data['0'].sp_dob);
           this.angForm.controls['sp_location'].setValue(result.data['0'].sp_location);
           this.angForm.controls['sp_designation'].setValue(result.data['0'].sp_designation);

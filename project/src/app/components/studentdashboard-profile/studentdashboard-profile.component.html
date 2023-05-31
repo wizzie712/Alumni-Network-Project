@@ -91,27 +91,27 @@
                 <div class="row">
                 <div class="col-sm-6">
                         <p class="m-b-10 f-w-600">Name</p>
-                        <h6 class="text-muted f-w-400"><input type="text" name="name" [disabled]="isInputDisabled" formControlName="stud_name"  id="name" placeholder="Name"> </h6>
+                        <h6 class="text-muted f-w-400"><input type="text" name="name" [readonly]="isInputDisabled" id="stud_name" placeholder="Name" formControlName="stud_name"> </h6>
                     </div>
                     <div class="col-sm-6">
                       <p class="m-b-10 f-w-600">Email</p>
-                      <h6 class="text-muted f-w-400"><input type="email" name="email" [disabled]="isInputDisabled" id="sp_email" formControlName="sp_email" placeholder="Email-Id"> </h6>
+                      <h6 class="text-muted f-w-400"><input type="email" name="email" [readonly]="isInputDisabled" id="sp_email" formControlName="sp_email" placeholder="Email-Id"> </h6>
                   </div>
                   </div><br>
                 <div class="row">
                     <div class="col-sm-6">
                         <p class="m-b-10 f-w-600">Phone</p>
-                        <h6 class="text-muted f-w-400"><input type="text" name="mobile" [disabled]="isInputDisabled" id="sp_mobile" formControlName="sp_mobile" placeholder="Mobile No"></h6>
+                        <h6 class="text-muted f-w-400"><input type="text" name="mobile" [readonly]="isInputDisabled" id="sp_mobile" formControlName="sp_mobile" placeholder="Mobile No"></h6>
                     </div>
                     <div class="col-sm-6">
                       <p class="m-b-10 f-w-600">Date of Birth</p>
-                      <h6 class="text-muted f-w-400"><input type="date" [disabled]="isInputDisabled" id="sp_dob" formControlName="sp_dob"></h6>
+                      <h6 class="text-muted f-w-400"><input type="date" [readonly]="isInputDisabled" id="sp_dob" formControlName="sp_dob"></h6>
                   </div>
                 </div><br>
                 <div class="row">
                   <div class="col-sm-6">
                     <p class="m-b-10 f-w-600">Location</p>
-                    <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="sp_location" formControlName="sp_location" name="location" placeholder="State,Country"></h6>
+                    <h6 class="text-muted f-w-400"><input type="text" [readonly]="isInputDisabled" id="sp_location" formControlName="sp_location" name="location" placeholder="State,Country"></h6>
                 </div>
               </div>
 
@@ -121,11 +121,11 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <p class="m-b-10 f-w-600">Job Role</p>
-                        <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="sp_designation" formControlName="sp_designation" placeholder="Job Role"></h6>
+                        <h6 class="text-muted f-w-400"><input type="text" [readonly]="isInputDisabled" id="sp_designation" formControlName="sp_designation" placeholder="Job Role"></h6>
                     </div>
                     <div class="col-sm-6">
                         <p class="m-b-10 f-w-600">Company</p>
-                        <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="sp_company" formControlName="sp_company" placeholder="Company Name"></h6>
+                        <h6 class="text-muted f-w-400"><input type="text" [readonly]="isInputDisabled" id="sp_company" formControlName="sp_company" placeholder="Company Name"></h6>
                     </div>
                 </div>
 
@@ -138,7 +138,7 @@
                       </label>
                       </p>
 
-                        <h6 class="text-muted f-w-400"><input type="text" [disabled]="isInputDisabled" id="sp_linkedin" formControlName="sp_linkedin" placeholder="Linked-Id"></h6>
+                        <h6 class="text-muted f-w-400"><input type="text" [readonly]="isInputDisabled" id="sp_linkedin" formControlName="sp_linkedin" placeholder="Linked-Id"></h6>
                     </div>
 
                 </div>
