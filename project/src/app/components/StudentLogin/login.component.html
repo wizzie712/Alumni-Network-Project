@@ -1,7 +1,7 @@
 <html>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head> 
+    </head>
 <div class="container">
 <div class="bg-image">
 </div>
@@ -33,7 +33,7 @@
       </div>
       <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
         Email is Invalid
-      </div> 
+      </div>
     </div>
     <div class="col mb-1">
       <div class="inputbox">
@@ -43,7 +43,7 @@
       </div>
        <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
         Password is required
-      </div> 
+      </div>
     </div>
     <div class="d-grid">
     <div class="row">
@@ -54,7 +54,7 @@
     <div class="row">
         <div class="d-grid">
           <div class="loginstu">
-          
+
           <a routerLink="/studentregister">Register as a Student</a><br>
           <a routerLink="/facultylogin">Faculty Login</a>
         </div>
