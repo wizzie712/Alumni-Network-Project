@@ -22,7 +22,7 @@ import { EditfacultyComponent } from './components/editfaculty/editfaculty.compo
 import { FacultyDashboardComponent } from './components/faculty-dashboard/faculty-dashboard.component';
 import { OurstudentsComponent } from './components/ourstudents/ourstudents.component';
 import { OurfacultyComponent } from './components/ourfaculty/ourfaculty.component';
-
+import { FacultyprofileComponent } from './components/facultyprofile/facultyprofile.component';
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -47,7 +47,8 @@ const routes: Routes = [
   { path: 'addfaculty',component:AddfacultyComponent},
   { path: 'editfaculty/:faculty_email',component:EditfacultyComponent},
   { path: 'ourstudents', component:OurstudentsComponent},
-  { path: 'ourfaculty', component:OurfacultyComponent}
+  { path: 'ourfaculty', component:OurfacultyComponent},
+  { path: 'facultyprofile', component:FacultyprofileComponent}
 ];
 
 @NgModule({

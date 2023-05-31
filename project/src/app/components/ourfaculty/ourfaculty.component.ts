@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import StickyNavigation from './stickynavbar.component.js';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-ourfaculty',
@@ -8,13 +12,45 @@ import StickyNavigation from './stickynavbar.component.js';
 })
 export class OurfacultyComponent implements OnInit {
 
+  
+  sloginbtn: boolean = false;
+  logoutbtn: boolean = false;
+  logged_in_username: any;
+
   stickyNavigation: StickyNavigation | undefined;
+
+  constructor(
+    private router: Router,
+    private renderer: Renderer2,
+    private dataService: ApiService,
+    private http: HttpClient
+  ) {}
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.dataService.getLoggedInName.subscribe(name => this.changeName(name));
+    if (this.dataService.isLoggedIn()) {
+      console.log("loggedin");
+      this.sloginbtn = false;
+      this.logoutbtn = true;
+      this.logged_in_username = this.dataService.getUsername();
+      console.log(this.logged_in_username);
+    } else {
+      this.sloginbtn = true;
+      this.logoutbtn = false;
+    }
   }
 
-  ngAfterViewInit() {
-    this.stickyNavigation = new StickyNavigation();
+  private changeName(name: boolean): void {
+    this.logoutbtn = name;
+    this.sloginbtn = !name;
+  }
 
+  logout() {
+    this.dataService.deleteToken();
+    this.router.navigate(['/studentlogin']).then(() => {
+      window.location.reload();
+    });
+  }
 }
-}
+
+
