@@ -138,9 +138,9 @@ export class StudentdashboardProfileComponent implements OnInit{
 
     }
 
-    postdata(angForm1: { value: { sp_name:any, sp_email:any, sp_dob:any, sp_location:any, sp_designation:any, sp_company:any, sp_linkedin:any, sp_mobile: any}; })
+    postdata(angForm1: { value: { stud_name:any, sp_email:any, sp_dob:any, sp_location:any, sp_designation:any, sp_company:any, sp_linkedin:any, sp_mobile: any}; })
     {
-    this.dataService.insertstudentprofiledetails(angForm1.value.sp_name,angForm1.value.sp_email,angForm1.value.sp_dob,angForm1.value.sp_location,angForm1.value.sp_designation,angForm1.value.sp_company,angForm1.value.sp_linkedin,angForm1.value.sp_mobile)
+    this.dataService.insertstudentprofiledetails(angForm1.value.stud_name,angForm1.value.sp_email,angForm1.value.sp_dob,angForm1.value.sp_location,angForm1.value.sp_designation,angForm1.value.sp_company,angForm1.value.sp_linkedin,angForm1.value.sp_mobile)
     .pipe(first())
     .subscribe(
     data => {
