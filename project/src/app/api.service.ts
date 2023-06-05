@@ -240,6 +240,40 @@ getStudentProfileDetails(){
 ); 
 }
 
+getStudentDetails() {
+  const formData: any = new FormData();
+  formData.append("email",this.getEmail());
+
+  return this.httpClient.post<any>(this.baseUrl + '/retrieveStudentData.php', formData)
+    .pipe(
+      catchError((error: any) => {
+        console.error('Error occurred: ', error);
+        throw new Error('An error occurred while retrieving student details.'); // Throw a custom error
+      }),
+      map((response: any) => {
+        if (response.success === 'success' && response.data) {
+          response.data.forEach((student: any) => {
+            const studName = student.stud_name;
+            const designation = student.sp_designation;
+            const profileImage = student.sp_profile_image;
+            const linkedIn = student.sp_linkedin;
+
+            // Display the data in whatever format you desire
+            console.log(`Student Name: ${studName}`);
+            console.log(`Designation: ${designation}`);
+            console.log(`Profile Image: ${profileImage}`);
+            console.log(`Linked In : ${linkedIn}`)
+          });
+        } else {
+          console.log(response.message || 'No results found');
+        }
+
+        return response;
+      })
+    );
+}
+
+
 getTestimonials(){
   return this.httpClient.get<Users[]>(this.baseUrl+'/getTestimonials.php');
 }
