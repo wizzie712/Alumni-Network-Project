@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OurfacultyComponent implements OnInit {
 
-  
+
   sloginbtn: boolean = false;
   logoutbtn: boolean = false;
   logged_in_username: any;
@@ -47,7 +47,7 @@ export class OurfacultyComponent implements OnInit {
 
   logout() {
     this.dataService.deleteToken();
-    this.router.navigate(['/studentlogin']).then(() => {
+    this.router.navigate(['/facultylogin']).then(() => {
       window.location.reload();
     });
   }
