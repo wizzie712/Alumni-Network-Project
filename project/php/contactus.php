@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $subject = $_POST["subject"];
+    $name = $_POST["Name"];
+    $email = $_POST["Email"];
+    $subject = $_POST["Subject"];
     $body = $_POST["body"];
 
     // Set up email parameters
