@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { data } from 'jquery';
+import { first } from 'rxjs/operators';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -15,8 +19,8 @@ export class OuralumniComponent implements OnInit {
   stud_name_url: any;
   sp_designation_url: any;
   sp_linked_in_url:any;
-  
-  constructor(private dataService: ApiService) {}
+ 
+  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {}
 
   ngOnInit(): void {
     this.dataService.getLoggedInName.subscribe(name => this.changeName(name));
@@ -56,8 +60,11 @@ export class OuralumniComponent implements OnInit {
     this.sloginbtn = !name;
   }
 
-  logout() {
-    this.dataService.deleteToken();
-    // Rest of your logout code
+  logout()
+  {
+  this.dataService.deleteToken();
+  this.router.navigate(['/studentlogin']).then(()=>{
+    window.location.reload();
+  });
   }
 }

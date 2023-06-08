@@ -27,9 +27,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Dept</th>
-        <th>Qualification</th>
         <th>Designation</th>
-        <th>Password</th>
         <th>Area of Interest</th>
         <th>Edit</th>
     </thead>
@@ -38,13 +36,11 @@
         <tr *ngFor="let user of users; let i = index;">
             <td>{{i+1}}</td>
             <td>{{user.faculty_name}}</td>
-            <td>{{user.faculty_email}}</td>
-            <td>{{user.faculty_dept}}</td>
-            <td>{{user.faculty_qualification}}</td>
-            <td>{{user.faculty_designation}}</td>
-            <td>{{user.faculty_password}}</td>
-            <td>{{user.faculty_aoi}}</td>
-            <td>  <button routerLink="/editfaculty/{{user.faculty_email}}"><span class="fa fa-pencil"></span></button>    <button (click)="deleteUser(user.faculty_email)" > <span class="fa fa-trash"></span></button>  </td>
+            <td>{{user.fp_email}}</td>
+            <td>{{user.fp_dept}}</td>
+            <td>{{user.fp_designation}}</td>
+            <td>{{user.fp_aoi}}</td>
+            <td>  <button routerLink="/editfaculty/{{user.fp_email}}"><span class="fa fa-pencil"></span></button>    <button (click)="deleteUser(user.fp_email)" > <span class="fa fa-trash"></span></button>  </td>
         </tr>
 
     </tbody>

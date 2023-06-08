@@ -60,6 +60,8 @@ import { getLocaleDateFormat } from '@angular/common';
         return Faculty;
     }));
   }
+
+  
   
   //token
   setToken(token: string,email:string) {
@@ -104,7 +106,7 @@ getSingleStudent(stud_email:any) {
 } 
 
 getSingleFaculty(faculty_email:any) {
-  console.log(this.baseUrl+'/singlefaculty.php?faculty_email='+faculty_email);
+  console.log(this.baseUrl+'/singlefaculty.php?fp_email='+faculty_email);
   return this.httpClient.get<Users[]>(this.baseUrl+'/singlefaculty.php?faculty_email='+faculty_email);
 } 
 
@@ -123,9 +125,9 @@ editStudent(stud_name: any,stud_email: any,stud_password: any, stud_gender: any,
     return this.httpClient.put(this.baseUrl+'/updatestudent.php', {stud_name ,stud_email, stud_password,stud_gender, stud_batch});  
   }  
 
-editFaculty(faculty_name: any,faculty_email: any,faculty_dept: any, faculty_qualification: any,faculty_designation: any,faculty_password: any,faculty_aoi: any) {
+editFaculty(faculty_name: any,fp_email: any,fp_dept: any,fp_designation: any,fp_linkedin: any,fp_aoi: any) {
     //console.log(id);
-    return this.httpClient.put(this.baseUrl+'/updatefaculty.php', {faculty_name ,faculty_email,faculty_dept,faculty_qualification, faculty_designation, faculty_password, faculty_aoi});  
+    return this.httpClient.put(this.baseUrl+'/updatefaculty.php', {faculty_name, fp_email, fp_dept, fp_designation, fp_linkedin, fp_aoi});  
   }
   
 insertcompanydetails(c_name:any, c_designation:any, c_jobtype:any, c_location :any, c_experience:any, c_salary:any, company_logo_file: any, c_suggestions:any){
@@ -186,6 +188,29 @@ insertstudentprofiledetails(sp_name:any, sp_email:any, sp_dob:any, sp_location:a
     ); 
 }
 
+insertfacultyprofiledetails(faculty_name:any,fp_email: any, fp_mobile: any, fp_dob: any, fp_aoi: any, fp_linkedin: any, fp_designation: any, fp_dept: any) {
+  const formData: any = new FormData();
+  formData.append("faculty_name", faculty_name);
+  formData.append("fp_email", fp_email);
+  formData.append("fp_mobile", fp_mobile);
+  formData.append("fp_dob", fp_dob);
+  formData.append("fp_aoi", fp_aoi);
+  formData.append("fp_linkedin", fp_linkedin);
+  formData.append("fp_designation", fp_designation);
+  formData.append("fp_dept", fp_dept);
+  console.log(formData);
+  return this.httpClient.post<any>(this.baseUrl + '/facultyprofilebasic.php', formData).pipe(
+    catchError((error: any) => {
+      console.error('Error occurred: ', error);
+      return throwError('An error occurred while inserting faculty profile details.');
+    }),
+    map((response: any) => {
+      console.log('Response received: ', response);
+      return response;
+    })
+  );
+}
+
 updateminiprofile(profile_pic_file:any){
   const formData: any = new FormData();
   
@@ -195,6 +220,27 @@ updateminiprofile(profile_pic_file:any){
   formData.append("email",this.getEmail());
   //console.log(formData.data);
 return this.httpClient.post<any>(this.baseUrl + '/updateuserprofilepicture.php', formData)
+.pipe(
+  catchError((error: any) => {
+    console.error('Error occurred: ', error);
+    return throwError(error);
+  }),
+  map((response: any) => {
+    console.log('Response received: ', response);
+    return response;
+  })
+);
+}
+
+updateminiprofilefaculty(profile_pic_file:any){
+  const formData: any = new FormData();
+  
+  console.log(profile_pic_file.value.profile_pic);
+  formData.append("profile_pic_file",profile_pic_file.value.profile_pic);
+  //formData.append("email","nikhilphadke38@gmail.com");
+  formData.append("email",this.getEmail());
+  //console.log(formData.data);
+return this.httpClient.post<any>(this.baseUrl + '/updatefacultyprofilepicture.php', formData)
 .pipe(
   catchError((error: any) => {
     console.error('Error occurred: ', error);
@@ -223,6 +269,21 @@ getStudentProfileImage(){
 ); 
 }
 
+getFacultyProfileImage(){
+  const formData: any = new FormData();
+  formData.append("email",this.getEmail());
+  return this.httpClient.post<any>(this.baseUrl + '/updatefacultyprofilepicture.php', formData)
+.pipe(
+  catchError((error: any) => {
+    console.error('Error occurred: ', error);
+    return throwError(error);
+  }),
+  map((response: any) => {
+    console.log('Response received: ', response);
+    return response;
+  })
+); 
+}
 //this is for getting details from db in editprofile page
 getStudentProfileDetails(){
   const formData: any = new FormData();
@@ -240,6 +301,22 @@ getStudentProfileDetails(){
 ); 
 }
 
+//this is for getting details from db in editprofile page
+getFacultyProfileDetails(){
+  const formData: any = new FormData();
+  formData.append("email",this.getEmail());
+  return this.httpClient.post<any>(this.baseUrl + '/completeFacultyProfile.php', formData)
+.pipe(
+  catchError((error: any) => {
+    console.error('Error occurred: ', error);
+    return throwError(error);
+  }),
+  map((response: any) => {
+    console.log('Response received: ', response);
+    return response;
+  })
+); 
+}
 getStudentDetails() {
   const formData: any = new FormData();
   formData.append("email",this.getEmail());
@@ -260,6 +337,39 @@ getStudentDetails() {
 
             // Display the data in whatever format you desire
             console.log(`Student Name: ${studName}`);
+            console.log(`Designation: ${designation}`);
+            console.log(`Profile Image: ${profileImage}`);
+            console.log(`Linked In : ${linkedIn}`)
+          });
+        } else {
+          console.log(response.message || 'No results found');
+        }
+
+        return response;
+      })
+    );
+}
+
+getFacultyDetails() {
+  const formData: any = new FormData();
+  formData.append("email",this.getEmail());
+
+  return this.httpClient.post<any>(this.baseUrl + '/retrieveFacultyData.php', formData)
+    .pipe(
+      catchError((error: any) => {
+        console.error('Error occurred: ', error);
+        throw new Error('An error occurred while retrieving student details.'); // Throw a custom error
+      }),
+      map((response: any) => {
+        if (response.success === 'success' && response.data) {
+          response.data.forEach((faculty: any) => {
+            const facultyName = faculty.faculty_name;
+            const designation = faculty.fp_designation;
+            const profileImage = faculty.fp_profile_image;
+            const linkedIn = faculty.fp_linkedin;
+
+            // Display the data in whatever format you desire
+            console.log(`Faculty Name: ${facultyName}`);
             console.log(`Designation: ${designation}`);
             console.log(`Profile Image: ${profileImage}`);
             console.log(`Linked In : ${linkedIn}`)

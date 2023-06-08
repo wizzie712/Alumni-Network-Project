@@ -12,20 +12,33 @@ $db_name = 'alumniconnect';
 $mysqli = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
-  die('Error: Failed to connect to database');
+    die('Error: Failed to connect to the database');
 }
 
-$faculty_email = $_GET['faculty_email'];
+$faculty_email = mysqli_real_escape_string($mysqli, $_GET['faculty_email']);
 
-$sql = "DELETE FROM faculty_creds where faculty_email = '$faculty_email'";
-if (mysqli_query($mysqli, $sql)) {
+// Delete records from faculty_creds table
+$sql_creds = "DELETE FROM faculty_creds WHERE faculty_email = '$faculty_email'";
+
+// Delete records from faculty_profile table
+$sql_profile = "DELETE FROM faculty_profile WHERE fp_email = '$faculty_email'";
+
+// Perform both deletions in a transaction
+mysqli_begin_transaction($mysqli);
+
+try {
+    mysqli_query($mysqli, $sql_creds);
+    mysqli_query($mysqli, $sql_profile);
+    mysqli_commit($mysqli);
+
     $authdata = [
         "success" => true,
-        "message" => "User record deleted successfully"
+        "message" => "User records deleted successfully"
     ];
     echo json_encode($authdata);
-} else {
-    echo "Error deleting record: " . mysqli_error($mysqli);
+} catch (Exception $e) {
+    mysqli_rollback($mysqli);
+    echo "Error deleting records: " . $e->getMessage();
 }
 
 mysqli_close($mysqli);
