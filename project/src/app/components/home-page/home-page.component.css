@@ -80,13 +80,15 @@ small {
   height: 100%;
 }
 header {
-  height: 10px;
-  background-color: #02b8dd;
+  height: 80px;
+  background-color: #ffffff;
   position: sticky;
+  top: 0;
+  z-index: 100;
 }
 header h1 {
   float: left;
-  margin-top: 32px;
+  margin-top: 20px;
   /* background-color: red; */
 }
 header h1 .color {
@@ -94,7 +96,9 @@ header h1 .color {
 }
 header nav {
   float: right;
-  margin-right: 40px;
+  margin-right: 203px;
+  font-size: 1.2rem;
+  margin-top: -10px;
   /* background-color: aqua; */
 }
 header nav ul li {
@@ -110,6 +114,18 @@ header nav ul li a {
   display: block;
   margin-right: 20px;
 }
+
+/* horizontal line */
+.horizontal-line {
+  display: block;
+  border-bottom: 2px solid rgb(120, 119, 119);
+  /* margin-top: 5px; */
+  position: sticky;
+  top: 80px;
+  z-index: 2;
+}
+
+
 .button-1 {
   display: block;
   text-align: center;
@@ -170,6 +186,7 @@ header nav ul li a {
   border: 2px solid gray;
   overflow-y: auto; /* Enable vertical scrolling */
   margin-left: 30px;
+  background-image: url('src/assets/images/noticesBg.jpg');
 }
 
 .notices .content ul li{
