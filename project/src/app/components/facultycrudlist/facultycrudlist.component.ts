@@ -23,9 +23,9 @@ export class FacultycrudlistComponent implements OnInit {
 
   }
 
-  deleteUser(faculty_email:any){
+  deleteUser(fp_email:any){
     //console.log(id);
-    this.dataService.deleteFaculty(faculty_email).subscribe(
+    this.dataService.deleteFaculty(fp_email).subscribe(
       (result:any)=>{
         this.users = result;
         window.location.reload();

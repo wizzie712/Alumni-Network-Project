@@ -22,8 +22,7 @@ if (!$mysqli) {
 }
 
 $faculty_email = mysqli_real_escape_string($mysqli, $_GET['faculty_email']);
-
-$sql = "SELECT * FROM faculty_creds where faculty_email = '$faculty_email'";
+$sql = "SELECT fc.faculty_name, fp.* FROM faculty_creds fc JOIN faculty_profile fp ON fc.faculty_email = fp.fp_email WHERE fc.faculty_email = '$faculty_email'";
 
 $result = mysqli_query($mysqli, $sql);
 

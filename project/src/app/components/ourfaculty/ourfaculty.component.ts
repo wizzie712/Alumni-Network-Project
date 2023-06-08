@@ -12,10 +12,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OurfacultyComponent implements OnInit {
 
-
+  facultydetails: any[] = [];
   sloginbtn: boolean = false;
   logoutbtn: boolean = false;
   logged_in_username: any;
+  profile_pic_url:any;
+  faculty_name_url:any;
+  fp_designation_url:any;
+  fp_linked_in_url:any;
 
   stickyNavigation: StickyNavigation | undefined;
 
@@ -30,6 +34,25 @@ export class OurfacultyComponent implements OnInit {
     this.dataService.getLoggedInName.subscribe(name => this.changeName(name));
     if (this.dataService.isLoggedIn()) {
       console.log("loggedin");
+
+      this.dataService.getFacultyDetails().subscribe(
+        (result: any) => {
+          console.log(result.data);
+          if (result.success === 'success' && result.data.length > 0) {
+            this.facultydetails = result.data; // Assign fetched data to facultydetails array
+            const faculty = this.facultydetails[0];
+            this.profile_pic_url = faculty.fp_profile_image;
+            this.faculty_name_url = faculty.faculty_name;
+            this.fp_designation_url = faculty.fp_designation;
+            this.fp_linked_in_url = faculty.fp_linkedin;
+          } else {
+            console.log(result.message || 'No results found');
+          }
+        },
+        error => {
+          console.log("Error occurred while fetching");
+        }
+      );
       this.sloginbtn = false;
       this.logoutbtn = true;
       this.logged_in_username = this.dataService.getUsername();

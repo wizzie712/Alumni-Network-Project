@@ -47,7 +47,7 @@ const routes: Routes = [
   { path: 'facultycrudlist',component:FacultycrudlistComponent},
   { path: 'facultydashboard',component:FacultyDashboardComponent},
   { path: 'addfaculty',component:AddfacultyComponent},
-  { path: 'editfaculty/:faculty_email',component:EditfacultyComponent},
+  { path: 'editfaculty/:fp_email',component:EditfacultyComponent},
   { path: 'ourstudents', component:OurstudentsComponent},
   { path: 'ourfaculty', component:OurfacultyComponent},
   { path: 'facultyprofile', component:FacultyprofileComponent},

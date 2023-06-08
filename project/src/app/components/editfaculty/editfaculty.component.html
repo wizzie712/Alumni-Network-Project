@@ -37,7 +37,7 @@
     <div class="col mb-4">
       <div class="inputbox">
         <ion-icon name="mail-outline"></ion-icon>
-      <input type="email" required class="form-control input-field" id="email" formControlName="faculty_email">
+      <input type="email" required class="form-control input-field" id="email" formControlName="fp_email">
       <label for="">Email</label>
     </div>
        <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
@@ -50,7 +50,7 @@
     <div class="col mb-4">
       <div class="inputbox">
         <ion-icon name="lock-closed-outline"></ion-icon>
-      <input type="text" required class="form-control input-field" id="dept" formControlName="faculty_dept">
+      <input type="text" required class="form-control input-field" id="dept" formControlName="fp_dept">
       <label for="">Department</label>
       </div>
       <div class="form-text text-danger" *ngIf="Dept.errors?.['required'] && (Dept.dirty || Dept.touched)">
@@ -60,17 +60,7 @@
     <div class="col mb-4">
       <div class="inputbox">
         <ion-icon name="lock-closed-outline"></ion-icon>
-      <input type="text" required class="form-control input-field" id="qualification" formControlName="faculty_qualification">
-      <label for="">Qualification</label>
-      </div>
-      <div class="form-text text-danger" *ngIf="Qualification.errors?.['required'] && (Qualification.dirty || Qualification.touched)">
-         Qualification is required
-      </div>
-    </div>
-    <div class="col mb-4">
-      <div class="inputbox">
-        <ion-icon name="lock-closed-outline"></ion-icon>
-      <input type="text" required class="form-control input-field" id="designation" formControlName="faculty_designation">
+      <input type="text" required class="form-control input-field" id="designation" formControlName="fp_designation">
       <label for="">Designation</label>
       </div>
       <div class="form-text text-danger" *ngIf="Designation.errors?.['required'] && (Designation.dirty || Designation.touched)">
@@ -80,20 +70,17 @@
     <div class="col mb-4">
       <div class="inputbox">
         <ion-icon name="lock-closed-outline"></ion-icon>
-      <input type="password" required class="form-control input-field" id="password" formControlName="faculty_password">
-      <label for="">Password</label>
+      <input type="text" required class="form-control input-field" id="Linkedin" formControlName="fp_linkedin">
+      <label for="">Linked-in</label>
       </div>
-      <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
-        Password is required
-      </div>
-      <div class="form-text text-danger" *ngIf="Password.errors?.['pattern'] && (Password.dirty || Password.touched)">
-        Password should have Special characters, Lower & Upper case, numbers and minimum 8 characters
+      <div class="form-text text-danger" *ngIf="Linkedin.errors?.['required'] && (Linkedin.dirty || Linkedin.touched)">
+        Linked-in is required
       </div>
     </div>
     <div class="col mb-4">
       <div class="inputbox">
         <ion-icon name="lock-closed-outline"></ion-icon>
-      <input type="text" required class="form-control input-field" id="aoi" formControlName="faculty_aoi">
+      <input type="text" required class="form-control input-field" id="aoi" formControlName="fp_aoi">
       <label for="">Area of Interest</label>
       </div>
       <div class="form-text text-danger" *ngIf="AOI.errors?.['required'] && (AOI.dirty || AOI.touched)">

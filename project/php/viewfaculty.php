@@ -15,8 +15,8 @@ if (!$mysqli) {
   die('Error : ('. mysqli_connect_errno() .') '. mysqli_connect_error());
 }
 
-// Query the database to retrieve all data from a table
-$sql = "SELECT * FROM faculty_creds";
+// Query the database to retrieve data from both tables
+$sql = "SELECT fc.faculty_name, fp.* FROM faculty_creds fc JOIN faculty_profile fp ON fc.faculty_email = fp.fp_email";
 $result = mysqli_query($mysqli, $sql);
 
 // Check if there are any results
@@ -28,9 +28,8 @@ if (mysqli_num_rows($result) > 0) {
   }
   // Return the data as a JSON object
   echo json_encode($rows);
-  //print_r($rows);
 } else {
-  //echo "No results found.";
+  echo "No results found.";
 }
 
 // Close the database connection

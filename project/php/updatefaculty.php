@@ -12,36 +12,46 @@ $db_name = 'alumniconnect';
 $mysqli = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
-    die('Error : ('. mysqli_connect_errno() .') '. mysqli_connect_error());
+    die('Error: Failed to connect to the database');
 }
 
 $postdata = file_get_contents("php://input");
 
-if(isset($postdata) && !empty($postdata)){
+if (isset($postdata) && !empty($postdata)) {
     $request = json_decode($postdata);
     $faculty_name = trim($request->faculty_name);
-    $faculty_email = mysqli_real_escape_string($mysqli, trim($request->faculty_email));
-    $faculty_dept = trim($request->faculty_dept);
-    $faculty_qualification = mysqli_real_escape_string($mysqli, trim($request->faculty_qualification));
-    $faculty_designation = mysqli_real_escape_string($mysqli, trim($request->faculty_designation));
-    $faculty_password = mysqli_real_escape_string($mysqli, trim($request->faculty_password));
-    $faculty_aoi = mysqli_real_escape_string($mysqli, trim($request->faculty_aoi));
+    $fp_email = mysqli_real_escape_string($mysqli, trim($request->fp_email));
+    $faculty_dept = trim($request->fp_dept);
+    $faculty_designation = mysqli_real_escape_string($mysqli, trim($request->fp_designation));
+    $fp_linkedin = mysqli_real_escape_string($mysqli, trim($request->fp_linkedin));
+    $faculty_aoi = mysqli_real_escape_string($mysqli, trim($request->fp_aoi));
 
-    $sql = "UPDATE faculty_creds SET faculty_name = '$faculty_name', faculty_email = '$faculty_email',faculty_dept = '$faculty_dept',faculty_qualification = ' $faculty_qualification',faculty_designation = '$faculty_designation', faculty_password = '$faculty_password', faculty_aoi = '$faculty_aoi' WHERE faculty_email = '$faculty_email'";
+    // Update faculty_name in faculty_creds table
+    $sql_creds = "UPDATE faculty_creds SET faculty_name = '$faculty_name' WHERE faculty_email = '$fp_email'";
 
-    if (mysqli_query($mysqli, $sql)) {
+    // Update fp_dept, fp_designation, fp_linkedin, fp_aoi in faculty_profile table
+    $sql_profile = "UPDATE faculty_profile SET fp_dept = '$faculty_dept', fp_designation = '$faculty_designation', fp_linkedin = '$fp_linkedin', fp_aoi = '$faculty_aoi' WHERE fp_email = '$fp_email'";
+
+    // Perform both updates in a transaction
+    mysqli_begin_transaction($mysqli);
+
+    try {
+        mysqli_query($mysqli, $sql_creds);
+        mysqli_query($mysqli, $sql_profile);
+        mysqli_commit($mysqli);
+
         $authdata = [
-            'faculty_name'=> $faculty_name,
-            'faculty_email' => $faculty_email,
-            'faculty_dept' => $faculty_dept,
-            'faculty_qualification' => $faculty_qualification,
-            'faculty_designation' => $faculty_designation,
-            'faculty_password' => $faculty_password,
-            'faculty_aoi' => $faculty_aoi
+            'faculty_name' => $faculty_name,
+            'fp_email' => $fp_email,
+            'fp_dept' => $faculty_dept,
+            'fp_designation' => $faculty_designation,
+            'fp_linkedin' => $fp_linkedin,
+            'fp_aoi' => $faculty_aoi
         ];
         echo json_encode($authdata);
-    } else {
-        echo "Error updating record: " . mysqli_error($mysqli);
+    } catch (Exception $e) {
+        mysqli_rollback($mysqli);
+        echo "Error updating record: " . $e->getMessage();
     }
 }
 ?>
