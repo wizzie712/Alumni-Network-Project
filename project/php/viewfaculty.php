@@ -16,7 +16,7 @@ if (!$mysqli) {
 }
 
 // Query the database to retrieve data from both tables
-$sql = "SELECT fc.faculty_name, fp.* FROM faculty_creds fc JOIN faculty_profile fp ON fc.faculty_email = fp.fp_email";
+$sql = "SELECT fc.faculty_name, fc.faculty_email, COALESCE(fp.fp_email, '') AS fp_email, COALESCE(fp.fp_dept, '') AS fp_dept, COALESCE(fp.fp_designation, '') AS fp_designation, COALESCE(fp.fp_aoi, '') AS fp_aoi FROM faculty_creds fc LEFT JOIN faculty_profile fp ON fc.faculty_email = fp.fp_email";
 $result = mysqli_query($mysqli, $sql);
 
 // Check if there are any results

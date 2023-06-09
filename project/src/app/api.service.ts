@@ -408,23 +408,21 @@ getTestimonials(){
 // }
 insertTestimonials(stud_testimonial: any) {
   const currentDate: Date = new Date();
+  const year: number = currentDate.getFullYear();
+  const month: number = currentDate.getMonth() + 1;
+  const day: number = currentDate.getDate();
+  const formattedDate: string = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 
-// Extract individual components of the date
-const year: number = currentDate.getFullYear();
-const month: number = currentDate.getMonth() + 1; // Note: Months are zero-based
-const day: number = currentDate.getDate();
-
-// Create a formatted date string
-const formattedDate: string = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-
-console.log(formattedDate); // Output: "2023-05-31"
+  console.log(formattedDate);
   const formData: any = new FormData();
-  formData.append("stud_email", this.getEmail());
-  formData.append("stud_testimonial", stud_testimonial);
-  formData.append("stud_date", formattedDate);
+  formData.append("email", this.getEmail()); // Updated field name to "email"
+  formData.append("testimonial", stud_testimonial); // Updated field name to "testimonial"
+  formData.append("date", formattedDate); // Updated field name to "date"
+
   console.log(this.getEmail());
-  console.log('stud_testimonial:', stud_testimonial); // Log the stud_testimonial value
-  console.log('stud_date:',formattedDate); // Log the stud_date value
+  console.log('testimonial:', stud_testimonial);
+  console.log('date:', formattedDate);
+
   return this.httpClient.post<any>(this.baseUrl+'/addTestimonials.php', formData)
     .pipe(
       catchError((error: any) => {
@@ -432,10 +430,41 @@ console.log(formattedDate); // Output: "2023-05-31"
         return throwError(error);
       }),
       map((response: any) => {
-        console.log('Response received:', response); // Log the response received from the server
+        console.log('Response received:', response);
         return response;
       })
     );
 }
+
+insertTestimonialsFaculty(faculty_testimonial: any) {
+  const currentDate: Date = new Date();
+  const year: number = currentDate.getFullYear();
+  const month: number = currentDate.getMonth() + 1;
+  const day: number = currentDate.getDate();
+  const formattedDate: string = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+
+  console.log(formattedDate);
+  const formData: any = new FormData();
+  formData.append("email", this.getEmail()); // Updated field name to "email"
+  formData.append("testimonial", faculty_testimonial); // Updated field name to "testimonial"
+  formData.append("date", formattedDate); // Updated field name to "date"
+
+  console.log(this.getEmail());
+  console.log('testimonial:', faculty_testimonial);
+  console.log('date:', formattedDate);
+
+  return this.httpClient.post<any>(this.baseUrl+'/addTestimonials.php', formData)
+    .pipe(
+      catchError((error: any) => {
+        console.error('Error occurred:', error);
+        return throwError(error);
+      }),
+      map((response: any) => {
+        console.log('Response received:', response);
+        return response;
+      })
+    );
+}
+
 
 }

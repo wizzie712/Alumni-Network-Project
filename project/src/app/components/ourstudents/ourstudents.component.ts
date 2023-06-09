@@ -67,6 +67,8 @@ export class OurstudentsComponent implements OnInit {
 
   logout() {
     this.dataService.deleteToken();
-    // Rest of your logout code
+    this.router.navigate(['/facultylogin']).then(() => {
+      window.location.reload();
+    });
   }
 }

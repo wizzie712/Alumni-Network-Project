@@ -23,9 +23,13 @@ if(isset($postdata) && !empty($postdata)) {
     $faculty_email = mysqli_real_escape_string($mysqli, trim($request->faculty_email));
     $faculty_password = mysqli_real_escape_string($mysqli, trim($request->faculty_password));
 
-    $sql = "INSERT INTO faculty_creds(faculty_email,faculty_password) VALUES ('$faculty_email','$faculty_password')";
+    $sql = "INSERT INTO faculty_creds (faculty_email, faculty_password) VALUES ('$faculty_email', '$faculty_password')";
     
     if (mysqli_query($mysqli, $sql)) {
+        // Insert blank data into faculty_profile table
+        $insertSql = "INSERT INTO faculty_profile (fp_email, fp_dept, fp_designation, fp_aoi) VALUES ('$faculty_email', '', '', '')";
+        mysqli_query($mysqli, $insertSql);
+        
         $authdata = [
             'faculty_email' => $faculty_email,
             'faculty_password' => $faculty_password
