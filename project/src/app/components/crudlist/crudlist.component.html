@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
   <body>
     <input type="checkbox" id="check">
@@ -21,9 +22,23 @@
 <li><a routerLink="#"><i class="fas fa-poll" style="color: #ffffff;"></i>Insights</a></li>
 </ul>
 </div>
-<div class = "horizontal-nav" style="background-color: cyan; margin-left: 20.25%;">
+<!-- <div class = "horizontal-nav" style="background-color: cyan; margin-left: 20.25%;">
   <h3>Alumni Connect</h3>
-</div>
+</div> -->
+<div id="textbox">
+  <p class="alignleft" routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
+  <p class="alignright">
+   <tr>
+     <td>
+   Hey
+ </td>
+ <td>
+ <button type="button"  class="btn btn-block" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
+   <ion-icon title="Logout" name="power-outline" style="font-size: 2rem; margin-bottom: -5px;"></ion-icon>
+ </button>
+</td>
+</tr>
+</p>   </div>
 <section>
   <div class="table-responsive">
 <table class="table table-stripped">
@@ -46,7 +61,7 @@
             <td>{{user.stud_password}}</td>
             <td>{{user.stud_gender}}</td>
             <td>{{user.stud_batch}}</td>
-            <td>  <button routerLink="/editstudent/{{user.stud_email}}"><span class="fa fa-pencil"></span></button>    <button (click)="deleteUser(user.stud_email)" > <span class="fa fa-trash"></span></button>  </td>
+            <td>  <button style="background-color: green;" routerLink="/editstudent/{{user.stud_email}}"><span class="fa fa-pencil"></span></button>    <button style="background-color: rgb(159, 12, 12);" (click)="deleteUser(user.stud_email)" > <span class="fa fa-trash"></span></button>  </td>
         </tr>
 
     </tbody>
