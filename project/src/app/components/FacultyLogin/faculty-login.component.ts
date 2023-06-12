@@ -14,9 +14,16 @@ export class FacultyLoginComponent implements OnInit{
   angForm: FormGroup;
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
   this.angForm = this.fb.group({
-  faculty_email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
+  faculty_email: ['', [Validators.required,Validators.minLength(1), Validators.email,this.gmailValidator]],
   faculty_password: ['', Validators.required]
   });
+  }
+  gmailValidator(control: FormControl) {
+    const email = control.value;
+    if (email && !email.endsWith('@gmail.com')) {
+      return { invalidGmail: true };
+    }
+    return null;
   }
   ngOnInit() {
   }

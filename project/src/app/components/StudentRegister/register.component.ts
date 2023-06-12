@@ -14,16 +14,22 @@ export class RegisterComponent implements OnInit {
   yearControl = new FormControl('');
   angForm: FormGroup;
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
-  
+
   this.angForm = this.fb.group({
   stud_name: ['', Validators.required],
-  stud_email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
+  stud_email: ['', [Validators.required,Validators.minLength(1), Validators.email,this.gmailValidator]],
   stud_password: ['', [Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,}')]],
   stud_gender: ['', Validators.required],
   stud_batch: ['', Validators.required]
   });
   }
-
+  gmailValidator(control: FormControl) {
+    const email = control.value;
+    if (email && !email.endsWith('@gmail.com')) {
+      return { invalidGmail: true };
+    }
+    return null;
+  }
   ngOnInit(): void {
   }
 years = Array.from({length: 18}, (_, i) => 2025 - i);

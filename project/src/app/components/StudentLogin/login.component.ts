@@ -14,10 +14,18 @@ export class LoginComponent implements OnInit {
   angForm: FormGroup;
   constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
   this.angForm = this.fb.group({
-  stud_email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
-  stud_password: ['', Validators.required]
-  });
-  }
+    stud_email: ['', [Validators.required,Validators.minLength(1), Validators.email, this.gmailValidator]],
+    stud_password: ['', Validators.required]
+    });
+    }
+
+    gmailValidator(control: FormControl) {
+      const email = control.value;
+      if (email && !email.endsWith('@gmail.com')) {
+        return { invalidGmail: true };
+      }
+      return null;
+    }
   ngOnInit() {
   }
   postdata(angForm1: { value: { stud_email: any; stud_password: any; }; })

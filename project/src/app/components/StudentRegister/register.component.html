@@ -43,8 +43,8 @@
        <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
         Email is required
       </div>
-      <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
-        Email is Invalid
+      <div class="form-text text-danger" *ngIf="Email.errors?.['invalidGmail'] && (Email.dirty || Email.touched)">
+        Email ID should end with @gmail.com
       </div>
     </div>
     <div class="col mb-4">
