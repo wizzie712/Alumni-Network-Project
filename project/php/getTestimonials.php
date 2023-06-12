@@ -19,8 +19,12 @@ if (!$mysqli) {
 }
 
 // Query the database to retrieve the joined data
-$sql = "SELECT sg.*, sp.sp_profile_image FROM stud_guidance sg
-        INNER JOIN stud_profile sp ON sg.stud_email = sp.sp_email";
+$sql = "(SELECT sg.*, sp.sp_profile_image FROM stud_guidance sg
+        INNER JOIN stud_profile sp ON sg.stud_email = sp.sp_email)
+        UNION ALL
+        (SELECT fg.*, fp.fp_profile_image FROM faculty_guidance fg
+        INNER JOIN faculty_profile fp ON fg.faculty_email = fp.fp_email)
+        ORDER BY RAND()";
 $result = mysqli_query($mysqli, $sql);
 
 // Check if there are any results

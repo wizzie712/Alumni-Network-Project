@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { data } from 'jquery';
@@ -19,8 +19,25 @@ export class OuralumniComponent implements OnInit {
   stud_name_url: any;
   sp_designation_url: any;
   sp_linked_in_url:any;
- 
-  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {}
+
+  searchQuery!: string;
+  highlightedContent: string | undefined;
+
+
+
+  search(): void {
+    const escapedQuery = this.escapeRegExp(this.searchQuery);
+    const regex = new RegExp(`(${escapedQuery})`, 'gi');
+    const pageContent = this.elementRef.nativeElement.innerHTML;
+    this.highlightedContent = pageContent.replace(regex, '<mark>$1</mark>');
+  }
+
+  escapeRegExp(query: string): string {
+    return query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+
+  constructor(private elementRef: ElementRef, private fb: FormBuilder,private dataService: ApiService,private router:Router) {}
 
   ngOnInit(): void {
     this.dataService.getLoggedInName.subscribe(name => this.changeName(name));
