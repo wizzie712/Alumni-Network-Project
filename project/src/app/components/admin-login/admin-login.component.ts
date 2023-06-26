@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-admin-login',
@@ -18,7 +20,7 @@ export class AdminLoginComponent implements OnInit{
 });
 
   [logemail: string]: any;
-  constructor() { }
+  constructor(private alertController: AlertController, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -32,13 +34,37 @@ get Password(): FormControl {
   return this.loginForm.get("logpassword") as FormControl;
 }
 
-loginSubmitted(){
-  console.log(this.loginForm);
-  // document.write("login successful");
-alert('Login Successful');
-// // if (logemail === 'anushka.salvi@spit.ac.in') {
-// //   // console.log(this.form.value); // Process your form
-// }
+  async loginSubmitted(){
+  if (
+    this.loginForm.valid &&
+    this.Email.value === 'anushka.salvi@spit.ac.in' &&
+    this.Password.value === 'Abc@12345'
+  ) {
+    const alert = await this.alertController.create({
+      header: 'Login Success',
+      message: 'You have successfully logged in.',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.router.navigate(['/crudlist']); // Replace '/new-page' with the actual route to the new page
+          }
+        }
+      ],
+      cssClass: 'alert-middle' // Add the CSS class to center the alert
+    });
+
+    await alert.present();
+  } else {
+    const alert = await this.alertController.create({
+      header: 'Login Failed',
+      message: 'Invalid email or password.',
+      buttons: ['OK'],
+      cssClass: 'alert-middle' // Add the CSS class to center the alert
+    });
+
+    await alert.present();
+  }
 
 }
 }

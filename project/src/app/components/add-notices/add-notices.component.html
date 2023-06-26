@@ -44,17 +44,14 @@
 <table class="table table-stripped">
     <thead class="bg-primary">
         <th>Sr. No</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Password</th>
-        <th>Gender</th>
-        <th>Batch</th>
+        <th>Notice</th>
+        <th>Pdf Attached</th>
         <th>Edit</th>
     </thead>
 
     <tbody>
 
-        <tr *ngFor="let user of users; let i = index;">
+        <!-- <tr *ngFor="let user of users; let i = index;">
             <td>{{i+1}}</td>
             <td>{{user.stud_name}}</td>
             <td>{{user.stud_email}}</td>
@@ -62,7 +59,7 @@
             <td>{{user.stud_gender}}</td>
             <td>{{user.stud_batch}}</td>
             <td>  <button style="background-color: green;" routerLink="/editstudent/{{user.stud_email}}"><span class="fa fa-pencil"></span></button>    <button style="background-color: rgb(159, 12, 12);" (click)="deleteUser(user.stud_email)" > <span class="fa fa-trash"></span></button>  </td>
-        </tr>
+        </tr> -->
 
     </tbody>
 
@@ -74,3 +71,4 @@
   </section>
 </body>
 </html>
+
