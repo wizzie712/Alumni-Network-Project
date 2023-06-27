@@ -1,86 +1,31 @@
-<div class="container">
-  <form class="border p-3" [formGroup]="registerForm" (ngSubmit)="registerSubmitted()">
-
-  <div class="row">
-    <div class="col text-center p-2 mb-3 bg-light">
-      <span class="fs-3">Admin Registration</span>
-    </div>
-  </div>
-
-    <div class="col mb-3">
-      <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
-      <div class="form-text text-danger" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
-        Name is required
-      </div>
-      <div class="form-text text-danger" *ngIf="Name.errors?.['minlength'] && (Name.touched || Name.dirty)">
-        Name is too short
-      </div>
-      <div class="form-text text-danger" *ngIf="Name.errors?.['pattern'] && (Name.touched || Name.dirty)">
-        Name should start with alphabet
-      </div>
-    </div>
-    <div class="col mb-3">
-      <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
-      <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
-        Email is required
-      </div>
-      <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
-        Email is Invalid
-      </div>
-    </div>
-    <div class="col mb-3">
-      <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
-      <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
-        Password is required
-      </div>
-      <div class="form-text text-danger" *ngIf="Password.errors?.['pattern'] && (Password.dirty || Password.touched)">
-        Password should have Special characters, Lower & Upper case, numbers and minimum 8 characters
-      </div>
-    </div>
-    <div class="col ps-3">
-      <div class="m-1">Gender</div>
-      <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input" value="m" id="male" formControlName="gender">
-        <label for="male" class="form-check-label">Male</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio" class="form-check-input" value="f" id="female" formControlName="gender">
-        <label for="female" class="form-check-label">Female</label>
-      </div>
-      <div class="form-text text-danger" *ngIf="Gender.errors?.['required']">
-        Select Gender
-      </div>
-
-      <div class="row">
-        <div class="col-6 offset-3">
-          <div class="d-grid">
-            <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Submit</button>
-            <!-- <button type="submit" class="btn btn-primary" onclick="loginpage()">Login</button> -->
-            <a routerLink="/adminlogin">Admin Login</a>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6 offset-3">
-        <div class="d-grid">
-          <a routerLink="/facultylogin">Faculty Login</a>
-        </div>
-        <div>
-          <a routerLink="/facultyregister">Register as Faculty</a>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6 offset-3">
-        <div class="d-grid">
-          <a routerLink="/studentlogin">Student Login</a>
-        </div>
-        <div>
-          <a routerLink="/studentregister">Register as Student</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</form>
+<div class="card-container">
+<div class="card">
+  <a class="card1" href="#">
+   <p>This is heading</p>
+   <p class="small">Card description with lots of great facts and interesting details.</p>
+   <div class="go-corner" href="#">
+     <div class="go-arrow">
+       →
+     </div>
+   </div>
+ </a>
+  <a class="card1" href="#">
+   <p>This is heading</p>
+   <p class="small">Card description with lots of great facts and interesting details.</p>
+   <div class="go-corner" href="#">
+     <div class="go-arrow">
+       →
+     </div>
+   </div>
+ </a>
+  <a class="card1" href="#">
+   <p>This is heading</p>
+   <p class="small">Card description with lots of great facts and interesting details.</p>
+   <div class="go-corner" href="#">
+     <div class="go-arrow">
+       →
+     </div>
+   </div>
+ </a>
+</div>
 </div>

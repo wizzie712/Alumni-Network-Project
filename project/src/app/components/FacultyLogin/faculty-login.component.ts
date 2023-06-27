@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators, NgForm, FormBuilder } from '@angula
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-faculty-login',
@@ -12,7 +13,7 @@ import { ApiService } from 'src/app/api.service';
 export class FacultyLoginComponent implements OnInit{
   [x: string]: any;
   angForm: FormGroup;
-  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
+  constructor(private alertController: AlertController,private fb: FormBuilder,private dataService: ApiService,private router:Router) {
   this.angForm = this.fb.group({
   faculty_email: ['', [Validators.required,Validators.minLength(1), Validators.email,this.gmailValidator]],
   faculty_password: ['', Validators.required]
@@ -32,13 +33,35 @@ export class FacultyLoginComponent implements OnInit{
   this.dataService.facultylogin(angForm1.value.faculty_email,angForm1.value.faculty_password)
   .pipe(first())
   .subscribe(
-  data => {
-  //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/studentdashboard';
-  this.router.navigate(['/ourstudents']);
-  },
-  error => {
-  });
-  }
+    async (data) => {
+      const alert = await this.alertController.create({
+        header: 'Login Success',
+        message: 'You have successfully logged in.',
+        buttons: [
+          {
+            text: 'OK',
+            handler: () => {
+              this.router.navigate(['/studentdashboard']);
+            },
+          },
+        ],
+        cssClass: 'alert-middle',
+      });
+
+      await alert.present();
+    },
+    async (error) => {
+      const alert = await this.alertController.create({
+        header: 'Login Failed',
+        message: 'Invalid email or password.',
+        buttons: ['OK'],
+        cssClass: 'alert-middle',
+      });
+
+      await alert.present();
+    }
+  );
+}
   get Email() { return this.angForm.get('faculty_email') as FormControl; }
   get Password() { return this.angForm.get('faculty_password') as FormControl; }
   }

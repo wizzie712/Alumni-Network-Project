@@ -3,7 +3,7 @@ import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angula
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
-
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +13,7 @@ import { ApiService } from 'src/app/api.service';
 export class RegisterComponent implements OnInit {
   yearControl = new FormControl('');
   angForm: FormGroup;
-  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
+  constructor(private alertController: AlertController, private fb: FormBuilder,private dataService: ApiService,private router:Router) {
 
   this.angForm = this.fb.group({
   stud_name: ['', Validators.required],
@@ -38,11 +38,34 @@ postdata(angForm1: { value: { stud_name:any; stud_email: any; stud_password: any
 this.dataService.userregistration(angForm1.value.stud_name,angForm1.value.stud_email,angForm1.value.stud_password,angForm1.value.stud_gender,angForm1.value.stud_batch)
 .pipe(first())
 .subscribe(
-data => {
-this.router.navigate(['/studentlogin']);
-},
-error => {
-});
+  async (data) => {
+    const alert = await this.alertController.create({
+      header: 'Login Success',
+      message: 'You have successfully logged in.',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+            this.router.navigate(['/studentdashboard']);
+          },
+        },
+      ],
+      cssClass: 'alert-middle',
+    });
+
+    await alert.present();
+  },
+  async (error) => {
+    const alert = await this.alertController.create({
+      header: 'Login Failed',
+      message: 'Invalid email or password.',
+      buttons: ['OK'],
+      cssClass: 'alert-middle',
+    });
+
+    await alert.present();
+  }
+);
 }
   //registrationMessage: any = {};
 

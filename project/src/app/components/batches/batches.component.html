@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <div id="textbox">
+
+      <p class="alignleft" *ngIf='logoutbtn' routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
+      <p class="alignright">
+        <tr>
+          <td>
+        Hey {{logged_in_username}},
+      </td>
+      <td>
+      <button type="button" *ngIf='logoutbtn' class="btn btn-block" (click)="logout()" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
+        <ion-icon title="Logout" name="power-outline" style="font-size: 2rem; margin-bottom: -5px;"></ion-icon>
+      </button>
+    </td>
+    </tr>
+    </p>    </div>
+          <div style="clear: both;"></div>
+    <section class="et-hero-tabs">
+
+      <div class="et-hero-tabs-container">
+        <a class="et-hero-tab" routerLink="/studentdashboard">Look for Job</a>
+        <a class="et-hero-tab" routerLink="/postjobs">Post Jobs</a>
+        <a class="et-hero-tab" routerLink="/guidance">Insights</a>
+        <a class="et-hero-tab" routerLink="/batches"><div style="text-decoration: underline;"><b>Ex-Classmates</b></div></a>
+        <a class="et-hero-tab" routerLink="/studentdashboardprofile">Profile</a>
+        <span class="et-hero-tab-slider"></span>
+      </div>
+    </section>
+    <body>
+    <div class="card-container">
+    <div class="card">
+      <a class="card1" *ngFor="let batch of batches" href="#">
+        <p>{{batch.stud_batch}}</p>
+        <p class="small">Members: {{batch.batch_count}}</p>
+        <div class="go-corner" href="#">
+          <div class="go-arrow">
+            →
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+</body>
