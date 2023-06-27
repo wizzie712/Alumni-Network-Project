@@ -25,7 +25,11 @@ import { OurfacultyComponent } from './components/ourfaculty/ourfaculty.componen
 import { FacultyprofileComponent } from './components/facultyprofile/facultyprofile.component';
 import { FacultyinsightsComponent } from './components/facultyinsights/facultyinsights.component';
 import { OuralumniComponent } from './components/ouralumni/ouralumni.component';
+
 import { BatchesComponent } from './components/batches/batches.component';
+
+import { AddNoticesComponent } from './components/add-notices/add-notices.component';
+
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -55,7 +59,8 @@ const routes: Routes = [
   { path: 'facultyinsights', component:FacultyinsightsComponent},
   { path: 'ouralumni', component:OuralumniComponent},
   { path: 'batches', component:BatchesComponent}
-];
+  { path: 'addNotices', component:AddNoticesComponent}
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
