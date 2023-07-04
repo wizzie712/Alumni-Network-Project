@@ -182,3 +182,27 @@ button:hover{
   align-items: center;
 }
 
+@media only screen and (max-width: 600px) {
+  .form-box {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .inputbox {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .inputbox ion-icon {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+  }
+  .form-control {
+    padding-left: 35px;
+  }
+  .btn {
+    width: 100%;
+  }
+  .loginstu {
+    font-size: 1rem;
+  }
+}

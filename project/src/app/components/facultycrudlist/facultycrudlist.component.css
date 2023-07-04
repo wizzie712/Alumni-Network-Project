@@ -147,3 +147,20 @@ span{
 .my-float{
 	margin-top:22px;
 }
+
+
+.alignleft {
+	float: left;
+  font-size: 2.5rem;
+  margin: 0;
+  letter-spacing: 1rem;
+  padding: 20px;
+  margin-left: 270px;
+}
+.alignright {
+	float: right;
+  font-size: 1.5rem;
+  letter-spacing: 0.3rem;
+  opacity: 0.8;
+  padding: 20px;
+}
