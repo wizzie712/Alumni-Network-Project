@@ -1,10 +1,15 @@
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-  <input type="checkbox" id="check">
+
+  </head>
+  <body>
+    <input type="checkbox" id="check">
     <label for="check">
       <i class="fas fa-bars" id="btn"></i>
       <i class="fas fa-times" id="cancel"></i>
@@ -14,11 +19,14 @@
   <ul>
 <li><a routerLink="/crudlist"><i class="fa fa-graduation-cap" style="color: #f3f4f7;"></i>Our Students</a></li>
 <li><a routerLink="/facultycrudlist"><i class="fas fa-school" style="color: #ffffff;"></i>Our Faculty</a></li>
-<li><a routerLink="#"><i class="fas fa-poll" style="color: #ffffff;"></i>Insights</a></li>
+<li><a routerLink="/addnotice"><i class="fas fa-poll" style="color: #ffffff;"></i>Notices</a></li>
 </ul>
 </div>
-<div class = "horizontal-nav" style="background-color: cyan; margin-left: 20.25%;">
+<!-- <div class = "horizontal-nav" style="background-color: cyan; margin-left: 20.25%;">
   <h3>Alumni Connect</h3>
+</div> -->
+<div id="textbox">
+  <p class="alignleft" routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
 </div>
 <section>
 <table class="table table-stripped">

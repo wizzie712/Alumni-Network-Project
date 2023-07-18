@@ -25,6 +25,8 @@ import { OurfacultyComponent } from './components/ourfaculty/ourfaculty.componen
 import { FacultyprofileComponent } from './components/facultyprofile/facultyprofile.component';
 import { FacultyinsightsComponent } from './components/facultyinsights/facultyinsights.component';
 import { OuralumniComponent } from './components/ouralumni/ouralumni.component';
+import { AddnoticeComponent } from './components/addnotice/addnotice.component';
+import { NoticepopupComponent } from './components/noticepopup/noticepopup.component';
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -52,7 +54,9 @@ const routes: Routes = [
   { path: 'ourfaculty', component:OurfacultyComponent},
   { path: 'facultyprofile', component:FacultyprofileComponent},
   { path: 'facultyinsights', component:FacultyinsightsComponent},
-  { path: 'ouralumni', component:OuralumniComponent}
+  { path: 'ouralumni', component:OuralumniComponent},
+  { path: 'addnotice', component:AddnoticeComponent},
+  { path: 'noticepopup', component:NoticepopupComponent}
 ];
 
 @NgModule({
