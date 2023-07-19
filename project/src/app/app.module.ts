@@ -16,6 +16,7 @@ import { StudentDashboardComponent } from './components/student-dashboard/studen
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { PostJobsComponent } from './components/post-jobs/post-jobs.component';
@@ -34,9 +35,9 @@ import { OurfacultyComponent } from './components/ourfaculty/ourfaculty.componen
 import { FacultyprofileComponent } from './components/facultyprofile/facultyprofile.component';
 import { FacultyinsightsComponent } from './components/facultyinsights/facultyinsights.component';
 import { OuralumniComponent } from './components/ouralumni/ouralumni.component';
-import { BatchesComponent } from './components/batches/batches.component';
-import { AddNoticesComponent } from './components/add-notices/add-notices.component';
-
+import { AddnoticeComponent } from './components/addnotice/addnotice.component';
+import { NoticepopupComponent } from './components/noticepopup/noticepopup.component';
+import { EditnoticeComponent } from './components/editnotice/editnotice.component';
 // import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @NgModule({
@@ -68,9 +69,9 @@ import { AddNoticesComponent } from './components/add-notices/add-notices.compon
     FacultyprofileComponent,
     FacultyinsightsComponent,
     OuralumniComponent,
-    BatchesComponent,
-    AddNoticesComponent,
-
+    AddnoticeComponent,
+    NoticepopupComponent,
+    EditnoticeComponent,
   ],
   imports: [
     BrowserModule,

@@ -25,10 +25,9 @@ import { OurfacultyComponent } from './components/ourfaculty/ourfaculty.componen
 import { FacultyprofileComponent } from './components/facultyprofile/facultyprofile.component';
 import { FacultyinsightsComponent } from './components/facultyinsights/facultyinsights.component';
 import { OuralumniComponent } from './components/ouralumni/ouralumni.component';
-
-import { BatchesComponent } from './components/batches/batches.component';
-
-import { AddNoticesComponent } from './components/add-notices/add-notices.component';
+import { AddnoticeComponent } from './components/addnotice/addnotice.component';
+import { NoticepopupComponent } from './components/noticepopup/noticepopup.component';
+import { EditnoticeComponent } from './components/editnotice/editnotice.component';
 
 
 const routes: Routes = [
@@ -58,9 +57,10 @@ const routes: Routes = [
   { path: 'facultyprofile', component:FacultyprofileComponent},
   { path: 'facultyinsights', component:FacultyinsightsComponent},
   { path: 'ouralumni', component:OuralumniComponent},
-  { path: 'batches', component:BatchesComponent}
-  { path: 'addNotices', component:AddNoticesComponent}
-
+  { path: 'addnotice', component:AddnoticeComponent},
+  { path: 'noticepopup', component:NoticepopupComponent},
+  { path: 'editnotice/:id', component:EditnoticeComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

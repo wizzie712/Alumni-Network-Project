@@ -1,0 +1,24 @@
+<div class="popup-container">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h1 class="popup-heading">Edit Notice</h1>
+        <button class="close-button" (click)="closePopup()">&times;</button>
+      </div>
+      <div class="popup-body">
+        <form [formGroup]="angForm" >
+          <div class="form-group">
+            <label for="notice_info">Notice Information:</label>
+            <input type="text" class="form-control" id="notice_info" formControlName="notice_info" placeholder="Enter notice information" required>
+          </div>
+          <div class="form-group">
+            <label for="notice_link">Notice Link:</label>
+            <input type="file" class="form-control-file" id="notice_link" accept=".pdf" (change)="uploadFile($event)" required>
+          </div>
+          <div class="popup-footer">
+            <button type="submit" class="btn btn-primary" (click) = "sendFileToServer()">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -441,4 +441,63 @@ console.log(formattedDate); // Output: "2023-05-31"
     );
 }
 
+insertnotice(pdfNoticeInfo:any, pdfNoticeFile:any){
+  console.log(pdfNoticeInfo);
+  console.log(pdfNoticeFile);
+  const formData: any = new FormData();
+  formData.append("pdfNoticeInfo", pdfNoticeInfo);
+  formData.append("pdfNoticeFile", pdfNoticeFile);
+  return this.httpClient.post<any>(this.baseUrl+'/addnotice.php', formData)
+  .pipe(
+    catchError((error: any) => {
+      console.error('Error occurred:', error);
+      return throwError(error);
+    }),
+    map((response: any) => {
+      console.log('Response received:', response); // Log the response received from the server
+      return response;
+    })
+  );
+  
 }
+
+
+getNotices(){
+  return this.httpClient.get<Users[]>(this.baseUrl+'/getNotices.php');
+}
+
+deleteNotice(notice_id:any){
+  console.log(notice_id)
+  return this.httpClient.delete(this.baseUrl+'/deletenotice.php?notice_id='+ notice_id);  
+}
+
+editNotice(noticeId: any, pdfNoticeInfo: any, pdfNoticeFile: any) {
+  const formData: FormData = new FormData();
+  formData.append('noticeId', noticeId);
+  formData.append('notice_info', pdfNoticeInfo); // Updated key to match PHP code
+  formData.append('notice_link', pdfNoticeFile); // Updated key to match PHP code
+
+  return this.httpClient.post<any>(this.baseUrl + '/editnotice.php', formData)
+    .pipe(
+      catchError((error: any) => {
+        console.error('Error occurred:', error);
+        return throwError(error);
+      })
+    );
+}
+
+fetchNoticeById(noticeId: any) {
+  return this.httpClient.get<any>(this.baseUrl + '/getnotice.php?id=' + noticeId)
+    .pipe(
+      catchError((error: any) => {
+        console.error('Error occurred:', error);
+        return throwError(error);
+      })
+    );
+}
+
+getTopNotices() {
+  return this.httpClient.get<any[]>(this.baseUrl + '/gettopnotice.php');
+}
+}
+
