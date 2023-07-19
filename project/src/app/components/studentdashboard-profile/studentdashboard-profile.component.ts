@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { data } from 'jquery';
 import { first } from 'rxjs/operators';
 import { ApiService } from 'src/app/api.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-studentdashboard-profile',
@@ -26,7 +27,7 @@ export class StudentdashboardProfileComponent implements OnInit{
     [x: string]: any;
     angForm: FormGroup;
     angForm_profile_pic: FormGroup;
-    constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
+    constructor(private alertController: AlertController, private fb: FormBuilder,private dataService: ApiService,private router:Router) {
     this.angForm = this.fb.group({
     stud_name: ['', Validators.required],
     sp_email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
@@ -121,21 +122,22 @@ export class StudentdashboardProfileComponent implements OnInit{
       //alert(student_name.value+"  "+ student_profile_description.value );
       this.dataService.updateminiprofile(this.angForm_profile_pic).pipe(first())
       .subscribe(
-      data => {
-        if(data.status == 'fail'){
-          alert(data.message);
-          console.log(data.message);
-        }
-        else{
-          this.router.navigate(['/studentdashboardprofile']).then(()=>{
-            window.location.reload();
-          });
-        }
-      },
-      error => {
-        alert("error while updating profile pic mini profile"+error.message);
-      });
+        async (data) => {
+          const alert = await this.alertController.create({
+            header: 'Woohoo!',
+            message: 'Profile picture has been successfully edited',
+            buttons: [
+              {
+                text: 'OK',
 
+              },
+            ],
+            cssClass: 'alert-middle',
+          });
+
+          await alert.present();
+        },
+      );
     }
 
     postdata(angForm1: { value: { stud_name:any, sp_email:any, sp_dob:any, sp_location:any, sp_designation:any, sp_company:any, sp_linkedin:any, sp_mobile: any}; })
@@ -143,13 +145,24 @@ export class StudentdashboardProfileComponent implements OnInit{
     this.dataService.insertstudentprofiledetails(angForm1.value.stud_name,angForm1.value.sp_email,angForm1.value.sp_dob,angForm1.value.sp_location,angForm1.value.sp_designation,angForm1.value.sp_company,angForm1.value.sp_linkedin,angForm1.value.sp_mobile)
     .pipe(first())
     .subscribe(
-    data => {
-    //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/studentdashboard';
-    //window.location.reload();
-    },
-    error => {
-    });
-    }
+      async (data) => {
+        const alert = await this.alertController.create({
+          header: 'Woohoo!',
+          message: 'Your profile details have been edited',
+          buttons: [
+            {
+              text: 'OK',
+
+            },
+          ],
+          cssClass: 'alert-middle',
+        });
+
+        await alert.present();
+      },
+
+    );
+  }
 
     get Email() { return this.angForm.get('sp_email') as FormControl; }
     get Name() { return this.angForm.get('sp_name') as FormControl; }

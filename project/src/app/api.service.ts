@@ -9,14 +9,14 @@ import { getLocaleDateFormat } from '@angular/common';
 @Injectable({
   providedIn: 'any'
   })
-  
+
   export class ApiService {
-  
+
   redirectUrl: string | undefined;
   baseUrl:string = "http://localhost/project/php";
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }
-    
+
   public userlogin(stud_email: any, stud_password: any) {
   // alert(stud_email)
   console.log(stud_email,stud_password);
@@ -37,8 +37,8 @@ import { getLocaleDateFormat } from '@angular/common';
     return Faculty;
     }));
     }
-    
-  
+
+
   public userregistration(stud_name: any,stud_email: any,stud_password: any,stud_gender: any, stud_batch: any) {
   return this.httpClient.post<any>(this.baseUrl + '/register.php', {stud_name,stud_email,stud_password, stud_gender, stud_batch })
   .pipe(map(Users => {
@@ -61,8 +61,8 @@ import { getLocaleDateFormat } from '@angular/common';
     }));
   }
 
-  
-  
+
+
   //token
   setToken(token: string,email:string) {
   localStorage.setItem('token', token);
@@ -90,11 +90,11 @@ import { getLocaleDateFormat } from '@angular/common';
   }
   return false;
   }
-  
+
  //service for crud on users(students)
 getStudents() {
   return this.httpClient.get<Users[]>(this.baseUrl+'/viewstudent.php');
-} 
+}
 
 getFaculty(){
   return this.httpClient.get<Users[]>(this.baseUrl+'/viewfaculty.php');
@@ -103,33 +103,33 @@ getFaculty(){
 getSingleStudent(stud_email:any) {
   console.log(this.baseUrl+'/singleuser.php?stud_email='+stud_email);
   return this.httpClient.get<Users[]>(this.baseUrl+'/singleuser.php?stud_email='+stud_email);
-} 
+}
 
 getSingleFaculty(faculty_email:any) {
   console.log(this.baseUrl+'/singlefaculty.php?fp_email='+faculty_email);
   return this.httpClient.get<Users[]>(this.baseUrl+'/singlefaculty.php?faculty_email='+faculty_email);
-} 
+}
 
 deleteStudent(stud_email:any) {
   console.log(stud_email);
-  return this.httpClient.delete(this.baseUrl+'/deletestudent.php?stud_email='+ stud_email);  
-}  
+  return this.httpClient.delete(this.baseUrl+'/deletestudent.php?stud_email='+ stud_email);
+}
 
 deleteFaculty(faculty_email:any) {
   console.log(faculty_email);
-  return this.httpClient.delete(this.baseUrl+'/deletefaculty.php?faculty_email='+ faculty_email);  
-}  
+  return this.httpClient.delete(this.baseUrl+'/deletefaculty.php?faculty_email='+ faculty_email);
+}
 
 editStudent(stud_name: any,stud_email: any,stud_password: any, stud_gender: any, stud_batch: any) {
     //console.log(id);
-    return this.httpClient.put(this.baseUrl+'/updatestudent.php', {stud_name ,stud_email, stud_password,stud_gender, stud_batch});  
-  }  
+    return this.httpClient.put(this.baseUrl+'/updatestudent.php', {stud_name ,stud_email, stud_password,stud_gender, stud_batch});
+  }
 
 editFaculty(faculty_name: any,fp_email: any,fp_dept: any,fp_designation: any,fp_linkedin: any,fp_aoi: any) {
     //console.log(id);
-    return this.httpClient.put(this.baseUrl+'/updatefaculty.php', {faculty_name, fp_email, fp_dept, fp_designation, fp_linkedin, fp_aoi});  
+    return this.httpClient.put(this.baseUrl+'/updatefaculty.php', {faculty_name, fp_email, fp_dept, fp_designation, fp_linkedin, fp_aoi});
   }
-  
+
 insertcompanydetails(c_name:any, c_designation:any, c_jobtype:any, c_location :any, c_experience:any, c_salary:any, company_logo_file: any, c_suggestions:any){
   const formData: any = new FormData();
   formData.append("c_name",c_name);
@@ -153,12 +153,15 @@ insertcompanydetails(c_name:any, c_designation:any, c_jobtype:any, c_location :a
         //alert(response);
         return response;
       })
-    ); 
+    );
 }
 
 getScompanydetails() {
   return this.httpClient.get<Users[]>(this.baseUrl+'/companydetailsview.php');
-} 
+}
+getSbatches() {
+  return this.httpClient.get<Users[]>(this.baseUrl+'/viewbatches.php');
+}
 
 insertstudentprofiledetails(sp_name:any, sp_email:any, sp_dob:any, sp_location:any, sp_designation:any, sp_company:any, sp_linkedin:any, sp_mobile: any){
   //alert("insert student details invoked.");
@@ -185,7 +188,7 @@ insertstudentprofiledetails(sp_name:any, sp_email:any, sp_dob:any, sp_location:a
         //alert(response);
         return response;
       })
-    ); 
+    );
 }
 
 insertfacultyprofiledetails(faculty_name:any,fp_email: any, fp_mobile: any, fp_dob: any, fp_aoi: any, fp_linkedin: any, fp_designation: any, fp_dept: any) {
@@ -213,7 +216,7 @@ insertfacultyprofiledetails(faculty_name:any,fp_email: any, fp_mobile: any, fp_d
 
 updateminiprofile(profile_pic_file:any){
   const formData: any = new FormData();
-  
+
   console.log(profile_pic_file.value.profile_pic);
   formData.append("profile_pic_file",profile_pic_file.value.profile_pic);
   //formData.append("email","nikhilphadke38@gmail.com");
@@ -234,7 +237,7 @@ return this.httpClient.post<any>(this.baseUrl + '/updateuserprofilepicture.php',
 
 updateminiprofilefaculty(profile_pic_file:any){
   const formData: any = new FormData();
-  
+
   console.log(profile_pic_file.value.profile_pic);
   formData.append("profile_pic_file",profile_pic_file.value.profile_pic);
   //formData.append("email","nikhilphadke38@gmail.com");
@@ -266,7 +269,7 @@ getStudentProfileImage(){
     console.log('Response received: ', response);
     return response;
   })
-); 
+);
 }
 
 getFacultyProfileImage(){
@@ -282,7 +285,7 @@ getFacultyProfileImage(){
     console.log('Response received: ', response);
     return response;
   })
-); 
+);
 }
 //this is for getting details from db in editprofile page
 getStudentProfileDetails(){
@@ -298,7 +301,7 @@ getStudentProfileDetails(){
     console.log('Response received: ', response);
     return response;
   })
-); 
+);
 }
 
 //this is for getting details from db in editprofile page
@@ -315,7 +318,7 @@ getFacultyProfileDetails(){
     console.log('Response received: ', response);
     return response;
   })
-); 
+);
 }
 getStudentDetails() {
   const formData: any = new FormData();

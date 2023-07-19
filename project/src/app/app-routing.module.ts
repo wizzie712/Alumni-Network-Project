@@ -29,6 +29,7 @@ import { AddnoticeComponent } from './components/addnotice/addnotice.component';
 import { NoticepopupComponent } from './components/noticepopup/noticepopup.component';
 import { EditnoticeComponent } from './components/editnotice/editnotice.component';
 
+
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
   { path: 'studentregister', component: RegisterComponent},

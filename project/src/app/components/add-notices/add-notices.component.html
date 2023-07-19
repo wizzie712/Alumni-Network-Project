@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+    <header>Hello, Admin</header>
+  <ul>
+<li><a routerLink="/crudlist"><i class="fa fa-graduation-cap" style="color: #f3f4f7;"></i>Our Students</a></li>
+<li><a routerLink="/facultycrudlist"><i class="fas fa-school" style="color: #ffffff;"></i>Our Faculty</a></li>
+<li><a routerLink="/addNotices"><i class="fas fa-poll" style="color: #ffffff;"></i>Notices</a></li>
+</ul>
+</div>
+<!-- <div class = "horizontal-nav" style="background-color: cyan; margin-left: 20.25%;">
+  <h3>Alumni Connect</h3>
+</div> -->
+<div id="textbox">
+  <p class="alignleft" routerLink="" routerLinkActive="active">ALUMNI CONNECT</p>
+  <p class="alignright">
+   <tr>
+     <td>
+   Hey
+ </td>
+ <td>
+ <button type="button"  class="btn btn-block" style="font-size: 1.5rem;"><i class="icon ion-power"></i>
+   <ion-icon title="Logout" name="power-outline" style="font-size: 2rem; margin-bottom: -5px;"></ion-icon>
+ </button>
+</td>
+</tr>
+</p>   </div>
+<section>
+  <div class="table-responsive">
+<table class="table table-stripped">
+    <thead class="bg-primary">
+        <th>Sr. No</th>
+        <th>Notice</th>
+        <th>Pdf Attached</th>
+        <th>Edit</th>
+    </thead>
+
+    <tbody>
+
+        <!-- <tr *ngFor="let user of users; let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{user.stud_name}}</td>
+            <td>{{user.stud_email}}</td>
+            <td>{{user.stud_password}}</td>
+            <td>{{user.stud_gender}}</td>
+            <td>{{user.stud_batch}}</td>
+            <td>  <button style="background-color: green;" routerLink="/editstudent/{{user.stud_email}}"><span class="fa fa-pencil"></span></button>    <button style="background-color: rgb(159, 12, 12);" (click)="deleteUser(user.stud_email)" > <span class="fa fa-trash"></span></button>  </td>
+        </tr> -->
+
+    </tbody>
+
+</table>
+</div>
+<a routerLink="/addstudent" class="float">
+    <i class="fa fa-plus my-float"></i>
+    </a>
+  </section>
+</body>
+</html>
+

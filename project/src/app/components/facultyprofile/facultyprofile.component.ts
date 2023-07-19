@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/api.service';
 import StickyNavigation from './stickynavbar.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-facultyprofile',
@@ -30,7 +31,7 @@ export class FacultyprofileComponent implements OnInit {
   [x: string]: any;
   angForm: FormGroup;
   angForm_profile_pic: FormGroup;
-  constructor(private fb: FormBuilder,private router: Router,private renderer: Renderer2,private dataService: ApiService,private http: HttpClient) {
+  constructor(private alertController: AlertController, private fb: FormBuilder,private router: Router,private renderer: Renderer2,private dataService: ApiService,private http: HttpClient) {
   this.angForm = this.fb.group({
     faculty_name: ['', Validators.required],
     fp_email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
@@ -122,34 +123,45 @@ export class FacultyprofileComponent implements OnInit {
       //alert(student_name.value+"  "+ student_profile_description.value );
       this.dataService.updateminiprofilefaculty(this.angForm_profile_pic).pipe(first())
       .subscribe(
-      data => {
-        if(data.status == 'fail'){
-          alert(data.message);
-          console.log(data.message);
-        }
-        else{
-          this.router.navigate(['/facultyprofile']).then(()=>{
-            window.location.reload();
-          });
-        }
-      },
-      error => {
-        alert("error while updating profile pic mini profile"+error.message);
-      });
+        async (data) => {
+          const alert = await this.alertController.create({
+            header: 'Woohoo!',
+            message: 'Profile picture has been successfully edited',
+            buttons: [
+              {
+                text: 'OK',
 
+              },
+            ],
+            cssClass: 'alert-middle',
+          });
+
+          await alert.present();
+        },
+      );
     }
     postdata(angForm1: { value: {faculty_name:any, fp_email:any, fp_mobile:any, fp_dob:any, fp_aoi:any, fp_linkedin:any, fp_designation:any, fp_dept: any}; })
     {
     this.dataService.insertfacultyprofiledetails(angForm1.value.faculty_name,angForm1.value.fp_email,angForm1.value.fp_mobile,angForm1.value.fp_dob,angForm1.value.fp_aoi,angForm1.value.fp_linkedin,angForm1.value.fp_designation,angForm1.value.fp_dept)
     .pipe(first())
     .subscribe(
-    data => {
-    const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/facultyprofile';
-    window.location.reload();
-    },
-    error => {
-    });
-    }
+      async (data) => {
+        const alert = await this.alertController.create({
+          header: 'Woohoo!',
+          message: 'Profile picture has been successfully edited',
+          buttons: [
+            {
+              text: 'OK',
+
+            },
+          ],
+          cssClass: 'alert-middle',
+        });
+
+        await alert.present();
+      },
+    );
+  }
     get Email() { return this.angForm.get('fp_email') as FormControl; }
     get Name() { return this.angForm.get('faculty_name') as FormControl; }
     get Dob() { return this.angForm.get('fp_dob') as FormControl; }
