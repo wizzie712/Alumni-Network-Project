@@ -51,8 +51,8 @@
         <tr *ngFor="let notice of notices; let i = index;">
           <td>{{ i + 1 }}</td>
           <td>{{ notice.notice_info }}</td>
-          <td><a [href]="notice.notice_link" target=”_blank”>Download PDF</a></td>
-          <td>  <button routerLink="/editnotice/{{notice.notice_id}}"><span class="fa fa-pencil"></span></button>    <button (click)="deleteUser(notice.notice_id)" > <span class="fa fa-trash"></span></button>  </td>
+          <td><a [href]="notice.notice_link" target=”_blank”>View PDF</a></td>
+          <td>  <button [routerLink]="['/editnotice', notice.notice_id]"><span class="fa fa-pencil"></span></button>    <button (click)="deleteUser(notice.notice_id)" > <span class="fa fa-trash"></span></button>  </td>
       </tbody>
 
 </table>

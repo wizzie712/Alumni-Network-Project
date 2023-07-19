@@ -27,6 +27,7 @@ import { FacultyinsightsComponent } from './components/facultyinsights/facultyin
 import { OuralumniComponent } from './components/ouralumni/ouralumni.component';
 import { AddnoticeComponent } from './components/addnotice/addnotice.component';
 import { NoticepopupComponent } from './components/noticepopup/noticepopup.component';
+import { EditnoticeComponent } from './components/editnotice/editnotice.component';
 
 const routes: Routes = [
   { path: 'studentlogin', component: LoginComponent },
@@ -56,7 +57,8 @@ const routes: Routes = [
   { path: 'facultyinsights', component:FacultyinsightsComponent},
   { path: 'ouralumni', component:OuralumniComponent},
   { path: 'addnotice', component:AddnoticeComponent},
-  { path: 'noticepopup', component:NoticepopupComponent}
+  { path: 'noticepopup', component:NoticepopupComponent},
+  { path: 'editnotice/:id', component:EditnoticeComponent}
 ];
 
 @NgModule({

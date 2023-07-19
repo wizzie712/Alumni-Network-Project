@@ -37,7 +37,7 @@ import { FacultyinsightsComponent } from './components/facultyinsights/facultyin
 import { OuralumniComponent } from './components/ouralumni/ouralumni.component';
 import { AddnoticeComponent } from './components/addnotice/addnotice.component';
 import { NoticepopupComponent } from './components/noticepopup/noticepopup.component';
-import { EditnoticeComponent } from './src/app/components/editnotice/editnotice.component';
+import { EditnoticeComponent } from './components/editnotice/editnotice.component';
 // import { BreakpointObserver,Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @NgModule({

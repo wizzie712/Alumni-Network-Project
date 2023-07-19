@@ -9,11 +9,20 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-
+  notices: any;
   companydetails: any;
   constructor(private router: Router,private renderer: Renderer2,private dataService: ApiService,private http: HttpClient) {}
 
   ngOnInit(): void {
+    this.dataService.getTopNotices().subscribe(
+        (data: any[]) => {
+          this.notices = data;
+        },
+        (error) => {
+          console.error('Error fetching notices:', error);
+        }
+      );
+    
     this.dataService.getScompanydetails().subscribe(
       (result:any)=>{
         //console.log(result)

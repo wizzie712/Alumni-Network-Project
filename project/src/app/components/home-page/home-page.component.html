@@ -38,10 +38,10 @@
     <h2 style="padding-top: 10px; font-size: 1.5rem;">Notices</h2>
     <div class="content">
       <ul>
-        <li>awsedrftvgybhnjmk,lvnjgrjihni </li>
-        <li>ugt8rugj85riufjcvkmx, </li>
-        <li>rieofkdsl,;x.0-owplas;.z/</li>
-      </ul> 
+        <li *ngFor="let notice of notices">
+          <a href="{{ notice.notice_link }}" target="_blank">{{ notice.notice_info }}</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
